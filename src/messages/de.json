@@ -1,0 +1,178 @@
+{
+  "common": {
+    "siteTitle": "Mathematik-Ressourcen-Repository",
+    "siteDescription": "Wir sammeln hochwertige Mathematik-Lernressourcen aus der ganzen Welt und bieten ein umfassendes mathematisches Wissenssystem und Lernwerkzeuge für Mathematik-Enthusiasten, Studenten und Forscher.",
+    "navigation": {
+      "home": "Startseite",
+      "resources": "Ressourcen",
+      "branches": "Bereiche",
+      "tools": "Werkzeuge",
+      "calculator": "Rechner",
+      "examples": "Beispiele"
+    },
+    "footer": {
+      "quickLinks": "Schnelle Links",
+      "contactUs": "Kontaktieren Sie uns",
+      "copyright": "© 2024 Mathematik-Ressourcen-Repository. Alle Rechte vorbehalten."
+    }
+  },
+  "nav": {
+    "home": "Startseite",
+    "resources": "Ressourcen",
+    "branches": "Bereiche",
+    "tools": "Werkzeuge",
+    "calculator": "Rechner",
+    "examples": "Beispiele"
+  },
+  "home": {
+    "title": "Mathematik-Ressourcen-Repository",
+    "subtitle": "Entdecken Sie die Unendlichen Möglichkeiten der Mathematik",
+    "description": "Wir sammeln hochwertige Mathematik-Lernressourcen aus der ganzen Welt und bieten ein umfassendes mathematisches Wissenssystem und Lernwerkzeuge für Mathematik-Enthusiasten, Studenten und Forscher.",
+    "cta": "Lernen beginnen",
+    "features": {
+      "title": "Warum unser Ressourcen-Repository wählen",
+      "comprehensive": {
+        "title": "Umfassende Ressourcen",
+        "desc": "Abgedeckt von Grundmathematik bis zur höheren Mathematik, um verschiedene Lernbedürfnisse zu erfüllen"
+      },
+      "quality": {
+        "title": "Hochwertige Inhalte",
+        "desc": "Sorgfältig ausgewählte Ressourcen, die Autorität und Genauigkeit der Inhalte gewährleisten"
+      },
+      "interactive": {
+        "title": "Interaktive Werkzeuge",
+        "desc": "Interaktive Lernwerkzeuge, die das Mathematiklernen einfacher und interessanter machen"
+      },
+      "community": {
+        "title": "Community-Unterstützung",
+        "desc": "Eine lebendige Gemeinschaft von Mathematik-Enthusiasten zum Teilen und Diskutieren"
+      }
+    },
+    "stats": {
+      "title": "Unsere Statistiken",
+      "resources": "Ressourcen",
+      "branches": "Mathematik-Bereiche",
+      "tools": "Werkzeuge",
+      "users": "Benutzer"
+    }
+  },
+  "resources": {
+    "title": "Mathematik-Ressourcen",
+    "subtitle": "Hochwertige Mathematik-Lernressourcen",
+    "search": "Ressourcen suchen...",
+    "categories": {
+      "all": "Alle",
+      "video": "Videos",
+      "article": "Artikel",
+      "book": "Bücher",
+      "course": "Kurse",
+      "tool": "Werkzeuge"
+    },
+    "filter": {
+      "title": "Nach Bereich filtern",
+      "all": "Alle Bereiche"
+    },
+    "sort": {
+      "title": "Sortieren nach",
+      "newest": "Neueste",
+      "popular": "Beliebtheit",
+      "rating": "Bewertung"
+    }
+  },
+  "branches": {
+    "title": "Mathematik-Bereiche",
+    "subtitle": "Entdecken Sie verschiedene Mathematik-Bereiche",
+    "description": "Mathematik ist ein weites und tiefes Wissenssystem, das viele verschiedene Studienbereiche umfasst",
+    "learnMore": "Mehr erfahren",
+    "branches": {
+      "algebra": {
+        "title": "Algebra",
+        "desc": "Studiert Strukturen, Beziehungen und Mengen durch Symbole und Regeln"
+      },
+      "geometry": {
+        "title": "Geometrie",
+        "desc": "Erkundet Formen, Größen und relative Eigenschaften von Figuren und Räumen"
+      },
+      "calculus": {
+        "title": "Analysis",
+        "desc": "Analysiert Veränderung und Bewegung durch Ableitungen und Integrale"
+      },
+      "statistics": {
+        "title": "Statistik",
+        "desc": "Sammelt, organisiert, analysiert und interpretiert Daten"
+      },
+      "probability": {
+        "title": "Wahrscheinlichkeitstheorie",
+        "desc": "Studiert zufällige Ereignisse und Auftretenswahrscheinlichkeiten"
+      },
+      "numberTheory": {
+        "title": "Zahlentheorie",
+        "desc": "Untersucht Eigenschaften und Beziehungen ganzer Zahlen"
+      },
+      "linearAlgebra": {
+        "title": "Lineare Algebra",
+        "desc": "Studiert Vektoren, Matrizen und lineare Räume"
+      },
+      "discreteMath": {
+        "title": "Diskrete Mathematik",
+        "desc": "Beschäftigt sich mit diskreten mathematischen Objekten und endlichen Strukturen"
+      }
+    }
+  },
+  "tools": {
+    "title": "Mathematik-Werkzeuge",
+    "subtitle": "Interaktive Mathematik-Lernwerkzeuge",
+    "description": "Verwenden Sie unsere interaktiven Werkzeuge, um das Mathematiklernen einfacher und interessanter zu machen",
+    "calculator": {
+      "title": "Wissenschaftlicher Rechner",
+      "desc": "Erweiterter Online-Wissenschaftsrechner mit vollständigen Funktionen"
+    },
+    "plotter": {
+      "title": "Funktionsplotter",
+      "desc": "Online-Mathematik-Funktionsplotter, unterstützt mehrere Funktionstypen"
+    },
+    "solver": {
+      "title": "Gleichungslöser",
+      "desc": "Online-Gleichungslöser, kann verschiedene Arten von Gleichungen lösen"
+    },
+    "converter": {
+      "title": "Einheitenkonverter",
+      "desc": "Einheitenumwandlungs-Tool, unterstützt gängige Umwandlungen"
+    }
+  },
+  "calculator": {
+    "title": "Wissenschaftlicher Rechner",
+    "subtitle": "Erweiterter Online-Wissenschaftsrechner",
+    "description": "Verwenden Sie unseren Online-Wissenschaftsrechner, um komplexe mathematische Probleme zu lösen",
+    "clear": "Löschen",
+    "backspace": "Rücktaste",
+    "equals": "="
+  },
+  "examples": {
+    "title": "Mathematik-Beispiele",
+    "subtitle": "Beispiele für klassische mathematische Probleme",
+    "description": "Lernen Sie durch Beispiele für klassische mathematische Probleme und verbessern Sie Ihre Problemlösungsfähigkeiten",
+    "difficulty": {
+      "all": "Alle Niveaus",
+      "elementary": "Elementar",
+      "intermediate": "Mittel",
+      "advanced": "Fortgeschritten"
+    },
+    "category": {
+      "all": "Alle Kategorien",
+      "algebra": "Algebra",
+      "geometry": "Geometrie",
+      "calculus": "Analysis",
+      "statistics": "Statistik"
+    },
+    "showSolution": "Lösung anzeigen",
+    "hideSolution": "Lösung ausblenden"
+  },
+  "footer": {
+    "about": "Über uns",
+    "contact": "Kontakt",
+    "privacy": "Datenschutzrichtlinie",
+    "terms": "Nutzungsbedingungen",
+    "copyright": "© 2024 Mathematik-Ressourcen-Repository. Alle Rechte vorbehalten."
+  }
+}

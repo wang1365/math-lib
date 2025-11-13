@@ -1,0 +1,178 @@
+{
+  "common": {
+    "siteTitle": "Repositório de Recursos Matemáticos",
+    "siteDescription": "Reunimos recursos de aprendizagem matemática de alta qualidade do mundo todo, fornecendo um sistema de conhecimento matemático abrangente e ferramentas de aprendizagem para entusiastas da matemática, estudantes e pesquisadores.",
+    "navigation": {
+      "home": "Início",
+      "resources": "Recursos",
+      "branches": "Ramos",
+      "tools": "Ferramentas",
+      "calculator": "Calculadora",
+      "examples": "Exemplos"
+    },
+    "footer": {
+      "quickLinks": "Links Rápidos",
+      "contactUs": "Contate-nos",
+      "copyright": "© 2024 Repositório de Recursos Matemáticos. Todos os direitos reservados."
+    }
+  },
+  "nav": {
+    "home": "Início",
+    "resources": "Recursos",
+    "branches": "Ramos",
+    "tools": "Ferramentas",
+    "calculator": "Calculadora",
+    "examples": "Exemplos"
+  },
+  "home": {
+    "title": "Repositório de Recursos Matemáticos",
+    "subtitle": "Explore as Infinitas Possibilidades da Matemática",
+    "description": "Reunimos recursos de aprendizagem matemática de alta qualidade do mundo todo, fornecendo um sistema de conhecimento matemático abrangente e ferramentas de aprendizagem para entusiastas da matemática, estudantes e pesquisadores.",
+    "cta": "Começar a Aprender",
+    "features": {
+      "title": "Por Que Escolher Nosso Repositório de Recursos",
+      "comprehensive": {
+        "title": "Recursos Abrangentes",
+        "desc": "Cobrindo desde matemática básica até matemática avançada, atendendo a diferentes níveis de necessidades de aprendizagem"
+      },
+      "quality": {
+        "title": "Conteúdo de Alta Qualidade",
+        "desc": "Recursos cuidadosamente selecionados, garantindo a autoridade e precisão do conteúdo"
+      },
+      "interactive": {
+        "title": "Ferramentas Interativas",
+        "desc": "Ferramentas de aprendizagem interativas para tornar o aprendizado de matemática mais fácil e interessante"
+      },
+      "community": {
+        "title": "Apoio Comunitário",
+        "desc": "Uma comunidade vibrante de entusiastas da matemática para compartilhar e discutir"
+      }
+    },
+    "stats": {
+      "title": "Nossas Estatísticas",
+      "resources": "Recursos",
+      "branches": "Ramos Matemáticos",
+      "tools": "Ferramentas",
+      "users": "Usuários"
+    }
+  },
+  "resources": {
+    "title": "Recursos de Matemática",
+    "subtitle": "Recursos de Aprendizagem Matemática de Alta Qualidade",
+    "search": "Pesquisar recursos...",
+    "categories": {
+      "all": "Todos",
+      "video": "Vídeos",
+      "article": "Artigos",
+      "book": "Livros",
+      "course": "Cursos",
+      "tool": "Ferramentas"
+    },
+    "filter": {
+      "title": "Filtrar por Ramo",
+      "all": "Todos os Ramos"
+    },
+    "sort": {
+      "title": "Ordenar por",
+      "newest": "Mais Recentes",
+      "popular": "Popularidade",
+      "rating": "Avaliação"
+    }
+  },
+  "branches": {
+    "title": "Ramos da Matemática",
+    "subtitle": "Explore Diferentes Campos da Matemática",
+    "description": "A matemática é um sistema de conhecimento vasto e profundo, incluindo muitos ramos diferentes de estudo",
+    "learnMore": "Saber Mais",
+    "branches": {
+      "algebra": {
+        "title": "Álgebra",
+        "desc": "Estuda estruturas, relações e quantidades através de símbolos e regras"
+      },
+      "geometry": {
+        "title": "Geometria",
+        "desc": "Explora formas, tamanhos e propriedades relativas de figuras e espaços"
+      },
+      "calculus": {
+        "title": "Cálculo",
+        "desc": "Analisa mudança e movimento através de derivadas e integrais"
+      },
+      "statistics": {
+        "title": "Estatística",
+        "desc": "Coleciona, organiza, analisa e interpreta dados"
+      },
+      "probability": {
+        "title": "Probabilidade",
+        "desc": "Estuda eventos aleatórios e possibilidade de ocorrência"
+      },
+      "numberTheory": {
+        "title": "Teoria dos Números",
+        "desc": "Investiga propriedades e relações de números inteiros"
+      },
+      "linearAlgebra": {
+        "title": "Álgebra Linear",
+        "desc": "Estuda vetores, matrizes e espaços lineares"
+      },
+      "discreteMath": {
+        "title": "Matemática Discreta",
+        "desc": "Lida com objetos matemáticos discretos e estruturas finitas"
+      }
+    }
+  },
+  "tools": {
+    "title": "Ferramentas Matemáticas",
+    "subtitle": "Ferramentas Interativas de Aprendizagem Matemática",
+    "description": "Use nossas ferramentas interativas para tornar o aprendizado de matemática mais fácil e interessante",
+    "calculator": {
+      "title": "Calculadora Científica",
+      "desc": "Calculadora científica online avançada com funções completas"
+    },
+    "plotter": {
+      "title": "Traçador de Gráficos",
+      "desc": "Traçador de funções matemáticas online, suportando múltiplos tipos de funções"
+    },
+    "solver": {
+      "title": "Solucionador de Equações",
+      "desc": "Solucionador de equações online, capaz de resolver vários tipos de equações"
+    },
+    "converter": {
+      "title": "Conversor de Unidades",
+      "desc": "Ferramenta de conversão de unidades, suportando conversões comuns"
+    }
+  },
+  "calculator": {
+    "title": "Calculadora Científica",
+    "subtitle": "Calculadora Científica Online Avançada",
+    "description": "Use nossa calculadora científica online para resolver problemas matemáticos complexos",
+    "clear": "Limpar",
+    "backspace": "Retroceder",
+    "equals": "="
+  },
+  "examples": {
+    "title": "Exemplos Matemáticos",
+    "subtitle": "Exemplos de Problemas Matemáticos Clássicos",
+    "description": "Aprenda através de exemplos de problemas matemáticos clássicos e melhore suas habilidades de resolução de problemas",
+    "difficulty": {
+      "all": "Todos os Níveis",
+      "elementary": "Elementar",
+      "intermediate": "Intermediário",
+      "advanced": "Avançado"
+    },
+    "category": {
+      "all": "Todas as Categorias",
+      "algebra": "Álgebra",
+      "geometry": "Geometria",
+      "calculus": "Cálculo",
+      "statistics": "Estatística"
+    },
+    "showSolution": "Mostrar Solução",
+    "hideSolution": "Ocultar Solução"
+  },
+  "footer": {
+    "about": "Sobre Nós",
+    "contact": "Contato",
+    "privacy": "Política de Privacidade",
+    "terms": "Termos de Serviço",
+    "copyright": "© 2024 Repositório de Recursos Matemáticos. Todos os direitos reservados."
+  }
+}

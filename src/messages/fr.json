@@ -1,0 +1,105 @@
+{
+  "common": {
+    "siteTitle": "Bibliothèque de Ressources Mathématiques",
+    "siteDescription": "Rassembler des ressources d'apprentissage mathématiques de qualité mondiale, fournissant des systèmes de connaissances mathématiques complets et des outils d'apprentissage pour les amateurs de mathématiques, les étudiants et les chercheurs.",
+    "navigation": {
+      "home": "Accueil",
+      "resources": "Ressources d'Apprentissage",
+      "branches": "Branches des Mathématiques",
+      "tools": "Outils",
+      "calculator": "Calculatrice",
+      "examples": "Exemples de Formules"
+    },
+    "footer": {
+      "quickLinks": "Liens Rapides",
+      "contactUs": "Nous Contacter",
+      "copyright": "© 2024 Bibliothèque de Ressources Mathématiques. Tous droits réservés."
+    }
+  },
+  "home": {
+    "hero": {
+      "title": "Explorer les Possibilités Infinies des Mathématiques",
+      "subtitle": "Rassembler des ressources d'apprentissage mathématiques de qualité mondiale, fournissant des systèmes de connaissances mathématiques complets et des outils d'apprentissage. Des mathématiques de base aux mathématiques avancées, de la théorie à l'application, rendre l'apprentissage des mathématiques plus intéressant et efficace.",
+      "cta": "Commencer à Apprendre",
+      "ctaSecondary": "Parcourir les Branches des Mathématiques"
+    },
+    "features": {
+      "title": "Pourquoi Nous Choisir",
+      "subtitle": "Nous nous engageons à fournir les ressources et outils d'apprentissage les plus de haute qualité et les plus complets pour les apprenants en mathématiques",
+      "richResources": {
+        "title": "Riches Ressources d'Apprentissage",
+        "description": "Rassembler des ressources d'apprentissage mathématiques de qualité mondiale, incluant des cours en ligne, des manuels, des livres, des conférences vidéo, etc."
+      },
+      "powerfulTools": {
+        "title": "Outils Mathématiques Puissants",
+        "description": "Fournir divers outils de calcul mathématique et logiciels de visualisation pour aider à l'apprentissage et à la recherche en mathématiques"
+      },
+      "immersiveExperience": {
+        "title": "Expérience d'Apprentissage Immersive",
+        "description": "Rendre l'apprentissage des mathématiques plus vivant et intéressant grâce à des plateformes d'apprentissage interactives et du contenu multimédia"
+      },
+      "curatedCourses": {
+        "title": "Cours Vidéo Sélectionnés",
+        "description": "Excellentes cours et conférences de mathématiques sélectionnées sur YouTube et d'autres plateformes"
+      }
+    },
+    "popularResources": {
+      "title": "Ressources Populaires",
+      "subtitle": "Découvrir les ressources d'apprentissage mathématiques les plus populaires"
+    }
+  },
+  "resources": {
+    "title": "Ressources d'Apprentissage",
+    "subtitle": "Explorer des riches ressources d'apprentissage mathématiques, incluant des cours en ligne, des manuels, des outils, etc.",
+    "categories": {
+      "platforms": "Plateformes d'Apprentissage en Ligne",
+      "videoCourses": "Cours Vidéo",
+      "tools": "Outils Mathématiques",
+      "encyclopedias": "Encyclopédies Mathématiques"
+    }
+  },
+  "branches": {
+    "title": "Branches des Mathématiques",
+    "subtitle": "Les mathématiques sont un vaste domaine contenant de nombreuses branches et directions de recherche différentes",
+    "basicMath": {
+      "title": "Mathématiques de Base",
+      "description": "Connaissances de base en mathématiques, incluant l'arithmétique, l'algèbre de base, la géométrie de base, etc."
+    },
+    "advancedMath": {
+      "title": "Mathématiques Avancées",
+      "description": "Contenu mathématique de niveau universitaire et supérieur, incluant le calcul, l'algèbre linéaire, etc."
+    },
+    "theoreticalMath": {
+      "title": "Mathématiques Théoriques",
+      "description": "Recherche théorique en mathématiques, incluant diverses branches des mathématiques pures"
+    },
+    "appliedMath": {
+      "title": "Mathématiques Appliquées",
+      "description": "Application des mathématiques dans des problèmes pratiques, incluant les mathématiques computationnelles, la statistique, etc."
+    },
+    "discreteMath": {
+      "title": "Mathématiques Discrètes",
+      "description": "Branches mathématiques étudiant des objets discrets, incluant la combinatoire, la théorie des graphes, etc."
+    },
+    "mathPhysics": {
+      "title": "Physique Mathématique",
+      "description": "L'intersection des mathématiques et de la physique, incluant des équations de physique mathématique, etc."
+    }
+  },
+  "tools": {
+    "title": "Outils Mathématiques",
+    "subtitle": "Outils puissants de calcul et de visualisation mathématiques",
+    "calculators": "Calculatrices",
+    "plotting": "Outils de Tracé",
+    "equationSolvers": "Solveurs d'Équations",
+    "symbolicMath": "Mathématiques Symboliques"
+  },
+  "calculator": {
+    "title": "Calculatrice Mathématique",
+    "subtitle": "Puissante calculatrice mathématique en ligne"
+  },
+  "examples": {
+    "title": "Exemples de Formules Mathématiques",
+    "subtitle": "Présentant la beauté et l'élégance des formules mathématiques classiques"
+  }
+}

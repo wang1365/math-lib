@@ -1,0 +1,105 @@
+{
+  "common": {
+    "siteTitle": "Biblioteca de Recursos Matemáticos",
+    "siteDescription": "Reuniendo recursos de aprendizaje matemático de calidad global, proporcionando sistemas de conocimiento matemático completos y herramientas de aprendizaje para entusiastas de las matemáticas, estudiantes e investigadores.",
+    "navigation": {
+      "home": "Inicio",
+      "resources": "Recursos de Aprendizaje",
+      "branches": "Ramas de las Matemáticas",
+      "tools": "Herramientas",
+      "calculator": "Calculadora",
+      "examples": "Ejemplos de Fórmulas"
+    },
+    "footer": {
+      "quickLinks": "Enlaces Rápidos",
+      "contactUs": "Contáctanos",
+      "copyright": "© 2024 Biblioteca de Recursos Matemáticos. Todos los derechos reservados."
+    }
+  },
+  "home": {
+    "hero": {
+      "title": "Explora las Posibilidades Infinitas de las Matemáticas",
+      "subtitle": "Reuniendo recursos de aprendizaje matemático de calidad global, proporcionando sistemas de conocimiento matemático completos y herramientas de aprendizaje. Desde matemáticas básicas hasta matemáticas avanzadas, de la teoría a la aplicación, haciendo el aprendizaje de las matemáticas más interesante y eficiente.",
+      "cta": "Comenzar a Aprender",
+      "ctaSecondary": "Explorar Ramas de las Matemáticas"
+    },
+    "features": {
+      "title": "Por Qué Elegirnos",
+      "subtitle": "Nos comprometemos a proporcionar los recursos y herramientas de aprendizaje más de alta calidad y más completos para los estudiantes de matemáticas",
+      "richResources": {
+        "title": "Recursos de Aprendizaje Ricos",
+        "description": "Reuniendo recursos de aprendizaje matemático de calidad global, incluyendo cursos en línea, libros de texto, libros, conferencias en video, etc."
+      },
+      "powerfulTools": {
+        "title": "Herramientas Matemáticas Poderosas",
+        "description": "Proporcionando varias herramientas de cálculo matemático y software de visualización para ayudar en el aprendizaje y la investigación de las matemáticas"
+      },
+      "immersiveExperience": {
+        "title": "Experiencia de Aprendizaje Inmersiva",
+        "description": "Haciendo el aprendizaje de las matemáticas más vivo e interesante a través de plataformas de aprendizaje interactivas y contenido multimedia"
+      },
+      "curatedCourses": {
+        "title": "Cursos en Video Curados",
+        "description": "Excelentes cursos y conferencias de matemáticas seleccionadas de YouTube y otras plataformas"
+      }
+    },
+    "popularResources": {
+      "title": "Recursos Populares",
+      "subtitle": "Descubre los recursos de aprendizaje matemático más populares"
+    }
+  },
+  "resources": {
+    "title": "Recursos de Aprendizaje",
+    "subtitle": "Explora ricos recursos de aprendizaje matemático, incluyendo cursos en línea, libros de texto, herramientas, etc.",
+    "categories": {
+      "platforms": "Plataformas de Aprendizaje en Línea",
+      "videoCourses": "Cursos en Video",
+      "tools": "Herramientas Matemáticas",
+      "encyclopedias": "Enciclopedias Matemáticas"
+    }
+  },
+  "branches": {
+    "title": "Ramas de las Matemáticas",
+    "subtitle": "Las matemáticas son un campo vasto que contiene muchas ramas y direcciones de investigación diferentes",
+    "basicMath": {
+      "title": "Matemáticas Básicas",
+      "description": "Conocimientos básicos de matemáticas, incluyendo aritmética, álgebra básica, geometría básica, etc."
+    },
+    "advancedMath": {
+      "title": "Matemáticas Avanzadas",
+      "description": "Contenido matemático de nivel universitario y superior, incluyendo cálculo, álgebra lineal, etc."
+    },
+    "theoreticalMath": {
+      "title": "Matemáticas Teóricas",
+      "description": "Investigación teórica en matemáticas, incluyendo varias ramas de las matemáticas puras"
+    },
+    "appliedMath": {
+      "title": "Matemáticas Aplicadas",
+      "description": "Aplicación de las matemáticas en problemas prácticos, incluyendo matemáticas computacionales, estadística, etc."
+    },
+    "discreteMath": {
+      "title": "Matemáticas Discretas",
+      "description": "Ramas matemáticas que estudian objetos discretos, incluyendo combinatoria, teoría de grafos, etc."
+    },
+    "mathPhysics": {
+      "title": "Física Matemática",
+      "description": "La intersección de las matemáticas y la física, incluyendo ecuaciones de física matemática, etc."
+    }
+  },
+  "tools": {
+    "title": "Herramientas Matemáticas",
+    "subtitle": "Herramientas poderosas de cálculo y visualización matemática",
+    "calculators": "Calculadoras",
+    "plotting": "Herramientas de Gráficos",
+    "equationSolvers": "Resolutores de Ecuaciones",
+    "symbolicMath": "Matemáticas Simbólicas"
+  },
+  "calculator": {
+    "title": "Calculadora Matemática",
+    "subtitle": "Potente calculadora matemática en línea"
+  },
+  "examples": {
+    "title": "Ejemplos de Fórmulas Matemáticas",
+    "subtitle": "Mostrando la belleza y elegancia de las fórmulas matemáticas clásicas"
+  }
+}

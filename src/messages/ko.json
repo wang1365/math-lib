@@ -1,0 +1,178 @@
+{
+  "common": {
+    "siteTitle": "수학 리소스 저장소",
+    "siteDescription": "전 세계의 고품질 수학 학습 리소스를 모아 수학 애호가, 학생 및 연구자를 위한 포괄적인 수학 지식 체계와 학습 도구를 제공합니다.",
+    "navigation": {
+      "home": "홈",
+      "resources": "리소스",
+      "branches": "분야",
+      "tools": "도구",
+      "calculator": "계산기",
+      "examples": "예제"
+    },
+    "footer": {
+      "quickLinks": "빠른 링크",
+      "contactUs": "연락처",
+      "copyright": "© 2024 수학 리소스 저장소. 모든 권리 보유."
+    }
+  },
+  "nav": {
+    "home": "홈",
+    "resources": "리소스",
+    "branches": "분야",
+    "tools": "도구",
+    "calculator": "계산기",
+    "examples": "예제"
+  },
+  "home": {
+    "title": "수학 리소스 저장소",
+    "subtitle": "수학의 무한한 가능성을 탐험하세요",
+    "description": "전 세계의 고품질 수학 학습 리소스를 모아 수학 애호가, 학생 및 연구자를 위한 포괄적인 수학 지식 체계와 학습 도구를 제공합니다.",
+    "cta": "학습 시작",
+    "features": {
+      "title": "우리의 리소스 저장소를 선택해야 하는 이유",
+      "comprehensive": {
+        "title": "포괄적인 리소스",
+        "desc": "기초 수학부터 고등 수학까지 다양한 학습 수준의 요구를 충족시킵니다"
+      },
+      "quality": {
+        "title": "고품질 콘텐츠",
+        "desc": "신중하게 선별된 리소스로 콘텐츠의 권위와 정확성을 보장합니다"
+      },
+      "interactive": {
+        "title": "인터랙티브 도구",
+        "desc": "수학 학습을 더 쉽고 흥미롭게 만드는 인터랙티브 학습 도구"
+      },
+      "community": {
+        "title": "커뮤니티 지원",
+        "desc": "공유하고 토론할 수 있는 활기찬 수학 애호가 커뮤니티"
+      }
+    },
+    "stats": {
+      "title": "우리의 통계",
+      "resources": "리소스",
+      "branches": "수학 분야",
+      "tools": "도구",
+      "users": "사용자"
+    }
+  },
+  "resources": {
+    "title": "수학 리소스",
+    "subtitle": "고품질 수학 학습 리소스",
+    "search": "리소스 검색...",
+    "categories": {
+      "all": "전체",
+      "video": "비디오",
+      "article": "기사",
+      "book": "도서",
+      "course": "강좌",
+      "tool": "도구"
+    },
+    "filter": {
+      "title": "분야별 필터링",
+      "all": "모든 분야"
+    },
+    "sort": {
+      "title": "정렬 기준",
+      "newest": "최신순",
+      "popular": "인기순",
+      "rating": "평점순"
+    }
+  },
+  "branches": {
+    "title": "수학의 분야",
+    "subtitle": "다양한 수학 분야 탐험",
+    "description": "수학은 광범위하고 심오한 지식 체계로, 많은 다른 학문 분야를 포함합니다",
+    "learnMore": "더 알아보기",
+    "branches": {
+      "algebra": {
+        "title": "대수학",
+        "desc": "기호와 규칙을 통해 구조, 관계 및 양을 연구합니다"
+      },
+      "geometry": {
+        "title": "기하학",
+        "desc": "도형과 공간의 형태, 크기 및 상대적 특성을 탐구합니다"
+      },
+      "calculus": {
+        "title": "미적분학",
+        "desc": "도함수와 적분을 통해 변화와 운동을 분석합니다"
+      },
+      "statistics": {
+        "title": "통계학",
+        "desc": "데이터를 수집, 정리, 분석 및 해석합니다"
+      },
+      "probability": {
+        "title": "확률론",
+        "desc": "무작위 사건과 발생 가능성을 연구합니다"
+      },
+      "numberTheory": {
+        "title": "정수론",
+        "desc": "정수의 특성과 관계를 조사합니다"
+      },
+      "linearAlgebra": {
+        "title": "선형대수학",
+        "desc": "벡터, 행렬 및 선형 공간을 연구합니다"
+      },
+      "discreteMath": {
+        "title": "이산수학",
+        "desc": "이산적 수학적 대상과 유한 구조를 다룹니다"
+      }
+    }
+  },
+  "tools": {
+    "title": "수학 도구",
+    "subtitle": "인터랙티브 수학 학습 도구",
+    "description": "당사의 인터랙티브 도구를 사용하여 수학 학습을 더 쉽고 흥미롭게 만드세요",
+    "calculator": {
+      "title": "과학용 계산기",
+      "desc": "완전한 기능을 갖춘 고급 온라인 과학용 계산기"
+    },
+    "plotter": {
+      "title": "그래프 플로터",
+      "desc": "여러 유형의 함수를 지원하는 온라인 수학 함수 그래프 플로터"
+    },
+    "solver": {
+      "title": "방정식 풀이기",
+      "desc": "다양한 유형의 방정식을 풀 수 있는 온라인 방정식 풀이기"
+    },
+    "converter": {
+      "title": "단위 변환기",
+      "desc": "일반적인 변환을 지원하는 단위 변환 도구"
+    }
+  },
+  "calculator": {
+    "title": "과학용 계산기",
+    "subtitle": "고급 온라인 과학용 계산기",
+    "description": "복잡한 수학 문제를 해결하기 위해 당사의 온라인 과학용 계산기를 사용하세요",
+    "clear": "지우기",
+    "backspace": "백스페이스",
+    "equals": "="
+  },
+  "examples": {
+    "title": "수학 예제",
+    "subtitle": "고전 수학 문제 예제",
+    "description": "고전 수학 문제 예제를 통해 학습하고 문제 해결 능력을 향상시키세요",
+    "difficulty": {
+      "all": "모든 수준",
+      "elementary": "초급",
+      "intermediate": "중급",
+      "advanced": "고급"
+    },
+    "category": {
+      "all": "모든 범주",
+      "algebra": "대수학",
+      "geometry": "기하학",
+      "calculus": "미적분학",
+      "statistics": "통계학"
+    },
+    "showSolution": "해결책 보기",
+    "hideSolution": "해결책 숨기기"
+  },
+  "footer": {
+    "about": "회사 소개",
+    "contact": "연락처",
+    "privacy": "개인정보 보호정책",
+    "terms": "서비스 약관",
+    "copyright": "© 2024 수학 리소스 저장소. 모든 권리 보유."
+  }
+}

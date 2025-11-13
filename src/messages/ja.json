@@ -1,0 +1,105 @@
+{
+  "common": {
+    "siteTitle": "数学リソースライブラリ",
+    "siteDescription": "世界中の優れた数学学習リソースを集め、数学愛好家、学生、研究者のための包括的な数学知識体系と学習ツールを提供します。",
+    "navigation": {
+      "home": "ホーム",
+      "resources": "学習リソース",
+      "branches": "数学の分野",
+      "tools": "ツール",
+      "calculator": "計算機",
+      "examples": "公式例"
+    },
+    "footer": {
+      "quickLinks": "クイックリンク",
+      "contactUs": "お問い合わせ",
+      "copyright": "© 2024 数学リソースライブラリ. All rights reserved."
+    }
+  },
+  "home": {
+    "hero": {
+      "title": "数学の無限の可能性を探索",
+      "subtitle": "世界中の優れた数学学習リソースを集め、学習者のための包括的な数学知識体系と学習ツールを提供します。基礎数学から高等数学まで、理論から応用まで、数学学習をより面白く効率的にします。",
+      "cta": "学習を開始",
+      "ctaSecondary": "数学の分野を見る"
+    },
+    "features": {
+      "title": "なぜ私たちを選ぶのか",
+      "subtitle": "数学学習者に最高品質で最も包括的な学習リソースとツールを提供することに尽力しています",
+      "richResources": {
+        "title": "豊富な学習リソース",
+        "description": "世界中の優れた数学学習リソースを集め、オンラインコース、教科書、書籍、ビデオ講義などを含む"
+      },
+      "powerfulTools": {
+        "title": "強力な数学ツール",
+        "description": "数学学習と研究を支援する、さまざまな数学計算ツールと可視化ソフトウェアを提供"
+      },
+      "immersiveExperience": {
+        "title": "没入型学習体験",
+        "description": "インタラクティブな学習プラットフォームとマルチメディアコンテンツを通じて、数学学習をより生き生きと面白くする"
+      },
+      "curatedCourses": {
+        "title": "厳選されたビデオコース",
+        "description": "YouTubeや他のプラットフォームから厳選された優れた数学コースと講義"
+      }
+    },
+    "popularResources": {
+      "title": "人気のリソース",
+      "subtitle": "最も人気のある数学学習リソースを発見"
+    }
+  },
+  "resources": {
+    "title": "学習リソース",
+    "subtitle": "オンラインコース、教科書、ツールなど、豊富な数学学習リソースを探索",
+    "categories": {
+      "platforms": "オンライン学習プラットフォーム",
+      "videoCourses": "ビデオコース",
+      "tools": "数学ツール",
+      "encyclopedias": "数学百科事典"
+    }
+  },
+  "branches": {
+    "title": "数学の分野",
+    "subtitle": "数学は広大な分野で、多くの異なる分野と研究方向を含んでいる",
+    "basicMath": {
+      "title": "基礎数学",
+      "description": "算術、基礎代数、基礎幾何学など、数学の基礎知識"
+    },
+    "advancedMath": {
+      "title": "高等数学",
+      "description": "微積分、線形代数など、大学レベル以上の数学コンテンツ"
+    },
+    "theoreticalMath": {
+      "title": "理論数学",
+      "description": "数学の理論研究、純粋数学のさまざまな分野を含む"
+    },
+    "appliedMath": {
+      "title": "応用数学",
+      "description": "計算数学、統計学など、実際の問題における数学の応用"
+    },
+    "discreteMath": {
+      "title": "離散数学",
+      "description": "組合せ数学、グラフ理論など、離散オブジェクトを研究する数学の分野"
+    },
+    "mathPhysics": {
+      "title": "数理物理学",
+      "description": "数学と物理学の交差点、数理物理方程式などを含む"
+    }
+  },
+  "tools": {
+    "title": "数学ツール",
+    "subtitle": "強力な数学計算と可視化ツール",
+    "calculators": "計算機",
+    "plotting": "プロットツール",
+    "equationSolvers": "方程式ソルバー",
+    "symbolicMath": "記号数学"
+  },
+  "calculator": {
+    "title": "数学計算機",
+    "subtitle": "強力なオンライン数学計算機"
+  },
+  "examples": {
+    "title": "数学公式例",
+    "subtitle": "古典的な数学公式の美しさと優雅さを展示"
+  }
+}

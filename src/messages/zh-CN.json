@@ -1,0 +1,134 @@
+{
+  "common": {
+    "siteTitle": "数学资源库",
+    "siteDescription": "汇集全球优质数学学习资源，为数学爱好者、学生和研究者提供全面的数学知识体系和学习工具。",
+    "navigation": {
+      "home": "首页",
+      "resources": "学习资源",
+      "branches": "数学分支",
+      "tools": "工具",
+      "calculator": "计算器",
+      "examples": "公式示例"
+    },
+    "footer": {
+      "quickLinks": "快速链接",
+      "contactUs": "联系我们",
+      "copyright": "© 2024 数学资源库. 保留所有权利。"
+    }
+  },
+  "nav": {
+    "home": "首页",
+    "resources": "学习资源",
+    "branches": "数学分支",
+    "tools": "工具",
+    "calculator": "计算器",
+    "examples": "公式示例",
+    "language": "语言"
+  },
+  "home": {
+    "hero": {
+      "title1": "探索数学的",
+      "title2": "无限可能",
+      "subtitle": "汇集全球优质数学学习资源，为学习者提供全面的数学知识体系和学习工具。从基础数学到高等数学，从理论到应用，让数学学习变得更加有趣和高效。",
+      "cta": {
+        "start": "开始学习",
+        "branches": "浏览数学分支"
+      }
+    },
+    "features": {
+      "title": "为什么选择我们",
+      "subtitle": "我们致力于为数学学习者提供最优质、最全面的学习资源和工具",
+      "resources": {
+        "title": "丰富的学习资源",
+        "description": "汇集全球优质数学学习资源，包括在线课程、教科书、视频讲座等"
+      },
+      "tools": {
+        "title": "强大的数学工具",
+        "description": "提供各种数学计算工具和可视化软件，助力数学学习和研究"
+      },
+      "videos": {
+        "title": "精选视频课程",
+        "description": "精选YouTube和其他平台的优质数学视频课程和讲座"
+      },
+      "encyclopedia": {
+        "title": "全面的数学百科",
+        "description": "涵盖各个数学分支的详细知识和概念解释"
+      },
+      "community": {
+        "title": "活跃的社区",
+        "description": "连接全球数学爱好者，分享学习经验和解题思路"
+      },
+      "recommendations": {
+        "title": "智能推荐",
+        "description": "基于你的学习进度和兴趣，智能推荐相关的数学资源"
+      }
+    },
+    "resources": {
+      "title": "热门资源",
+      "subtitle": "精选最受欢迎的数学学习资源和工具",
+      "visit": "访问网站",
+      "platforms": {
+        "title": "学习平台",
+        "khan": "免费的在线数学课程",
+        "mit": "麻省理工开放课程",
+        "3blue1brown": "可视化数学讲解"
+      },
+      "tools": {
+        "title": "数学工具",
+        "wolfram": "计算知识引擎",
+        "desmos": "图形计算器",
+        "geogebra": "动态数学软件"
+      }
+    },
+    "cta": {
+      "title": "开始你的数学之旅",
+      "subtitle": "加入我们的社区，与全球数学爱好者一起探索数学的美妙世界",
+      "explore": "探索资源",
+      "branches": "查看数学分支"
+    }
+  },
+  "resources": {
+    "title": "数学学习资源",
+    "subtitle": "精选全球优质的数学学习资源，包括在线课程、视频讲座、数学工具和百科全书。从基础数学到高等数学，满足不同学习者的需求。",
+    "visitResource": "访问资源",
+    "platforms": {
+      "title": "学习平台",
+      "khan": "免费的在线数学课程，从基础数学到高等数学",
+      "mit": "麻省理工学院的开放课程，包含完整的数学课程",
+      "coursera": "世界顶级大学的在线数学课程",
+      "edx": "哈佛和MIT创建的在线教育平台"
+    },
+    "videos": {
+      "title": "视频课程",
+      "3blue1brown": "以可视化方式讲解数学概念，特别适合理解抽象概念",
+      "professorLeonard": "大学数学课程完整视频，从微积分到高等数学",
+      "patrickjmt": "清晰的数学问题解答和概念讲解",
+      "mathologer": "探索数学的奇妙世界和有趣问题"
+    },
+    "levels": {
+      "beginnerToAdvanced": "初级到高级",
+      "intermediateToAdvanced": "中级到高级",
+      "beginnerToIntermediate": "初级到中级"
+    },
+    "types": {
+      "free": "免费",
+      "paid": "付费",
+      "freePaid": "免费/付费"
+    },
+    "moreResources": {
+      "title": "更多资源",
+      "subtitle": "探索更多数学学习资源，包括免费教科书、研究论文、数学社区等。",
+      "browseBranches": "按数学分支浏览",
+      "viewTools": "查看所有工具"
+    }
+  },
+  "footer": {
+    "description": "您数学学习和探索的综合资源。",
+    "quickLinks": "快速链接",
+    "resources": "资源",
+    "tools": "工具",
+    "community": "社区",
+    "contact": "联系",
+    "rights": "保留所有权利。"
+  }
+}

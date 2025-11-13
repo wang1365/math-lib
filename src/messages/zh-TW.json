@@ -1,0 +1,105 @@
+{
+  "common": {
+    "siteTitle": "數學資源庫",
+    "siteDescription": "匯集全球優質數學學習資源，為數學愛好者、學生和研究者提供全面的數學知識體系和學習工具。",
+    "navigation": {
+      "home": "首頁",
+      "resources": "學習資源",
+      "branches": "數學分支",
+      "tools": "工具",
+      "calculator": "計算器",
+      "examples": "公式範例"
+    },
+    "footer": {
+      "quickLinks": "快速連結",
+      "contactUs": "聯絡我們",
+      "copyright": "© 2024 數學資源庫. 保留所有權利."
+    }
+  },
+  "home": {
+    "hero": {
+      "title": "探索數學的無限可能",
+      "subtitle": "匯集全球優質數學學習資源，為學習者提供全面的數學知識體系和學習工具。從基礎數學到高等數學，從理論到應用，讓數學學習變得更加有趣和高效。",
+      "cta": "開始學習",
+      "ctaSecondary": "瀏覽數學分支"
+    },
+    "features": {
+      "title": "為什麼選擇我們",
+      "subtitle": "我們致力於為數學學習者提供最優質、最全面的學習資源和工具",
+      "richResources": {
+        "title": "豐富的學習資源",
+        "description": "匯集全球優質的數學學習資源，包括在線課程、教材、書籍、視頻講座等"
+      },
+      "powerfulTools": {
+        "title": "強大的數學工具",
+        "description": "提供各種數學計算工具和可視化軟件，助力數學學習和研究"
+      },
+      "immersiveExperience": {
+        "title": "沉浸式學習體驗",
+        "description": "通過互動式學習平台和多媒體內容，讓數學學習變得更加生動有趣"
+      },
+      "curatedCourses": {
+        "title": "精選視頻課程",
+        "description": "精選YouTube和其他平台的優秀數學課程和講座"
+      }
+    },
+    "popularResources": {
+      "title": "熱門資源",
+      "subtitle": "發現最受歡迎的數學學習資源"
+    }
+  },
+  "resources": {
+    "title": "學習資源",
+    "subtitle": "探索豐富的數學學習資源，包括在線課程、教材、工具等",
+    "categories": {
+      "platforms": "在線學習平台",
+      "videoCourses": "視頻課程",
+      "tools": "數學工具",
+      "encyclopedias": "數學百科"
+    }
+  },
+  "branches": {
+    "title": "數學分支",
+    "subtitle": "數學是一個廣闊的領域，包含許多不同的分支和研究方向",
+    "basicMath": {
+      "title": "基礎數學",
+      "description": "數學的基礎知識，包括算術、代數基礎、幾何基礎等"
+    },
+    "advancedMath": {
+      "title": "高等數學",
+      "description": "大學及以上層次的數學內容，包括微積分、線性代數等"
+    },
+    "theoreticalMath": {
+      "title": "理論數學",
+      "description": "數學的理論研究，包括純數學的各個分支"
+    },
+    "appliedMath": {
+      "title": "應用數學",
+      "description": "數學在實際問題中的應用，包括計算數學、統計學等"
+    },
+    "discreteMath": {
+      "title": "離散數學",
+      "description": "研究離散對象的數學分支，包括組合數學、圖論等"
+    },
+    "mathPhysics": {
+      "title": "數學物理",
+      "description": "數學與物理學的交叉領域，包括數學物理方程等"
+    }
+  },
+  "tools": {
+    "title": "數學工具",
+    "subtitle": "強大的數學計算和可視化工具",
+    "calculators": "計算器",
+    "plotting": "繪圖工具",
+    "equationSolvers": "方程求解器",
+    "symbolicMath": "符號計算"
+  },
+  "calculator": {
+    "title": "數學計算器",
+    "subtitle": "功能強大的在線數學計算器"
+  },
+  "examples": {
+    "title": "數學公式範例",
+    "subtitle": "展示經典數學公式的美麗和優雅"
+  }
+}

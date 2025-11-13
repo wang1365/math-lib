@@ -1,0 +1,369 @@
+{
+  "common": {
+    "siteTitle": "Math Resources Repository",
+    "siteDescription": "We gather high-quality mathematics learning resources from around the world, providing a comprehensive mathematical knowledge system and learning tools for mathematics enthusiasts, students, and researchers.",
+    "navigation": {
+      "home": "Home",
+      "resources": "Resources",
+      "branches": "Branches",
+      "tools": "Tools",
+      "calculator": "Calculator",
+      "examples": "Examples"
+    },
+    "footer": {
+      "quickLinks": "Quick Links",
+      "contactUs": "Contact Us",
+      "copyright": "© 2024 Math Resources Repository. All rights reserved."
+    }
+  },
+  "nav": {
+    "home": "Home",
+    "resources": "Resources",
+    "branches": "Branches",
+    "tools": "Tools",
+    "calculator": "Calculator",
+    "examples": "Examples",
+    "language": "Language"
+  },
+  "home": {
+    "hero": {
+      "title1": "Explore the",
+      "title2": "Infinite Possibilities",
+      "subtitle": "Bringing together global quality mathematics learning resources, providing comprehensive mathematical knowledge systems and learning tools for learners. From basic mathematics to advanced mathematics, from theory to application, making mathematics learning more interesting and efficient.",
+      "cta": {
+        "start": "Start Learning",
+        "branches": "Explore Branches"
+      }
+    },
+    "features": {
+      "title": "Why Choose Us",
+      "subtitle": "We are committed to providing the most qualified and comprehensive learning resources and tools for mathematics learners",
+      "resources": {
+        "title": "Rich Learning Resources",
+        "description": "Bringing together global quality mathematics learning resources, including online courses, textbooks, video lectures, etc."
+      },
+      "tools": {
+        "title": "Powerful Mathematics Tools",
+        "description": "Providing various mathematical calculation tools and visualization software to assist mathematics learning and research"
+      },
+      "videos": {
+        "title": "Curated Video Courses",
+        "description": "Selected excellent mathematics video courses and lectures from YouTube and other platforms"
+      },
+      "encyclopedia": {
+        "title": "Comprehensive Mathematics Encyclopedia",
+        "description": "Covering detailed knowledge and concept explanations in various branches of mathematics"
+      },
+      "community": {
+        "title": "Active Community",
+        "description": "Connecting mathematics enthusiasts worldwide, sharing learning experiences and problem-solving ideas"
+      },
+      "recommendations": {
+        "title": "Smart Recommendations",
+        "description": "Based on your learning progress and interests, intelligently recommend relevant mathematics resources"
+      }
+    },
+    "resources": {
+      "title": "Popular Resources",
+      "subtitle": "Selected from the most popular mathematics learning resources and tools",
+      "visit": "Visit Site",
+      "platforms": {
+        "title": "Learning Platforms",
+        "khan": "Free online mathematics courses",
+        "mit": "MIT OpenCourseWare",
+        "3blue1brown": "Visualized mathematics explanations"
+      },
+      "tools": {
+        "title": "Mathematics Tools",
+        "wolfram": "Computational knowledge engine",
+        "desmos": "Graphing calculator",
+        "geogebra": "Dynamic mathematics software"
+      }
+    },
+    "cta": {
+      "title": "Start Your Mathematics Journey",
+      "subtitle": "Join our community and explore the wonderful world of mathematics with mathematics enthusiasts from around the world",
+      "explore": "Explore Resources",
+      "branches": "View Branches"
+    }
+  },
+  "resources": {
+    "title": "Mathematics Learning Resources",
+    "subtitle": "Selected global quality mathematics learning resources, including online courses, video lectures, mathematics tools, and encyclopedias. From basic mathematics to advanced mathematics, meeting the needs of different learners.",
+    "visitResource": "Visit Resource",
+    "platforms": {
+      "title": "Learning Platforms",
+      "khan": "Free online mathematics courses",
+      "mit": "Complete mathematics courses from MIT",
+      "coursera": "Online mathematics courses from top universities worldwide",
+      "edx": "Online education platform created by Harvard and MIT"
+    },
+    "videos": {
+      "title": "Video Courses",
+      "3blue1brown": "Explaining mathematical concepts through visualization, especially suitable for understanding abstract concepts",
+      "professorLeonard": "Complete university mathematics course videos, from calculus to advanced mathematics",
+      "patrickjmt": "Clear mathematical problem solutions and concept explanations",
+      "mathologer": "Exploring the wonderful world and interesting problems of mathematics"
+    },
+    "levels": {
+      "beginnerToAdvanced": "Beginner to Advanced",
+      "intermediateToAdvanced": "Intermediate to Advanced",
+      "beginnerToIntermediate": "Beginner to Intermediate"
+    },
+    "types": {
+      "free": "Free",
+      "paid": "Paid",
+      "freePaid": "Free/Paid"
+    },
+    "moreResources": {
+      "title": "More Resources",
+      "subtitle": "Explore more mathematics learning resources, including free textbooks, research papers, mathematics communities, etc.",
+      "browseBranches": "Browse by Mathematics Branches",
+      "viewTools": "View All Tools"
+    }
+  },
+  "branches": {
+    "title": "Mathematics Branches",
+    "subtitle": "Explore the different branches of mathematics, from basic concepts to advanced theories",
+    "exploreResources": "Explore Resources",
+    "basic": {
+      "title": "Basic Mathematics",
+      "description": "The foundation branch of mathematics, providing basics for other mathematical fields",
+      "arithmetic": "Arithmetic",
+      "arithmeticDesc": "Basic operations and properties of numbers",
+      "arithmetic1": "Basic Operations",
+      "arithmetic2": "Fractions and Decimals",
+      "arithmetic3": "Percentages",
+      "algebra": "Algebra",
+      "algebraDesc": "Symbolic operations and equation solving",
+      "algebra1": "Linear Equations",
+      "algebra2": "Quadratic Equations",
+      "algebra3": "Polynomials",
+      "geometry": "Geometry",
+      "geometryDesc": "Shapes, sizes, and spatial relationships",
+      "geometry1": "Plane Geometry",
+      "geometry2": "Solid Geometry",
+      "geometry3": "Trigonometry"
+    },
+    "advanced": {
+      "title": "Advanced Mathematics",
+      "description": "More in-depth mathematical theories and applications",
+      "calculus": "Calculus",
+      "calculusDesc": "Study of rates of change and accumulation",
+      "calculus1": "Derivatives",
+      "calculus2": "Integrals",
+      "calculus3": "Series",
+      "linearAlgebra": "Linear Algebra",
+      "linearAlgebraDesc": "Vector spaces and linear transformations",
+      "linearAlgebra1": "Matrices",
+      "linearAlgebra2": "Vectors",
+      "linearAlgebra3": "Eigenvalues",
+      "statistics": "Probability & Statistics",
+      "statisticsDesc": "Data analysis and random phenomena",
+      "statistics1": "Descriptive Statistics",
+      "statistics2": "Inferential Statistics",
+      "statistics3": "Probability Theory"
+    },
+    "applied": {
+      "title": "Applied Mathematics",
+      "description": "Mathematics applied to real-world problems",
+      "optimization": "Optimization",
+      "optimizationDesc": "Finding the best solution among alternatives",
+      "optimization1": "Linear Programming",
+      "optimization2": "Nonlinear Optimization",
+      "optimization3": "Game Theory",
+      "numerical": "Numerical Analysis",
+      "numericalDesc": "Algorithms for mathematical problems",
+      "numerical1": "Numerical Methods",
+      "numerical2": "Approximation Theory",
+      "numerical3": "Computational Mathematics",
+      "modeling": "Mathematical Modeling",
+      "modelingDesc": "Using mathematics to represent real systems",
+      "modeling1": "Differential Equations",
+      "modeling2": "Simulation",
+      "modeling3": "System Dynamics"
+    },
+    "theoretical": {
+      "title": "Theoretical Mathematics",
+      "description": "Pure mathematical research and abstract concepts",
+      "analysis": "Real Analysis",
+      "analysisDesc": "Rigorous study of real numbers and functions",
+      "analysis1": "Limits and Continuity",
+      "analysis2": "Differentiation",
+      "analysis3": "Integration",
+      "algebra": "Abstract Algebra",
+      "algebraDesc": "Algebraic structures and operations",
+      "algebra1": "Groups",
+      "algebra2": "Rings",
+      "algebra3": "Fields",
+      "topology": "Topology",
+      "topologyDesc": "Properties of space preserved under transformations",
+      "topology1": "Point-set Topology",
+      "topology2": "Algebraic Topology",
+      "topology3": "Differential Topology"
+    },
+    "learningPath": {
+      "title": "Learning Path",
+      "subtitle": "Choose your learning path based on your current level and interests",
+      "startBasic": "Start with Basics",
+      "tryCalculator": "Try Calculator"
+    }
+  },
+  "footer": {
+    "description": "Your comprehensive resource for mathematics learning and exploration.",
+    "quickLinks": "Quick Links",
+    "resources": "Resources",
+    "tools": "Tools",
+    "community": "Community",
+    "contact": "Contact",
+    "rights": "All rights reserved."
+  },
+  "examples": {
+    "title": "Mathematical Examples",
+    "subtitle": "Showcase of classic and important mathematical formulas that have significant meaning in the development and application of mathematics.",
+    "example": "Example",
+    "examples": {
+      "quadratic": {
+        "title": "Quadratic Formula",
+        "category": "Algebra",
+        "description": "A general formula used to solve quadratic equations in one variable, where a, b, c are equation coefficients.",
+        "example": "For example: Solve x² - 5x + 6 = 0, where a=1, b=-5, c=6"
+      },
+      "euler": {
+        "title": "Euler's Formula",
+        "category": "Complex Analysis",
+        "description": "An important formula that connects exponential functions with trigonometric functions, holding a central position in complex analysis.",
+        "example": "When θ = π, we get the famous Euler's identity: e^{iπ} + 1 = 0"
+      },
+      "pythagorean": {
+        "title": "Pythagorean Theorem",
+        "category": "Geometry",
+        "description": "In a right triangle, the sum of the squares of the two legs equals the square of the hypotenuse, a fundamental theorem in geometry.",
+        "example": "If the two legs of a right triangle are 3 and 4 respectively, then the hypotenuse length is 5"
+      },
+      "taylor": {
+        "title": "Taylor Expansion",
+        "category": "Calculus",
+        "description": "Expanding a function as a power series around a point, an important tool in calculus.",
+        "example": "Taylor expansion of sin(x) at x=0: x - x³/3! + x⁵/5! - x⁷/7! + ..."
+      },
+      "gaussian": {
+        "title": "Gaussian Integral",
+        "category": "Integration",
+        "description": "The integral of the Gaussian function over the entire real axis, very important in probability theory and statistics.",
+        "example": "This integral plays a key role in the standardization process of normal distribution"
+      },
+      "fourier": {
+        "title": "Fourier Transform",
+        "category": "Analysis",
+        "description": "Converting time-domain signals to frequency-domain representation, widely used in signal processing and image processing.",
+        "example": "Used in fields such as audio compression, image processing, and communication systems"
+      }
+    },
+    "latex": {
+      "title": "More LaTeX Examples",
+      "subtitle": "Showcasing the powerful functionality of LaTeX in mathematical formula rendering",
+      "matrix": "Matrix Representation",
+      "limit": "Limit Definition",
+      "summation": "Summation Symbol",
+      "differential": "Differential Equation"
+    }
+  },
+  "tools": {
+    "title": "Mathematical Tools",
+    "subtitle": "Powerful mathematical calculation and visualization tools to help you better understand and apply mathematical concepts. From basic calculations to advanced analysis, meeting various mathematical needs.",
+    "features": "Features",
+    "useTool": "Use Tool",
+    "filter": {
+      "all": "All"
+    },
+    "basicCalculator": {
+      "name": "Basic Calculator",
+      "description": "Basic mathematical operation tool",
+      "category": "Basic Tools",
+      "features": {
+        "arithmetic": "Four arithmetic operations",
+        "percentage": "Percentage calculation",
+        "sqrt": "Square root calculation"
+      }
+    },
+    "functionPlotter": {
+      "name": "Function Plotter",
+      "description": "Plot function graphs",
+      "category": "Graph Tools",
+      "features": {
+        "2dPlotting": "2D function plotting",
+        "parametric": "Parametric equations",
+        "polar": "Polar coordinate plotting"
+      }
+    },
+    "statisticsCalculator": {
+      "name": "Statistics Calculator",
+      "description": "Statistical analysis tool",
+      "category": "Statistics Tools",
+      "features": {
+        "descriptive": "Descriptive statistics",
+        "regression": "Regression analysis",
+        "distributions": "Probability distributions"
+      }
+    },
+    "scientificCalculator": {
+      "name": "Scientific Calculator",
+      "description": "Advanced scientific calculation",
+      "category": "Advanced Tools",
+      "features": {
+        "trigonometric": "Trigonometric functions",
+        "logarithmic": "Logarithmic functions",
+        "complex": "Complex number operations"
+      }
+    },
+    "algebraCalculator": {
+      "name": "Algebra Calculator",
+      "description": "Algebraic equation solving",
+      "category": "Algebra Tools",
+      "features": {
+        "equations": "Equation solving",
+        "factorization": "Factorization",
+        "polynomials": "Polynomial operations"
+      }
+    },
+    "calculusTools": {
+      "name": "Calculus Tools",
+      "description": "Calculus calculations",
+      "category": "Calculus Tools",
+      "features": {
+        "derivatives": "Derivative calculation",
+        "integrals": "Integral calculation",
+        "limits": "Limit calculation"
+      }
+    },
+    "geometryCalculator": {
+      "name": "Geometry Calculator",
+      "description": "Geometric calculations",
+      "category": "Geometry Tools",
+      "features": {
+        "area": "Area calculation",
+        "volume": "Volume calculation",
+        "trigonometry": "Trigonometry"
+      }
+    },
+    "matrixCalculator": {
+      "name": "Matrix Calculator",
+      "description": "Matrix operations",
+      "category": "Linear Algebra",
+      "features": {
+        "multiplication": "Matrix multiplication",
+        "determinant": "Determinant calculation",
+        "inverse": "Inverse matrix"
+      }
+    },
+    "external": {
+      "title": "Recommended External Tools",
+      "subtitle": "These are our carefully selected third-party mathematical tools, powerful and professional",
+      "wolfram": "Computational knowledge engine that can solve various mathematical problems",
+      "desmos": "Free online graphing calculator with user-friendly interface",
+      "geogebra": "Dynamic mathematics software supporting geometry, algebra, statistics, etc.",
+      "visit": "Visit Website"
+    }
+  }
+}
