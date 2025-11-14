@@ -122,6 +122,264 @@
       "viewTools": "查看所有工具"
     }
   },
+  "branches": {
+    "title": "数学分支",
+    "subtitle": "探索不同的数学分支，从基础概念到高级理论",
+    "exploreResources": "探索资源",
+    "basic": {
+      "title": "基础数学",
+      "description": "数学的基础分支，为其他数学领域提供基础",
+      "arithmetic": "算术",
+      "arithmeticDesc": "数字的基本运算和性质",
+      "arithmetic1": "基本运算",
+      "arithmetic2": "分数和小数",
+      "arithmetic3": "百分比",
+      "algebra": "代数",
+      "algebraDesc": "符号运算和方程求解",
+      "algebra1": "线性方程",
+      "algebra2": "二次方程",
+      "algebra3": "多项式",
+      "geometry": "几何",
+      "geometryDesc": "形状、大小和空间关系",
+      "geometry1": "平面几何",
+      "geometry2": "立体几何",
+      "geometry3": "三角学"
+    },
+    "advanced": {
+      "title": "高等数学",
+      "description": "更深入的数学理论和应用",
+      "calculus": "微积分",
+      "calculusDesc": "研究变化率和累积",
+      "calculus1": "导数",
+      "calculus2": "积分",
+      "calculus3": "级数",
+      "linearAlgebra": "线性代数",
+      "linearAlgebraDesc": "向量空间和线性变换",
+      "linearAlgebra1": "矩阵",
+      "linearAlgebra2": "向量",
+      "linearAlgebra3": "特征值",
+      "statistics": "概率与统计",
+      "statisticsDesc": "数据分析和随机现象",
+      "statistics1": "描述性统计",
+      "statistics2": "推断性统计",
+      "statistics3": "概率论"
+    },
+    "applied": {
+      "title": "应用数学",
+      "description": "应用于实际问题的数学",
+      "optimization": "优化",
+      "optimizationDesc": "在备选方案中寻找最佳解决方案",
+      "optimization1": "线性规划",
+      "optimization2": "非线性优化",
+      "optimization3": "博弈论",
+      "numerical": "数值分析",
+      "numericalDesc": "数学问题的算法",
+      "numerical1": "数值方法",
+      "numerical2": "逼近理论",
+      "numerical3": "计算数学",
+      "modeling": "数学建模",
+      "modelingDesc": "使用数学表示真实系统",
+      "modeling1": "微分方程",
+      "modeling2": "仿真",
+      "modeling3": "系统动力学"
+    },
+    "theoretical": {
+      "title": "理论数学",
+      "description": "纯数学研究和抽象概念",
+      "analysis": "实分析",
+      "analysisDesc": "实数和函数的严格研究",
+      "analysis1": "极限和连续性",
+      "analysis2": "微分",
+      "analysis3": "积分",
+      "algebra": "抽象代数",
+      "algebraDesc": "代数结构和运算",
+      "algebra1": "群",
+      "algebra2": "环",
+      "algebra3": "域",
+      "topology": "拓扑学",
+      "topologyDesc": "在变换下保持的空间性质",
+      "topology1": "点集拓扑",
+      "topology2": "代数拓扑",
+      "topology3": "微分拓扑"
+    },
+    "learningPath": {
+      "title": "学习路径",
+      "subtitle": "根据您当前的级别和兴趣选择学习路径",
+      "startBasic": "从基础开始",
+      "tryCalculator": "试用计算器"
+    }
+  },
+  "examples": {
+    "title": "数学示例",
+    "subtitle": "展示在数学发展和应用中具有重要意义的经典和重要数学公式。",
+    "example": "示例",
+    "examples": {
+      "quadratic": {
+        "title": "二次公式",
+        "category": "代数",
+        "description": "用于求解一元二次方程的通用公式，其中a、b、c为方程系数。",
+        "example": "例如：求解 x² - 5x + 6 = 0，其中a=1, b=-5, c=6"
+      },
+      "euler": {
+        "title": "欧拉公式",
+        "category": "复分析",
+        "description": "连接指数函数与三角函数的重要公式，在复分析中占据核心地位。",
+        "example": "当 θ = π 时，我们得到著名的欧拉恒等式：e^{iπ} + 1 = 0"
+      },
+      "pythagorean": {
+        "title": "勾股定理",
+        "category": "几何",
+        "description": "在直角三角形中，两条直角边的平方和等于斜边的平方，是几何学中的基本定理。",
+        "example": "如果一个直角三角形的两条直角边分别为3和4，那么斜边长度为5"
+      },
+      "taylor": {
+        "title": "泰勒展开",
+        "category": "微积分",
+        "description": "将函数在某点处展开为幂级数，是微积分学中的重要工具。",
+        "example": "sin(x) 在 x=0 处的泰勒展开：x - x³/3! + x⁵/5! - x⁷/7! + ..."
+      },
+      "gaussian": {
+        "title": "高斯积分",
+        "category": "积分",
+        "description": "高斯函数在整个实轴上的积分，在概率论和统计学中非常重要。",
+        "example": "这个积分在正态分布的标准化过程中起着关键作用"
+      },
+      "fourier": {
+        "title": "傅里叶变换",
+        "category": "分析",
+        "description": "将时域信号转换为频域表示，在信号处理和图像处理中广泛应用。",
+        "example": "用于音频压缩、图像处理、通信系统等领域"
+      }
+    },
+    "latex": {
+      "title": "更多LaTeX示例",
+      "subtitle": "展示LaTeX在数学公式渲染中的强大功能",
+      "matrix": "矩阵表示",
+      "limit": "极限定义",
+      "summation": "求和符号",
+      "differential": "微分方程"
+    }
+  },
+  "tools": {
+    "title": "数学工具",
+    "subtitle": "强大的数学计算和可视化工具，帮助您更好地理解和应用数学概念。从基础计算到高级分析，满足各种数学需求。",
+    "features": "功能",
+    "useTool": "使用工具",
+    "filter": {
+      "all": "全部"
+    },
+    "basicCalculator": {
+      "name": "基础计算器",
+      "description": "基础数学运算工具",
+      "category": "基础工具",
+      "features": {
+        "arithmetic": "四则运算",
+        "percentage": "百分比计算",
+        "sqrt": "平方根计算"
+      }
+    },
+    "functionPlotter": {
+      "name": "函数绘图器",
+      "description": "绘制函数图形",
+      "category": "图形工具",
+      "features": {
+        "2dPlotting": "2D函数绘图",
+        "parametric": "参数方程",
+        "polar": "极坐标绘图"
+      }
+    },
+    "statisticsCalculator": {
+      "name": "统计计算器",
+      "description": "统计分析工具",
+      "category": "统计工具",
+      "features": {
+        "descriptive": "描述性统计",
+        "regression": "回归分析",
+        "distributions": "概率分布"
+      }
+    },
+    "scientificCalculator": {
+      "name": "科学计算器",
+      "description": "高级科学计算",
+      "category": "高级工具",
+      "features": {
+        "trigonometric": "三角函数",
+        "logarithmic": "对数函数",
+        "complex": "复数运算"
+      }
+    },
+    "algebraCalculator": {
+      "name": "代数计算器",
+      "description": "代数方程求解",
+      "category": "代数工具",
+      "features": {
+        "equations": "方程求解",
+        "factorization": "因式分解",
+        "polynomials": "多项式运算"
+      }
+    },
+    "calculusTools": {
+      "name": "微积分工具",
+      "description": "微积分计算",
+      "category": "微积分工具",
+      "features": {
+        "derivatives": "导数计算",
+        "integrals": "积分计算",
+        "limits": "极限计算"
+      }
+    },
+    "geometryCalculator": {
+      "name": "几何计算器",
+      "description": "几何计算",
+      "category": "几何工具",
+      "features": {
+        "area": "面积计算",
+        "volume": "体积计算",
+        "trigonometry": "三角学"
+      }
+    },
+    "matrixCalculator": {
+      "name": "矩阵计算器",
+      "description": "矩阵运算",
+      "category": "线性代数",
+      "features": {
+        "multiplication": "矩阵乘法",
+        "determinant": "行列式计算",
+        "inverse": "逆矩阵"
+      }
+    },
+    "external": {
+      "title": "推荐外部工具",
+      "subtitle": "这些是我们精心挑选的第三方数学工具，功能强大且专业",
+      "wolfram": "计算知识引擎，可以解决各种数学问题",
+      "desmos": "界面友好的免费在线图形计算器",
+      "geogebra": "支持几何、代数、统计等的动态数学软件",
+      "visit": "访问网站"
+    }
+  },
+  "calculator": {
+    "title": "数学计算器",
+    "subtitle": "功能强大的在线数学计算器，支持基础运算、科学计算、代数运算等多种功能。",
+    "description": "使用我们的在线计算器进行基础数学运算",
+    "basic": "基础模式",
+    "scientific": "科学模式",
+    "clear": "清除",
+    "equals": "等于",
+    "history": "历史记录",
+    "memory": "内存",
+    "backspace": "退格",
+    "functions": {
+      "sin": "正弦",
+      "cos": "余弦",
+      "tan": "正切",
+      "log": "对数",
+      "ln": "自然对数",
+      "sqrt": "平方根",
+      "pow": "幂",
+      "pi": "圆周率",
+      "e": "自然常数"
+    }
+  },
   "footer": {
     "description": "您数学学习和探索的综合资源。",
     "quickLinks": "快速链接",
