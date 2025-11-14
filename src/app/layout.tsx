@@ -3,6 +3,7 @@ import { getMessages } from 'next-intl/server';
 import Script from 'next/script';
 import { locales, defaultLocale } from '@/config/i18n';
 import './globals.css';
+ 
 
 export function generateStaticParams() {
   return locales.map((locale) => ({ locale: locale.code }));
