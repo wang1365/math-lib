@@ -18,14 +18,15 @@ export default function LanguageSwitcher() {
     startTransition(() => {
       // Remove the current locale from the pathname
       const pathWithoutLocale = pathname.replace(/^\/[a-z]{2}(-[A-Z]{2})?/, '') || '/'
+      const normalizedPath = pathWithoutLocale.startsWith('/') ? pathWithoutLocale : `/${pathWithoutLocale}`
       
       // Navigate to the new locale
       if (newLocale === 'zh-CN') {
         // Default locale, no prefix
-        router.push(pathWithoutLocale)
+        router.push(normalizedPath)
       } else {
         // Other locales need prefix
-        router.push(`/${newLocale}${pathWithoutLocale}`)
+        router.push(`/${newLocale}${normalizedPath}`)
       }
     })
   }

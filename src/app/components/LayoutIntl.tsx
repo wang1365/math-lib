@@ -5,6 +5,7 @@ import { BookOpen, Home, Library, Calculator, Menu, X, Plus, Hash } from 'lucide
 import { useState } from 'react'
 import { useTranslations } from 'next-intl'
 import LanguageSwitcher from './LanguageSwitcher'
+import { defaultLocale } from '@/config/i18n'
 
 interface LayoutProps {
   children: React.ReactNode
@@ -24,6 +25,11 @@ export default function Layout({ children, locale }: LayoutProps) {
     { name: t('navigation.examples'), href: '/examples', icon: Hash },
   ]
 
+  const withLocale = (href: string) => {
+    const normalized = href.startsWith('/') ? href : `/${href}`
+    return locale && locale !== defaultLocale ? `/${locale}${normalized}` : normalized
+  }
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100">
       {/* Navigation */}
@@ -31,7 +37,7 @@ export default function Layout({ children, locale }: LayoutProps) {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between h-20">
             <div className="flex items-center">
-              <Link href="/" className="flex items-center space-x-3 group">
+              <Link href={withLocale('/')} className="flex items-center space-x-3 group">
                 <div className="w-10 h-10 bg-gradient-to-br from-blue-600 via-purple-600 to-indigo-600 rounded-xl flex items-center justify-center shadow-lg group-hover:shadow-xl transition-all duration-300 transform group-hover:scale-105">
                   <span className="text-white font-bold text-xl">∑</span>
                 </div>
@@ -46,7 +52,7 @@ export default function Layout({ children, locale }: LayoutProps) {
               {navigation.map((item) => (
                 <Link
                   key={item.name}
-                  href={item.href}
+                  href={withLocale(item.href)}
                   className="group relative flex items-center space-x-2 text-gray-600 hover:text-blue-600 px-4 py-3 rounded-xl text-sm font-medium transition-all duration-300 hover:bg-blue-50/50 hover:shadow-sm"
                 >
                   <item.icon className="w-5 h-5 transition-transform duration-300 group-hover:scale-110" />
@@ -81,13 +87,13 @@ export default function Layout({ children, locale }: LayoutProps) {
           {isMenuOpen && (
             <div className="md:hidden bg-white/95 backdrop-blur-lg border-t border-gray-200/50">
               <div className="px-4 py-4 space-y-2">
-                {navigation.map((item) => (
-                  <Link
-                    key={item.name}
-                    href={item.href}
-                    className="group flex items-center space-x-3 text-gray-700 hover:text-blue-600 hover:bg-blue-50/50 px-4 py-3 rounded-xl text-base font-medium transition-all duration-300 transform hover:translate-x-1"
-                    onClick={() => setIsMenuOpen(false)}
-                  >
+              {navigation.map((item) => (
+                <Link
+                  key={item.name}
+                  href={withLocale(item.href)}
+                  className="group flex items-center space-x-3 text-gray-700 hover:text-blue-600 hover:bg-blue-50/50 px-4 py-3 rounded-xl text-base font-medium transition-all duration-300 transform hover:translate-x-1"
+                  onClick={() => setIsMenuOpen(false)}
+                >
                     <item.icon className="w-5 h-5 transition-transform duration-300 group-hover:scale-110" />
                     <span className="relative">
                       {item.name}
@@ -132,9 +138,9 @@ export default function Layout({ children, locale }: LayoutProps) {
                 {t('footer.quickLinks')}
               </h3>
               <ul className="space-y-3">
-                <li><Link href="/resources" className="group flex items-center text-gray-300 hover:text-white transition-all duration-300"><span className="w-2 h-0.5 bg-gradient-to-r from-blue-400 to-purple-400 mr-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>{t('navigation.resources')}</Link></li>
-                <li><Link href="/branches" className="group flex items-center text-gray-300 hover:text-white transition-all duration-300"><span className="w-2 h-0.5 bg-gradient-to-r from-blue-400 to-purple-400 mr-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>{t('navigation.branches')}</Link></li>
-                <li><Link href="/tools" className="group flex items-center text-gray-300 hover:text-white transition-all duration-300"><span className="w-2 h-0.5 bg-gradient-to-r from-blue-400 to-purple-400 mr-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>{t('navigation.tools')}</Link></li>
+                <li><Link href={withLocale('/resources')} className="group flex items-center text-gray-300 hover:text-white transition-all duration-300"><span className="w-2 h-0.5 bg-gradient-to-r from-blue-400 to-purple-400 mr-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>{t('navigation.resources')}</Link></li>
+                <li><Link href={withLocale('/branches')} className="group flex items-center text-gray-300 hover:text-white transition-all duration-300"><span className="w-2 h-0.5 bg-gradient-to-r from-blue-400 to-purple-400 mr-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>{t('navigation.branches')}</Link></li>
+                <li><Link href={withLocale('/tools')} className="group flex items-center text-gray-300 hover:text-white transition-all duration-300"><span className="w-2 h-0.5 bg-gradient-to-r from-blue-400 to-purple-400 mr-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>{t('navigation.tools')}</Link></li>
               </ul>
             </div>
             <div>
