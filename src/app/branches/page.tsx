@@ -8,140 +8,94 @@ export default function BranchesPage() {
   
   const mathBranches = [
     {
-      title: '基础数学',
+      title: t('basic.title'),
       icon: Hash,
       color: 'from-blue-500 to-cyan-500',
-      description: '数学的基础分支，为其他数学领域提供基础',
+      description: t('basic.description'),
       subcategories: [
         {
-          name: '算术',
-          description: '数的基本运算和性质',
-          resources: ['基础运算', '分数和小数', '百分比']
+          name: t('basic.arithmetic'),
+          description: t('basic.arithmeticDesc'),
+          resources: [t('basic.arithmetic1'), t('basic.arithmetic2'), t('basic.arithmetic3')]
         },
         {
-          name: '代数',
-          description: '符号运算和方程求解',
-          resources: ['线性方程', '二次方程', '多项式']
+          name: t('basic.algebra'),
+          description: t('basic.algebraDesc'),
+          resources: [t('basic.algebra1'), t('basic.algebra2'), t('basic.algebra3')]
         },
         {
-          name: '几何',
-          description: '形状、大小和空间关系',
-          resources: ['平面几何', '立体几何', '三角学']
+          name: t('basic.geometry'),
+          description: t('basic.geometryDesc'),
+          resources: [t('basic.geometry1'), t('basic.geometry2'), t('basic.geometry3')]
         }
       ]
     },
     {
-      title: '高等数学',
+      title: t('advanced.title'),
       icon: FunctionSquare,
       color: 'from-purple-500 to-pink-500',
-      description: '更深入的数学理论和应用',
+      description: t('advanced.description'),
       subcategories: [
         {
-          name: '微积分',
-          description: '变化率和累积量的研究',
-          resources: ['导数', '积分', '级数']
+          name: t('advanced.calculus'),
+          description: t('advanced.calculusDesc'),
+          resources: [t('advanced.calculus1'), t('advanced.calculus2'), t('advanced.calculus3')]
         },
         {
-          name: '线性代数',
-          description: '向量空间和线性变换',
-          resources: ['矩阵', '向量', '特征值']
+          name: t('advanced.linearAlgebra'),
+          description: t('advanced.linearAlgebraDesc'),
+          resources: [t('advanced.linearAlgebra1'), t('advanced.linearAlgebra2'), t('advanced.linearAlgebra3')]
         },
         {
-          name: '概率统计',
-          description: '数据分析和随机现象',
-          resources: ['概率分布', '统计推断', '回归分析']
+          name: t('advanced.statistics'),
+          description: t('advanced.statisticsDesc'),
+          resources: [t('advanced.statistics1'), t('advanced.statistics2'), t('advanced.statistics3')]
         }
       ]
     },
     {
-      title: '理论数学',
-      icon: Brain,
-      color: 'from-green-500 to-emerald-500',
-      description: '数学的理论基础和抽象概念',
-      subcategories: [
-        {
-          name: '数学分析',
-          description: '极限、连续性和收敛性',
-          resources: ['实分析', '复分析', '泛函分析']
-        },
-        {
-          name: '抽象代数',
-          description: '代数结构和运算',
-          resources: ['群论', '环论', '域论']
-        },
-        {
-          name: '拓扑学',
-          description: '空间的性质和变换',
-          resources: ['点集拓扑', '代数拓扑', '微分拓扑']
-        }
-      ]
-    },
-    {
-      title: '应用数学',
+      title: t('applied.title'),
       icon: PieChart,
       color: 'from-orange-500 to-red-500',
-      description: '数学在实际问题中的应用',
+      description: t('applied.description'),
       subcategories: [
         {
-          name: '数值分析',
-          description: '数值算法和计算方法',
-          resources: ['数值积分', '微分方程', '优化算法']
+          name: t('applied.optimization'),
+          description: t('applied.optimizationDesc'),
+          resources: [t('applied.optimization1'), t('applied.optimization2'), t('applied.optimization3')]
         },
         {
-          name: '运筹学',
-          description: '优化和决策理论',
-          resources: ['线性规划', '动态规划', '博弈论']
+          name: t('applied.numerical'),
+          description: t('applied.numericalDesc'),
+          resources: [t('applied.numerical1'), t('applied.numerical2'), t('applied.numerical3')]
         },
         {
-          name: '金融数学',
-          description: '金融市场的数学模型',
-          resources: ['期权定价', '风险管理', '投资组合']
+          name: t('applied.modeling'),
+          description: t('applied.modelingDesc'),
+          resources: [t('applied.modeling1'), t('applied.modeling2'), t('applied.modeling3')]
         }
       ]
     },
     {
-      title: '离散数学',
-      icon: Network,
-      color: 'from-indigo-500 to-purple-500',
-      description: '离散结构和组合数学',
-      subcategories: [
-        {
-          name: '组合数学',
-          description: '计数和排列组合',
-          resources: ['排列组合', '生成函数', '图论']
-        },
-        {
-          name: '数论',
-          description: '整数性质和算术函数',
-          resources: ['素数', '同余', '数论函数']
-        },
-        {
-          name: '逻辑',
-          description: '形式逻辑和推理',
-          resources: ['命题逻辑', '谓词逻辑', '证明论']
-        }
-      ]
-    },
-    {
-      title: '数学物理',
+      title: t('theoretical.title'),
       icon: Atom,
-      color: 'from-yellow-500 to-orange-500',
-      description: '物理学中的数学方法',
+      color: 'from-orange-500 to-red-500',
+      description: t('theoretical.description'),
       subcategories: [
         {
-          name: '微分方程',
-          description: '物理现象的数学模型',
-          resources: ['常微分方程', '偏微分方程', '边值问题']
+          name: t('theoretical.analysis'),
+          description: t('theoretical.analysisDesc'),
+          resources: [t('theoretical.analysis1'), t('theoretical.analysis2'), t('theoretical.analysis3')]
         },
         {
-          name: '变分法',
-          description: '泛函极值问题',
-          resources: ['欧拉方程', '哈密顿原理', '最小作用量']
+          name: t('theoretical.algebra'),
+          description: t('theoretical.algebraDesc'),
+          resources: [t('theoretical.algebra1'), t('theoretical.algebra2'), t('theoretical.algebra3')]
         },
         {
-          name: '群论',
-          description: '对称性和守恒定律',
-          resources: ['李群', '表示论', '规范理论']
+          name: t('theoretical.topology'),
+          description: t('theoretical.topologyDesc'),
+          resources: [t('theoretical.topology1'), t('theoretical.topology2'), t('theoretical.topology3')]
         }
       ]
     }
@@ -153,13 +107,8 @@ export default function BranchesPage() {
         <div className="max-w-7xl mx-auto">
           {/* Page Header */}
           <div className="text-center mb-12">
-            <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-              数学分支
-            </h1>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              数学是一个庞大而美妙的学科体系，包含多个相互关联的分支。
-              从基础数学到高等数学，从纯理论到实际应用，每个分支都有其独特的魅力和价值。
-            </p>
+            <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">{t('title')}</h1>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">{t('subtitle')}</p>
           </div>
 
           {/* Math Branches */}
@@ -199,7 +148,7 @@ export default function BranchesPage() {
                         href={`/branches/${subcategory.name.toLowerCase()}`}
                         className="inline-flex items-center mt-4 text-blue-600 hover:text-blue-800 font-medium text-sm"
                       >
-                        了解更多 →
+                        {t('exploreResources')} →
                       </Link>
                     </div>
                   ))}
@@ -211,9 +160,9 @@ export default function BranchesPage() {
           {/* Learning Path */}
           <div className="mt-16 bg-gradient-to-r from-blue-50 to-indigo-100 rounded-xl p-8">
             <div className="text-center mb-8">
-              <h3 className="text-2xl font-bold text-gray-900 mb-4">学习路径建议</h3>
+              <h3 className="text-2xl font-bold text-gray-900 mb-4">{t('learningPath.title')}</h3>
               <p className="text-gray-600">
-                根据你的数学背景和学习目标，选择合适的学习路径
+                {t('learningPath.subtitle')}
               </p>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">

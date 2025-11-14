@@ -3,80 +3,124 @@
 import Layout from '../components/LayoutIntl';
 import { Calculator, FunctionSquare, BarChart3, Atom, Sigma, TrendingUp, PieChart, Grid } from 'lucide-react'
 import { useState } from 'react'
+import { useTranslations } from 'next-intl'
 
 export default function ToolsPage() {
+  const t = useTranslations('tools')
   const [selectedTool, setSelectedTool] = useState<string | null>(null)
 
   const mathTools = [
     {
-      name: '基础计算器',
+      name: t('basicCalculator.name'),
       icon: Calculator,
-      description: '基本的数学运算工具',
+      description: t('basicCalculator.description'),
       color: 'from-blue-500 to-cyan-500',
-      category: '基础工具',
-      features: ['四则运算', '百分比计算', '平方根计算']
+      category: t('basicCalculator.category'),
+      features: [
+        t('basicCalculator.features.arithmetic'),
+        t('basicCalculator.features.percentage'),
+        t('basicCalculator.features.sqrt')
+      ]
     },
     {
-      name: '函数绘图器',
+      name: t('functionPlotter.name'),
       icon: FunctionSquare,
-      description: '绘制函数图像',
+      description: t('functionPlotter.description'),
       color: 'from-purple-500 to-pink-500',
-      category: '图形工具',
-      features: ['2D函数绘图', '参数方程', '极坐标绘图']
+      category: t('functionPlotter.category'),
+      features: [
+        t('functionPlotter.features.2dPlotting'),
+        t('functionPlotter.features.parametric'),
+        t('functionPlotter.features.polar')
+      ]
     },
     {
-      name: '统计计算器',
+      name: t('statisticsCalculator.name'),
       icon: BarChart3,
-      description: '统计分析工具',
+      description: t('statisticsCalculator.description'),
       color: 'from-green-500 to-emerald-500',
-      category: '统计工具',
-      features: ['描述性统计', '回归分析', '概率分布']
+      category: t('statisticsCalculator.category'),
+      features: [
+        t('statisticsCalculator.features.descriptive'),
+        t('statisticsCalculator.features.regression'),
+        t('statisticsCalculator.features.distributions')
+      ]
     },
     {
-      name: '科学计算器',
+      name: t('scientificCalculator.name'),
       icon: Atom,
-      description: '高级科学计算',
+      description: t('scientificCalculator.description'),
       color: 'from-orange-500 to-red-500',
-      category: '高级工具',
-      features: ['三角函数', '对数函数', '复数运算']
+      category: t('scientificCalculator.category'),
+      features: [
+        t('scientificCalculator.features.trigonometric'),
+        t('scientificCalculator.features.logarithmic'),
+        t('scientificCalculator.features.complex')
+      ]
     },
     {
-      name: '代数计算器',
+      name: t('algebraCalculator.name'),
       icon: Sigma,
-      description: '代数方程求解',
+      description: t('algebraCalculator.description'),
       color: 'from-indigo-500 to-purple-500',
-      category: '代数工具',
-      features: ['方程求解', '因式分解', '多项式运算']
+      category: t('algebraCalculator.category'),
+      features: [
+        t('algebraCalculator.features.equations'),
+        t('algebraCalculator.features.factorization'),
+        t('algebraCalculator.features.polynomials')
+      ]
     },
     {
-      name: '微积分工具',
+      name: t('calculusTools.name'),
       icon: TrendingUp,
-      description: '微积分计算',
+      description: t('calculusTools.description'),
       color: 'from-yellow-500 to-orange-500',
-      category: '微积分工具',
-      features: ['导数计算', '积分计算', '极限计算']
+      category: t('calculusTools.category'),
+      features: [
+        t('calculusTools.features.derivatives'),
+        t('calculusTools.features.integrals'),
+        t('calculusTools.features.limits')
+      ]
     },
     {
-      name: '几何计算器',
+      name: t('geometryCalculator.name'),
       icon: Grid,
-      description: '几何计算',
+      description: t('geometryCalculator.description'),
       color: 'from-teal-500 to-cyan-500',
-      category: '几何工具',
-      features: ['面积计算', '体积计算', '三角函数']
+      category: t('geometryCalculator.category'),
+      features: [
+        t('geometryCalculator.features.area'),
+        t('geometryCalculator.features.volume'),
+        t('geometryCalculator.features.trigonometry')
+      ]
     },
     {
-      name: '矩阵计算器',
+      name: t('matrixCalculator.name'),
       icon: PieChart,
-      description: '矩阵运算',
+      description: t('matrixCalculator.description'),
       color: 'from-pink-500 to-rose-500',
-      category: '线性代数',
-      features: ['矩阵乘法', '行列式计算', '逆矩阵']
+      category: t('matrixCalculator.category'),
+      features: [
+        t('matrixCalculator.features.multiplication'),
+        t('matrixCalculator.features.determinant'),
+        t('matrixCalculator.features.inverse')
+      ]
     }
   ]
 
-  const categories = ['全部', '基础工具', '图形工具', '统计工具', '高级工具', '代数工具', '微积分工具', '几何工具', '线性代数']
+  const categories = [
+    t('filter.all'),
+    t('basicCalculator.category'),
+    t('functionPlotter.category'),
+    t('statisticsCalculator.category'),
+    t('scientificCalculator.category'),
+    t('algebraCalculator.category'),
+    t('calculusTools.category'),
+    t('geometryCalculator.category'),
+    t('matrixCalculator.category')
+  ]
 
-  const filteredTools = selectedTool && selectedTool !== '全部' 
+  const filteredTools = selectedTool && selectedTool !== t('filter.all')
     ? mathTools.filter(tool => tool.category === selectedTool)
     : mathTools
 
@@ -87,11 +131,10 @@ export default function ToolsPage() {
           {/* Page Header */}
           <div className="text-center mb-12">
             <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-              数学工具
+              {t('title')}
             </h1>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              强大的数学计算和可视化工具，帮助你更好地理解和应用数学概念。
-              从基础计算到高级分析，满足各种数学需求。
+              {t('subtitle')}
             </p>
           </div>
 
@@ -127,7 +170,7 @@ export default function ToolsPage() {
                 <h3 className="text-lg font-semibold text-gray-900 mb-2">{tool.name}</h3>
                 <p className="text-gray-600 text-sm mb-4">{tool.description}</p>
                 <div className="space-y-1">
-                  <h4 className="font-medium text-gray-900 text-sm">功能特点：</h4>
+                  <h4 className="font-medium text-gray-900 text-sm">{t('features')}：</h4>
                   <ul className="space-y-1">
                     {tool.features.map((feature, featureIndex) => (
                       <li key={featureIndex} className="text-xs text-gray-600 flex items-center">
@@ -138,7 +181,7 @@ export default function ToolsPage() {
                   </ul>
                 </div>
                 <button className="w-full mt-4 bg-blue-600 text-white py-2 px-4 rounded-lg hover:bg-blue-700 transition-colors duration-300 text-sm font-medium">
-                  使用工具
+                  {t('useTool')}
                 </button>
               </div>
             ))}
@@ -147,46 +190,46 @@ export default function ToolsPage() {
           {/* External Tools Section */}
           <div className="bg-gradient-to-r from-blue-50 to-indigo-100 rounded-xl p-8">
             <div className="text-center mb-8">
-              <h3 className="text-2xl font-bold text-gray-900 mb-4">推荐外部工具</h3>
+              <h3 className="text-2xl font-bold text-gray-900 mb-4">{t('external.title')}</h3>
               <p className="text-gray-600">
-                这些是我们精选的第三方数学工具，功能强大且专业
+                {t('external.subtitle')}
               </p>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               <div className="bg-white rounded-lg p-6 shadow-md">
                 <h4 className="font-bold text-gray-900 mb-2">Wolfram Alpha</h4>
-                <p className="text-gray-600 text-sm mb-4">计算知识引擎，可以解决各种数学问题</p>
+                <p className="text-gray-600 text-sm mb-4">{t('external.wolfram')}</p>
                 <a
                   href="https://www.wolframalpha.com/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center text-blue-600 hover:text-blue-800 font-medium text-sm"
                 >
-                  访问网站 →
+                  {t('external.visit')} →
                 </a>
               </div>
               <div className="bg-white rounded-lg p-6 shadow-md">
                 <h4 className="font-bold text-gray-900 mb-2">Desmos</h4>
-                <p className="text-gray-600 text-sm mb-4">免费的在线图形计算器，界面友好</p>
+                <p className="text-gray-600 text-sm mb-4">{t('external.desmos')}</p>
                 <a
                   href="https://www.desmos.com/calculator"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center text-blue-600 hover:text-blue-800 font-medium text-sm"
                 >
-                  访问网站 →
+                  {t('external.visit')} →
                 </a>
               </div>
               <div className="bg-white rounded-lg p-6 shadow-md">
                 <h4 className="font-bold text-gray-900 mb-2">GeoGebra</h4>
-                <p className="text-gray-600 text-sm mb-4">动态数学软件，支持几何、代数、统计等</p>
+                <p className="text-gray-600 text-sm mb-4">{t('external.geogebra')}</p>
                 <a
                   href="https://www.geogebra.org/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center text-blue-600 hover:text-blue-800 font-medium text-sm"
                 >
-                  访问网站 →
+                  {t('external.visit')} →
                 </a>
               </div>
             </div>

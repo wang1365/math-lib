@@ -4,8 +4,10 @@ import Layout from '../components/LayoutIntl';
 import MathFormula from '@/app/components/MathFormula'
 import { useState } from 'react'
 import { Calculator, Plus, Minus, X, Divide, RefreshCw } from 'lucide-react'
+import { useTranslations } from 'next-intl'
 
 export default function CalculatorPage() {
+  const t = useTranslations('calculator')
   const [display, setDisplay] = useState('0')
   const [previousValue, setPreviousValue] = useState<number | null>(null)
   const [operation, setOperation] = useState<string | null>(null)
@@ -98,19 +100,14 @@ export default function CalculatorPage() {
         <div className="max-w-4xl mx-auto">
           {/* Page Header */}
           <div className="text-center mb-12">
-            <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-              数学计算器
-            </h1>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              功能强大的在线数学计算器，支持基本运算和高级数学功能。
-              帮助你快速准确地进行各种数学计算。
-            </p>
+            <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">{t('title')}</h1>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">{t('subtitle')}</p>
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
             {/* Basic Calculator */}
             <div className="bg-white rounded-xl shadow-lg p-6">
-              <h2 className="text-2xl font-bold text-gray-900 mb-6 text-center">基础计算器</h2>
+              <h2 className="text-2xl font-bold text-gray-900 mb-6 text-center">{t('basic')}</h2>
               
               <div className="max-w-sm mx-auto">
                 {/* Display */}
@@ -120,9 +117,7 @@ export default function CalculatorPage() {
 
                 {/* Button Grid */}
                 <div className="grid grid-cols-4 gap-2">
-                  <Button onClick={clearAll} variant="clear" className="col-span-2">
-                    <RefreshCw className="w-5 h-5 mx-auto" />
-                  </Button>
+                  <Button onClick={clearAll} variant="clear" className="col-span-2">{t('clear')}</Button>
                   <Button onClick={() => inputOperation('÷')} variant="operator">
                     <Divide className="w-5 h-5 mx-auto" />
                   </Button>
@@ -147,9 +142,7 @@ export default function CalculatorPage() {
                   <Button onClick={() => inputNumber('1')}>1</Button>
                   <Button onClick={() => inputNumber('2')}>2</Button>
                   <Button onClick={() => inputNumber('3')}>3</Button>
-                  <Button onClick={performCalculation} variant="equals" className="row-span-2">
-                    =
-                  </Button>
+                  <Button onClick={performCalculation} variant="equals" className="row-span-2">{t('equals')}</Button>
 
                   <Button onClick={() => inputNumber('0')} className="col-span-2">0</Button>
                   <Button onClick={() => inputNumber('.')}>.</Button>
@@ -201,9 +194,7 @@ export default function CalculatorPage() {
           <div className="mt-12 bg-gradient-to-r from-blue-50 to-indigo-100 rounded-xl p-8">
             <div className="text-center mb-8">
               <h3 className="text-2xl font-bold text-gray-900 mb-4">更多计算器</h3>
-              <p className="text-gray-600">
-                我们正在开发更多专业的数学计算器，包括科学计算器、图形计算器、统计计算器等。
-              </p>
+              <p className="text-gray-600">我们正在开发更多专业的数学计算器，包括科学计算器、图形计算器、统计计算器等。</p>
             </div>
             
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">

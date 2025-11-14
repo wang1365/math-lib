@@ -4,15 +4,15 @@ import { useRouter, usePathname } from 'next/navigation'
 import { useTransition } from 'react'
 import { Globe } from 'lucide-react'
 import { locales, type Locale } from '@/config/i18n'
-import { useParams } from 'next/navigation'
+import { useLocale } from 'next-intl'
 
 export default function LanguageSwitcher() {
   const router = useRouter()
   const pathname = usePathname()
-  const params = useParams()
+  const localeFromContext = useLocale()
   const [isPending, startTransition] = useTransition()
   
-  const currentLocale = params.locale as Locale || 'zh-CN'
+  const currentLocale = (localeFromContext as Locale) || 'zh-CN'
 
   const handleLanguageChange = (newLocale: Locale) => {
     startTransition(() => {
@@ -28,6 +28,7 @@ export default function LanguageSwitcher() {
         // Other locales need prefix
         router.push(`/${newLocale}${normalizedPath}`)
       }
+      router.refresh()
     })
   }
 
