@@ -1,7 +1,6 @@
 "use client"
 
 import AdBanner from '@/app/components/AdBanner'
-import Layout from '@/app/components/LayoutIntl'
 import { Calculator, BookOpen, Video, Globe, ExternalLink, Star, Users } from 'lucide-react'
 import Link from 'next/link'
 import { useTranslations } from 'next-intl'
@@ -104,8 +103,7 @@ export default function ResourcesPage() {
   }
 
   return (
-    <Layout>
-      <div className="py-16 px-4 sm:px-6 lg:px-8">
+    <div className="py-16 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
           {/* Ad Banner - Top */}
           <div className="mb-8 text-center">
@@ -214,6 +212,6 @@ export default function ResourcesPage() {
           </div>
         </div>
       </div>
-    </Layout>
+    
   )
 }

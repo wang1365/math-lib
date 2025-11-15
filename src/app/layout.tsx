@@ -1,3 +1,5 @@
+import { NextIntlClientProvider } from 'next-intl';
+import { getMessages } from 'next-intl/server';
 import Script from 'next/script';
 import { locales, defaultLocale } from '@/config/i18n';
 import './globals.css';
@@ -81,7 +83,7 @@ export default async function RootLayout({
 }) {
   const { locale: paramsLocale } = await params;
   let locale = paramsLocale || defaultLocale;
-  
+  const messages = await getMessages();
   // Ensure the locale is valid
   if (!locales.some(l => l.code === locale)) {
     // Redirect to default locale if invalid
@@ -122,7 +124,9 @@ export default async function RootLayout({
         </Script>
       </head>
       <body>
-        {children}
+        <NextIntlClientProvider locale={locale} messages={messages}>
+          {children}
+        </NextIntlClientProvider>
       </body>
     </html>
   );

@@ -1,6 +1,4 @@
 'use client'
-
-import Layout from '@/app/components/LayoutIntl'
 import MathFormula from '@/app/components/MathFormula'
 import { useState } from 'react'
 import { Calculator, Plus, Minus, X, Divide, RefreshCw } from 'lucide-react'
@@ -109,8 +107,7 @@ export default function CalculatorPage() {
   }
 
   return (
-    <Layout>
-      <div className="py-16 px-4 sm:px-6 lg:px-8">
+    <div className="py-16 px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto">
           {/* Page Header */}
           <div className="text-center mb-12">
@@ -206,6 +203,6 @@ export default function CalculatorPage() {
           </div>
         </div>
       </div>
-    </Layout>
+    
   )
 }

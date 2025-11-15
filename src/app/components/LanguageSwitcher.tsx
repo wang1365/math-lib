@@ -16,8 +16,9 @@ export default function LanguageSwitcher() {
 
   const handleLanguageChange = (newLocale: Locale) => {
     startTransition(() => {
-      // Remove the current locale from the pathname
-      const pathWithoutLocale = pathname.replace(/^\/[a-z]{2}(-[A-Z]{2})?/, '') || '/'
+      // Remove only a valid locale prefix from the pathname
+      const localePrefixPattern = /^\/(zh-CN|zh-TW|en|fr|ja|es|pt|ko|ar|de)(?=\/|$)/
+      const pathWithoutLocale = pathname.replace(localePrefixPattern, '') || '/'
       const normalizedPath = pathWithoutLocale.startsWith('/') ? pathWithoutLocale : `/${pathWithoutLocale}`
       
       // Navigate to the new locale
