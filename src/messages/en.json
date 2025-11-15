@@ -40,7 +40,10 @@
       "subtitle": "We are committed to providing the most qualified and comprehensive learning resources and tools for mathematics learners",
       "resources": {
         "title": "Rich Learning Resources",
-        "description": "Bringing together global quality mathematics learning resources, including online courses, textbooks, video lectures, etc."
+        "description": "Bringing together global quality mathematics learning resources, including online courses, textbooks, video lectures, etc.",
+        "subtitle": "Curated high-quality mathematics resources",
+        "platforms": "Learning Platforms",
+        "visit": "Visit Site"
       },
       "tools": {
         "title": "Powerful Mathematics Tools",

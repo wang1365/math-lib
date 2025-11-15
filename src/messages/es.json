@@ -30,21 +30,32 @@
     "features": {
       "title": "Por Qué Elegirnos",
       "subtitle": "Nos comprometemos a proporcionar los recursos y herramientas de aprendizaje más de alta calidad y más completos para los estudiantes de matemáticas",
-      "richResources": {
+      "resources": {
         "title": "Recursos de Aprendizaje Ricos",
-        "description": "Reuniendo recursos de aprendizaje matemático de calidad global, incluyendo cursos en línea, libros de texto, libros, conferencias en video, etc."
+        "description": "Reúne recursos de aprendizaje matemático de calidad global, incluyendo cursos en línea, libros de texto y conferencias en video",
+        "subtitle": "Recursos matemáticos de alta calidad",
+        "platforms": "Plataformas de Aprendizaje en Línea",
+        "visit": "Visitar sitio"
       },
-      "powerfulTools": {
+      "tools": {
         "title": "Herramientas Matemáticas Poderosas",
-        "description": "Proporcionando varias herramientas de cálculo matemático y software de visualización para ayudar en el aprendizaje y la investigación de las matemáticas"
+        "description": "Proporciona diversas herramientas de cálculo y software de visualización para apoyar el aprendizaje y la investigación"
       },
-      "immersiveExperience": {
-        "title": "Experiencia de Aprendizaje Inmersiva",
-        "description": "Haciendo el aprendizaje de las matemáticas más vivo e interesante a través de plataformas de aprendizaje interactivas y contenido multimedia"
+      "videos": {
+        "title": "Cursos de Video Seleccionados",
+        "description": "Cursos y conferencias de matemáticas seleccionados de YouTube y otras plataformas"
       },
-      "curatedCourses": {
-        "title": "Cursos en Video Curados",
-        "description": "Excelentes cursos y conferencias de matemáticas seleccionadas de YouTube y otras plataformas"
+      "encyclopedia": {
+        "title": "Enciclopedia Matemática Integral",
+        "description": "Cubre conocimientos detallados y explicaciones de conceptos en varias ramas de las matemáticas"
+      },
+      "community": {
+        "title": "Comunidad Activa",
+        "description": "Conecta entusiastas de las matemáticas de todo el mundo, compartiendo experiencias de aprendizaje e ideas de solución"
+      },
+      "recommendations": {
+        "title": "Recomendaciones Inteligentes",
+        "description": "Basadas en tu progreso e intereses, recomienda inteligentemente recursos relacionados"
       }
     },
     "popularResources": {

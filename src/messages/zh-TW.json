@@ -30,21 +30,32 @@
     "features": {
       "title": "為什麼選擇我們",
       "subtitle": "我們致力於為數學學習者提供最優質、最全面的學習資源和工具",
-      "richResources": {
+      "resources": {
         "title": "豐富的學習資源",
-        "description": "匯集全球優質的數學學習資源，包括在線課程、教材、書籍、視頻講座等"
+        "description": "匯集全球優質數學學習資源，包括在線課程、教科書、視頻講座等",
+        "subtitle": "匯集全球優質數學學習資源",
+        "platforms": "線上學習平台",
+        "visit": "訪問網站"
       },
-      "powerfulTools": {
+      "tools": {
         "title": "強大的數學工具",
-        "description": "提供各種數學計算工具和可視化軟件，助力數學學習和研究"
+        "description": "提供各種數學計算工具和可視化軟體，助力數學學習和研究"
       },
-      "immersiveExperience": {
-        "title": "沉浸式學習體驗",
-        "description": "通過互動式學習平台和多媒體內容，讓數學學習變得更加生動有趣"
-      },
-      "curatedCourses": {
+      "videos": {
         "title": "精選視頻課程",
-        "description": "精選YouTube和其他平台的優秀數學課程和講座"
+        "description": "精選 YouTube 和其他平台的優質數學視頻課程和講座"
+      },
+      "encyclopedia": {
+        "title": "全面的數學百科",
+        "description": "涵蓋各個數學分支的詳細知識和概念解釋"
+      },
+      "community": {
+        "title": "活躍的社群",
+        "description": "連接全球數學愛好者，分享學習經驗和解題思路"
+      },
+      "recommendations": {
+        "title": "智慧推薦",
+        "description": "基於你的學習進度和興趣，智慧推薦相關的數學資源"
       }
     },
     "popularResources": {

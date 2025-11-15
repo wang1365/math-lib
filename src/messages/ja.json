@@ -30,21 +30,32 @@
     "features": {
       "title": "なぜ私たちを選ぶのか",
       "subtitle": "数学学習者に最高品質で最も包括的な学習リソースとツールを提供することに尽力しています",
-      "richResources": {
+      "resources": {
         "title": "豊富な学習リソース",
-        "description": "世界中の優れた数学学習リソースを集め、オンラインコース、教科書、書籍、ビデオ講義などを含む"
+        "description": "世界中の高品質な数学学習リソースを集め、オンラインコース、教科書、ビデオ講義などを含みます",
+        "subtitle": "高品質な数学学習リソース",
+        "platforms": "オンライン学習プラットフォーム",
+        "visit": "サイトを訪問"
       },
-      "powerfulTools": {
+      "tools": {
         "title": "強力な数学ツール",
-        "description": "数学学習と研究を支援する、さまざまな数学計算ツールと可視化ソフトウェアを提供"
+        "description": "学習と研究を支援する各種計算ツールと可視化ソフトウェアを提供します"
       },
-      "immersiveExperience": {
-        "title": "没入型学習体験",
-        "description": "インタラクティブな学習プラットフォームとマルチメディアコンテンツを通じて、数学学習をより生き生きと面白くする"
-      },
-      "curatedCourses": {
+      "videos": {
         "title": "厳選されたビデオコース",
-        "description": "YouTubeや他のプラットフォームから厳選された優れた数学コースと講義"
+        "description": "YouTube 等のプラットフォームから厳選された優れた数学コースと講義"
+      },
+      "encyclopedia": {
+        "title": "包括的な数学百科事典",
+        "description": "各数学分野の詳細な知識と概念解説を網羅します"
+      },
+      "community": {
+        "title": "活発なコミュニティ",
+        "description": "世界中の数学愛好家をつなぎ、学習体験や問題解決のアイデアを共有します"
+      },
+      "recommendations": {
+        "title": "スマートレコメンド",
+        "description": "学習進捗と興味に基づき、関連する数学リソースを賢く推薦します"
       }
     },
     "popularResources": {

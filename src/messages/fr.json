@@ -30,21 +30,32 @@
     "features": {
       "title": "Pourquoi Nous Choisir",
       "subtitle": "Nous nous engageons à fournir les ressources et outils d'apprentissage les plus de haute qualité et les plus complets pour les apprenants en mathématiques",
-      "richResources": {
-        "title": "Riches Ressources d'Apprentissage",
-        "description": "Rassembler des ressources d'apprentissage mathématiques de qualité mondiale, incluant des cours en ligne, des manuels, des livres, des conférences vidéo, etc."
+      "resources": {
+        "title": "Ressources d'Apprentissage Riches",
+        "description": "Rassemble des ressources mathématiques de qualité mondiale, incluant des cours en ligne, des manuels et des conférences vidéo",
+        "subtitle": "Ressources mathématiques de haute qualité",
+        "platforms": "Plateformes d'Apprentissage en Ligne",
+        "visit": "Visiter le site"
       },
-      "powerfulTools": {
+      "tools": {
         "title": "Outils Mathématiques Puissants",
-        "description": "Fournir divers outils de calcul mathématique et logiciels de visualisation pour aider à l'apprentissage et à la recherche en mathématiques"
+        "description": "Fournit divers outils de calcul et des logiciels de visualisation pour soutenir l'apprentissage et la recherche"
       },
-      "immersiveExperience": {
-        "title": "Expérience d'Apprentissage Immersive",
-        "description": "Rendre l'apprentissage des mathématiques plus vivant et intéressant grâce à des plateformes d'apprentissage interactives et du contenu multimédia"
-      },
-      "curatedCourses": {
+      "videos": {
         "title": "Cours Vidéo Sélectionnés",
-        "description": "Excellentes cours et conférences de mathématiques sélectionnées sur YouTube et d'autres plateformes"
+        "description": "Cours et conférences de mathématiques sélectionnés depuis YouTube et d'autres plateformes"
+      },
+      "encyclopedia": {
+        "title": "Encyclopédie Mathématique Complète",
+        "description": "Couvre des connaissances détaillées et des explications de concepts dans diverses branches des mathématiques"
+      },
+      "community": {
+        "title": "Communauté Active",
+        "description": "Relie des passionnés de mathématiques du monde entier pour partager expériences et idées de résolution"
+      },
+      "recommendations": {
+        "title": "Recommandations Intelligentes",
+        "description": "Recommande intelligemment des ressources pertinentes selon vos progrès et intérêts"
       }
     },
     "popularResources": {
