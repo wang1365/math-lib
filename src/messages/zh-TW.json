@@ -116,5 +116,28 @@
   "examples": {
     "title": "數學公式範例",
     "subtitle": "展示經典數學公式的美麗和優雅"
+  },
+  "calculator": {
+    "title": "數學計算器",
+    "subtitle": "功能強大的線上數學計算器，支援基礎運算、科學計算、代數運算等多種功能。",
+    "description": "使用我們的線上計算器進行基礎數學運算",
+    "basic": "基礎模式",
+    "scientific": "科學模式",
+    "clear": "清除",
+    "equals": "等於",
+    "history": "歷史記錄",
+    "memory": "記憶",
+    "backspace": "退格",
+    "functions": {
+      "sin": "正弦",
+      "cos": "餘弦",
+      "tan": "正切",
+      "log": "對數",
+      "ln": "自然對數",
+      "sqrt": "平方根",
+      "pow": "冪",
+      "pi": "圓周率",
+      "e": "自然常數"
+    }
   }
 }

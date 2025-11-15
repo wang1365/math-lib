@@ -368,5 +368,28 @@
       "geogebra": "Dynamic mathematics software supporting geometry, algebra, statistics, etc.",
       "visit": "Visit Website"
     }
+  },
+  "calculator": {
+    "title": "Mathematics Calculator",
+    "subtitle": "Powerful online mathematics calculator supporting basic operations, scientific calculation, algebraic operations, and more.",
+    "description": "Use our online calculator for basic math operations",
+    "basic": "Basic Mode",
+    "scientific": "Scientific Mode",
+    "clear": "Clear",
+    "equals": "Equals",
+    "history": "History",
+    "memory": "Memory",
+    "backspace": "Backspace",
+    "functions": {
+      "sin": "Sine",
+      "cos": "Cosine",
+      "tan": "Tangent",
+      "log": "Logarithm",
+      "ln": "Natural Logarithm",
+      "sqrt": "Square Root",
+      "pow": "Power",
+      "pi": "Pi",
+      "e": "Euler's Number"
+    }
   }
 }

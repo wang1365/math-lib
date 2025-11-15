@@ -116,5 +116,28 @@
   "examples": {
     "title": "Exemples de Formules Mathématiques",
     "subtitle": "Présentant la beauté et l'élégance des formules mathématiques classiques"
+  },
+  "calculator": {
+    "title": "Calculatrice Mathématique",
+    "subtitle": "Puissante calculatrice mathématique en ligne prenant en charge les opérations de base, le calcul scientifique, les opérations algébriques, etc.",
+    "description": "Utilisez notre calculatrice en ligne pour les opérations mathématiques de base",
+    "basic": "Mode Basique",
+    "scientific": "Mode Scientifique",
+    "clear": "Effacer",
+    "equals": "Égal",
+    "history": "Historique",
+    "memory": "Mémoire",
+    "backspace": "Retour arrière",
+    "functions": {
+      "sin": "Sinus",
+      "cos": "Cosinus",
+      "tan": "Tangente",
+      "log": "Logarithme",
+      "ln": "Logarithme naturel",
+      "sqrt": "Racine carrée",
+      "pow": "Puissance",
+      "pi": "Pi",
+      "e": "Nombre d'Euler"
+    }
   }
 }

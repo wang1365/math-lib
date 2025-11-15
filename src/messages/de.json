@@ -207,5 +207,28 @@
     "privacy": "Datenschutzrichtlinie",
     "terms": "Nutzungsbedingungen",
     "copyright": "© 2024 Mathematik-Ressourcen-Repository. Alle Rechte vorbehalten."
+  },
+  "calculator": {
+    "title": "Mathematischer Rechner",
+    "subtitle": "Leistungsstarker Online‑Rechner für Grundrechenarten, wissenschaftliche Berechnungen und algebraische Operationen.",
+    "description": "Verwenden Sie unseren Online‑Rechner für grundlegende mathematische Operationen",
+    "basic": "Basismodus",
+    "scientific": "Wissenschaftsmodus",
+    "clear": "Löschen",
+    "equals": "Gleich",
+    "history": "Verlauf",
+    "memory": "Speicher",
+    "backspace": "Rücktaste",
+    "functions": {
+      "sin": "Sinus",
+      "cos": "Kosinus",
+      "tan": "Tangens",
+      "log": "Logarithmus",
+      "ln": "Natürlicher Logarithmus",
+      "sqrt": "Quadratwurzel",
+      "pow": "Potenz",
+      "pi": "Pi",
+      "e": "Eulersche Zahl"
+    }
   }
 }

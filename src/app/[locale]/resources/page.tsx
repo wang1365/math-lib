@@ -103,15 +103,15 @@ export default function ResourcesPage() {
   }
 
   return (
-    <div className="py-16 px-4 sm:px-6 lg:px-8">
+    <div className="py-4 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
           {/* Ad Banner - Top */}
-          <div className="mb-8 text-center">
+          <div className="mb-4 text-center">
             <AdBanner slot="1234567890" format="horizontal" responsive={true} />
           </div>
 
           {/* Page Header */}
-          <div className="text-center mb-12">
+          <div className="text-center mb-6">
             <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
               {t('title')}
             </h1>
@@ -124,16 +124,11 @@ export default function ResourcesPage() {
           <div className="space-y-16">
             {resourceCategories.map((category, categoryIndex) => (
               <div key={categoryIndex} className="">
-                <div className="flex items-center mb-8">
+                <div className="flex items-center mb-4">
                   <div className={`w-12 h-12 rounded-lg bg-gradient-to-r ${category.color} flex items-center justify-center mr-4`}>
                     <category.icon className="w-6 h-6 text-white" />
                   </div>
                   <h2 className="text-3xl font-bold text-gray-900">{category.title}</h2>
-                </div>
-                
-                {/* Ad Banner - Middle */}
-                <div className="mb-8 text-center">
-                  <AdBanner slot="2345678901" format="rectangle" responsive={true} />
                 </div>
                 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">

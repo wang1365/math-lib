@@ -49,6 +49,8 @@ export default function CalculatorPage() {
         return firstValue * secondValue
       case '÷':
         return firstValue / secondValue
+      case 'pow':
+        return Math.pow(firstValue, secondValue)
       case '=':
         return secondValue
       default:
@@ -94,6 +96,46 @@ export default function CalculatorPage() {
     )
   }
 
+  const insertConstant = (value: number) => {
+    setDisplay(String(value))
+    setWaitingForOperand(false)
+  }
+
+  const applyUnary = (type: string) => {
+    const x = parseFloat(display)
+    if (!Number.isFinite(x)) return
+    let r = x
+    switch (type) {
+      case 'sin':
+        r = Math.sin(x)
+        break
+      case 'cos':
+        r = Math.cos(x)
+        break
+      case 'tan':
+        r = Math.tan(x)
+        break
+      case 'log':
+        r = Math.log10 ? Math.log10(x) : Math.log(x) / Math.LN10
+        break
+      case 'ln':
+        r = Math.log(x)
+        break
+      case 'sqrt':
+        r = Math.sqrt(x)
+        break
+    }
+    setDisplay(String(r))
+    setWaitingForOperand(true)
+  }
+
+  const startPow = () => {
+    const x = parseFloat(display)
+    setPreviousValue(x)
+    setOperation('pow')
+    setWaitingForOperand(true)
+  }
+
   return (
     <Layout>
       <div className="py-16 px-4 sm:px-6 lg:px-8">
@@ -118,11 +160,11 @@ export default function CalculatorPage() {
                 {/* Button Grid */}
                 <div className="grid grid-cols-4 gap-2">
                   <Button onClick={clearAll} variant="clear" className="col-span-2">{t('clear')}</Button>
+                  <Button onClick={() => setDisplay(display.slice(0, -1) || '0')} variant="operator">
+                    {t('backspace')}
+                  </Button>
                   <Button onClick={() => inputOperation('÷')} variant="operator">
                     <Divide className="w-5 h-5 mx-auto" />
-                  </Button>
-                  <Button onClick={() => inputOperation('×')} variant="operator">
-                    <X className="w-5 h-5 mx-auto" />
                   </Button>
 
                   <Button onClick={() => inputNumber('7')}>7</Button>
@@ -146,6 +188,19 @@ export default function CalculatorPage() {
 
                   <Button onClick={() => inputNumber('0')} className="col-span-2">0</Button>
                   <Button onClick={() => inputNumber('.')}>.</Button>
+                </div>
+
+                <div className="mt-4 grid grid-cols-4 gap-2">
+                  <Button onClick={() => insertConstant(Math.PI)} variant="operator">{t('functions.pi')}</Button>
+                  <Button onClick={() => insertConstant(Math.E)} variant="operator">{t('functions.e')}</Button>
+                  <Button onClick={() => applyUnary('sqrt')} variant="operator">{t('functions.sqrt')}</Button>
+                  <Button onClick={() => inputOperation('×')} variant="operator">×</Button>
+                  <Button onClick={() => applyUnary('sin')} variant="operator">{t('functions.sin')}</Button>
+                  <Button onClick={() => applyUnary('cos')} variant="operator">{t('functions.cos')}</Button>
+                  <Button onClick={() => applyUnary('tan')} variant="operator">{t('functions.tan')}</Button>
+                  <Button onClick={startPow} variant="operator">{t('functions.pow')}</Button>
+                  <Button onClick={() => applyUnary('log')} variant="operator">{t('functions.log')}</Button>
+                  <Button onClick={() => applyUnary('ln')} variant="operator">{t('functions.ln')}</Button>
                 </div>
               </div>
             </div>

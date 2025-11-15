@@ -207,5 +207,28 @@
     "privacy": "Política de Privacidade",
     "terms": "Termos de Serviço",
     "copyright": "© 2024 Repositório de Recursos Matemáticos. Todos os direitos reservados."
+  },
+  "calculator": {
+    "title": "Calculadora Matemática",
+    "subtitle": "Poderosa calculadora matemática online que suporta operações básicas, cálculo científico, operações algébricas e mais.",
+    "description": "Use nossa calculadora online para operações matemáticas básicas",
+    "basic": "Modo Básico",
+    "scientific": "Modo Científico",
+    "clear": "Limpar",
+    "equals": "Igual",
+    "history": "Histórico",
+    "memory": "Memória",
+    "backspace": "Retroceder",
+    "functions": {
+      "sin": "Seno",
+      "cos": "Cosseno",
+      "tan": "Tangente",
+      "log": "Logaritmo",
+      "ln": "Logaritmo natural",
+      "sqrt": "Raiz quadrada",
+      "pow": "Potência",
+      "pi": "Pi",
+      "e": "Número de Euler"
+    }
   }
 }
