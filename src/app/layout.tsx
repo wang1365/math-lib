@@ -113,7 +113,7 @@ export default async function RootLayout({
 
         {/* Google Analytics */}
         <Script
-          src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`}
+          src={`https://www.googletagmanager.com/gtag/js?id=G-C1QDG4M016`}
           strategy="afterInteractive"
         />
         <Script id="gtag-init" strategy="afterInteractive">
@@ -121,7 +121,7 @@ export default async function RootLayout({
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
-            gtag('config', '${GA_ID}');
+            gtag('config', 'G-C1QDG4M016');
           `}
         </Script>
       </head>
@@ -132,7 +132,7 @@ export default async function RootLayout({
         {GA_ID && (
           <>
             <Script
-              src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`}
+              src={`https://www.googletagmanager.com/gtag/js?id=G-C1QDG4M016`}
               strategy="afterInteractive"
             />
             <Script id="gtag-init" strategy="afterInteractive">
@@ -140,12 +140,12 @@ export default async function RootLayout({
                 window.dataLayer = window.dataLayer || [];
                 function gtag(){dataLayer.push(arguments);} 
                 gtag('js', new Date());
-                gtag('config', '${GA_ID}');
+                gtag('config', 'G-C1QDG4M016');
               `}
             </Script>
           </>
         )}
-        {GA_ID && <Analytics gaId={GA_ID} />}
+        {GA_ID && <Analytics gaId='G-C1QDG4M016' />}
       </body>
     </html>
   );
