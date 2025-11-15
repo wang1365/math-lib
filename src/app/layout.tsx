@@ -3,6 +3,7 @@ import { getMessages } from 'next-intl/server';
 import Script from 'next/script';
 import { locales, defaultLocale } from '@/config/i18n';
 import './globals.css';
+import Analytics from './components/Analytics';
  
 
 export function generateStaticParams() {
@@ -84,6 +85,7 @@ export default async function RootLayout({
   const { locale: paramsLocale } = await params;
   let locale = paramsLocale || defaultLocale;
   const messages = await getMessages();
+  const GA_ID = process.env.NEXT_PUBLIC_GA_ID || '';
   // Ensure the locale is valid
   if (!locales.some(l => l.code === locale)) {
     // Redirect to default locale if invalid
@@ -127,6 +129,23 @@ export default async function RootLayout({
         <NextIntlClientProvider locale={locale} messages={messages}>
           {children}
         </NextIntlClientProvider>
+        {GA_ID && (
+          <>
+            <Script
+              src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`}
+              strategy="afterInteractive"
+            />
+            <Script id="gtag-init" strategy="afterInteractive">
+              {`
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){dataLayer.push(arguments);} 
+                gtag('js', new Date());
+                gtag('config', '${GA_ID}');
+              `}
+            </Script>
+          </>
+        )}
+        {GA_ID && <Analytics gaId={GA_ID} />}
       </body>
     </html>
   );

@@ -43,6 +43,7 @@
     }
   ],
   "env": {
-    "NEXT_PUBLIC_SITE_URL": "https://math-lib.vercel.app"
+    "NEXT_PUBLIC_SITE_URL": "https://math-lib.vercel.app",
+    "NEXT_PUBLIC_GA_ID": "G-C1QDG4M016"
   }
 }
