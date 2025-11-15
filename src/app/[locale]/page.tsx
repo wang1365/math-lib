@@ -1,10 +1,19 @@
-import { useTranslations } from 'next-intl';
+'use client'
+
+import { useTranslations, useLocale } from 'next-intl';
 import Layout from '../components/LayoutIntl';
 import { Calculator, BookOpen, Video, Globe, Users, Sparkles } from 'lucide-react';
 import Link from 'next/link';
 
 export default function Home() {
   const t = useTranslations('home');
+  const locale = useLocale();
+  console.log('current locale:', locale);
+
+  const withLocale = (href: string) =>
+    locale === 'zh-CN' ? href : `/${locale}${href.startsWith('/') ? href : `/${href}`}`
+  console.log('===============>>>', t);
+  console.log('===============>>>tttt', t('features.resources.title'));
   
   const features = [
     {
@@ -80,18 +89,18 @@ export default function Home() {
               {t('hero.subtitle')}
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link
-                href="/resources"
-                className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-8 py-3 rounded-lg font-semibold hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1"
-              >
-                {t('hero.cta.start')}
-              </Link>
-              <Link
-                href="/branches"
-                className="border-2 border-blue-600 text-blue-600 px-8 py-3 rounded-lg font-semibold hover:bg-blue-600 hover:text-white transition-all duration-300"
-              >
-                {t('hero.cta.branches')}
-              </Link>
+            <Link
+              href={withLocale('/resources')}
+              className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-8 py-3 rounded-lg font-semibold hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1"
+            >
+              {t('hero.cta.start')}
+            </Link>
+            <Link
+              href={withLocale('/branches')}
+              className="border-2 border-blue-600 text-blue-600 px-8 py-3 rounded-lg font-semibold hover:bg-blue-600 hover:text-white transition-all duration-300"
+            >
+              {t('hero.cta.branches')}
+            </Link>
             </div>
           </div>
         </div>

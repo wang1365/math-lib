@@ -1,11 +1,17 @@
+"use client"
+
 import AdBanner from '@/app/components/AdBanner'
 import Layout from '@/app/components/LayoutIntl'
 import { Calculator, BookOpen, Video, Globe, ExternalLink, Star, Users } from 'lucide-react'
 import Link from 'next/link'
 import { useTranslations } from 'next-intl'
+import { useLocale } from 'next-intl'
 
 export default function ResourcesPage() {
   const t = useTranslations('resources');
+  const locale = useLocale();
+  const withLocale = (href: string) =>
+    locale === 'zh-CN' ? href : `/${locale}${href.startsWith('/') ? href : `/${href}`}`
   
   const resourceCategories = [
     {
@@ -192,13 +198,13 @@ export default function ResourcesPage() {
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Link
-                  href="/branches"
+                  href={withLocale('/branches')}
                   className="bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors duration-300"
                 >
                   {t('moreResources.browseBranches')}
                 </Link>
                 <Link
-                  href="/tools"
+                  href={withLocale('/tools')}
                   className="border-2 border-blue-600 text-blue-600 px-6 py-3 rounded-lg font-semibold hover:bg-blue-600 hover:text-white transition-colors duration-300"
                 >
                   {t('moreResources.viewTools')}

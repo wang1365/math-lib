@@ -1,5 +1,3 @@
-import { NextIntlClientProvider } from 'next-intl';
-import { getMessages } from 'next-intl/server';
 import Script from 'next/script';
 import { locales, defaultLocale } from '@/config/i18n';
 import './globals.css';
@@ -90,7 +88,6 @@ export default async function RootLayout({
     locale = defaultLocale;
   }
 
-  const messages = await getMessages();
 
   return (
     <html lang={locale}>
@@ -125,9 +122,7 @@ export default async function RootLayout({
         </Script>
       </head>
       <body>
-        <NextIntlClientProvider messages={messages}>
-          {children}
-        </NextIntlClientProvider>
+        {children}
       </body>
     </html>
   );

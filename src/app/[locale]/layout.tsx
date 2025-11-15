@@ -1,6 +1,6 @@
 import { locales } from '@/config/i18n';
 import Layout from '../components/LayoutIntl';
-import { setRequestLocale, getMessages } from 'next-intl/server';
+import { setRequestLocale } from 'next-intl/server';
 import { NextIntlClientProvider } from 'next-intl';
 
 export function generateStaticParams() {
@@ -19,10 +19,10 @@ export default async function LocaleLayout({
   // Enable static rendering
   setRequestLocale(locale);
 
-  const messages = await getMessages();
+  const messages = (await import(`@/messages/${locale}.json`)).default;
 
   return (
-    <NextIntlClientProvider messages={messages}>
+    <NextIntlClientProvider locale={locale} messages={messages}>
       <Layout locale={locale}>
         {children}
       </Layout>
