@@ -19,7 +19,23 @@ export default async function LocaleLayout({
   // Enable static rendering
   setRequestLocale(locale);
 
-  const messages = (await import(`@/messages/${locale}.json`)).default;
+  const baseMessages = (await import('@/messages/zh-CN.json')).default as any;
+  const localeMessages = (await import(`@/messages/${locale}.json`)).default as any;
+
+  const deepMerge = (base: any, override: any): any => {
+    if (typeof base !== 'object' || base === null) return override ?? base;
+    const result: any = Array.isArray(base) ? [...base] : { ...base };
+    for (const key of Object.keys(override || {})) {
+      const bv = base[key];
+      const ov = override[key];
+      result[key] = (bv && typeof bv === 'object' && !Array.isArray(bv))
+        ? deepMerge(bv, ov)
+        : ov;
+    }
+    return result;
+  };
+
+  const messages = deepMerge(baseMessages, localeMessages);
 
   return (
     <NextIntlClientProvider locale={locale} messages={messages}>

@@ -19,9 +19,13 @@
   "home": {
     "hero": {
       "title": "Explora las Posibilidades Infinitas de las Matemáticas",
+      "title1": "Explora las",
+      "title2": "Posibilidades Infinitas de las Matemáticas",
       "subtitle": "Reuniendo recursos de aprendizaje matemático de calidad global, proporcionando sistemas de conocimiento matemático completos y herramientas de aprendizaje. Desde matemáticas básicas hasta matemáticas avanzadas, de la teoría a la aplicación, haciendo el aprendizaje de las matemáticas más interesante y eficiente.",
-      "cta": "Comenzar a Aprender",
-      "ctaSecondary": "Explorar Ramas de las Matemáticas"
+      "cta": {
+        "start": "Comenzar a Aprender",
+        "branches": "Explorar Ramas de las Matemáticas"
+      }
     },
     "features": {
       "title": "Por Qué Elegirnos",

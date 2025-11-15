@@ -25,10 +25,21 @@
     "examples": "Exemplos"
   },
   "home": {
+    "hero": {
+      "title1": "Explore as",
+      "title2": "Infinitas Possibilidades da Matemática"
+    },
     "title": "Repositório de Recursos Matemáticos",
     "subtitle": "Explore as Infinitas Possibilidades da Matemática",
     "description": "Reunimos recursos de aprendizagem matemática de alta qualidade do mundo todo, fornecendo um sistema de conhecimento matemático abrangente e ferramentas de aprendizagem para entusiastas da matemática, estudantes e pesquisadores.",
-    "cta": "Começar a Aprender",
+    "hero": {
+      "title1": "Explore as",
+      "title2": "Infinitas Possibilidades da Matemática",
+      "cta": {
+        "start": "Começar a Aprender",
+        "branches": "Explorar Ramos da Matemática"
+      }
+    },
     "features": {
       "title": "Por Que Escolher Nosso Repositório de Recursos",
       "comprehensive": {

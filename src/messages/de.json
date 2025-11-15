@@ -25,10 +25,21 @@
     "examples": "Beispiele"
   },
   "home": {
+    "hero": {
+      "title1": "Entdecken Sie die",
+      "title2": "Unendlichen Möglichkeiten der Mathematik"
+    },
     "title": "Mathematik-Ressourcen-Repository",
     "subtitle": "Entdecken Sie die Unendlichen Möglichkeiten der Mathematik",
     "description": "Wir sammeln hochwertige Mathematik-Lernressourcen aus der ganzen Welt und bieten ein umfassendes mathematisches Wissenssystem und Lernwerkzeuge für Mathematik-Enthusiasten, Studenten und Forscher.",
-    "cta": "Lernen beginnen",
+    "hero": {
+      "title1": "Entdecken Sie die",
+      "title2": "Unendlichen Möglichkeiten der Mathematik",
+      "cta": {
+        "start": "Lernen beginnen",
+        "branches": "Mathematik-Bereiche erkunden"
+      }
+    },
     "features": {
       "title": "Warum unser Ressourcen-Repository wählen",
       "comprehensive": {
