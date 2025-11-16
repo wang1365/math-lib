@@ -16,6 +16,20 @@
       "copyright": "© 2024 مستودع الموارد الرياضية. جميع الحقوق محفوظة."
     }
   },
+  "contact": {
+    "title": "تواصل معي",
+    "nameLabel": "الاسم",
+    "emailLabel": "البريد الإلكتروني",
+    "messageLabel": "المحتوى",
+    "sendButton": "إرسال البريد",
+    "openClientButton": "فتح برنامج البريد",
+    "placeholderName": "أدخل اسمك",
+    "placeholderEmail": "بريدك للرد",
+    "placeholderMessage": "أدخل سؤالك أو ملاحظتك",
+    "emailSubject": "تواصل من {name}",
+    "emailBodyTemplate": "الاسم: {name}\nالبريد: {email}\n\nالمحتوى:\n{message}",
+    "anonymous": "مجهول"
+  },
   "nav": {
     "home": "الصفحة الرئيسية",
     "resources": "المصادر",

@@ -16,6 +16,20 @@
       "copyright": "© 2024 Biblioteca de Recursos Matemáticos. Todos los derechos reservados."
     }
   },
+  "contact": {
+    "title": "Contáctame",
+    "nameLabel": "Nombre",
+    "emailLabel": "Correo electrónico",
+    "messageLabel": "Contenido",
+    "sendButton": "Enviar correo",
+    "openClientButton": "Abrir cliente de correo",
+    "placeholderName": "Ingrese su nombre",
+    "placeholderEmail": "Su correo para respuesta",
+    "placeholderMessage": "Ingrese su pregunta o comentario",
+    "emailSubject": "Contacto del sitio de {name}",
+    "emailBodyTemplate": "Nombre: {name}\nCorreo: {email}\n\nContenido:\n{message}",
+    "anonymous": "Anónimo"
+  },
   "home": {
     "hero": {
       "title": "Explora las Posibilidades Infinitas de las Matemáticas",

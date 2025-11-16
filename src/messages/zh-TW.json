@@ -16,6 +16,20 @@
       "copyright": "© 2024 數學資源庫. 保留所有權利."
     }
   },
+  "contact": {
+    "title": "聯絡我",
+    "nameLabel": "姓名",
+    "emailLabel": "信箱",
+    "messageLabel": "內容",
+    "sendButton": "寄送郵件",
+    "openClientButton": "開啟郵件用戶端",
+    "placeholderName": "請輸入您的姓名",
+    "placeholderEmail": "用於回覆的信箱",
+    "placeholderMessage": "請輸入您的問題或回饋",
+    "emailSubject": "來自 {name} 的網站聯絡",
+    "emailBodyTemplate": "姓名: {name}\n信箱: {email}\n\n內容:\n{message}",
+    "anonymous": "匿名"
+  },
   "home": {
     "hero": {
       "title": "探索數學的無限可能",

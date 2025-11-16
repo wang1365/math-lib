@@ -8,6 +8,7 @@ import ContactForm from '../components/ContactForm';
 
 export default function Home() {
   const t = useTranslations('home');
+  const ct = useTranslations('contact');
   const locale = useLocale();
   console.log('current locale:', locale);
 
@@ -208,7 +209,7 @@ export default function Home() {
       {/* Contact Section */}
       <section className="py-16 px-4 sm:px-6 lg:px-8 bg-white">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">联系我</h2>
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">{ct('title')}</h2>
           <div className="bg-white rounded-xl shadow-lg p-6 border border-gray-100">
             <ContactForm />
           </div>

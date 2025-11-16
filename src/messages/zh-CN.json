@@ -392,6 +392,20 @@
     "contact": "联系",
     "rights": "保留所有权利。"
   },
+  "contact": {
+    "title": "联系我",
+    "nameLabel": "姓名",
+    "emailLabel": "邮箱",
+    "messageLabel": "内容",
+    "sendButton": "发送邮件",
+    "openClientButton": "直接打开邮件客户端",
+    "placeholderName": "请输入您的姓名",
+    "placeholderEmail": "用于回复您的邮箱",
+    "placeholderMessage": "请输入您要咨询或反馈的内容",
+    "emailSubject": "来自 {name} 的网站联系",
+    "emailBodyTemplate": "姓名: {name}\n邮箱: {email}\n\n内容:\n{message}",
+    "anonymous": "匿名"
+  },
   "calculator": {
     "title": "数学计算器",
     "subtitle": "功能强大的在线数学计算器，支持基础运算、科学计算、代数运算等多种功能。",

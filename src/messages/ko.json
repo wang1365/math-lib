@@ -16,6 +16,20 @@
       "copyright": "© 2024 수학 리소스 저장소. 모든 권리 보유."
     }
   },
+  "contact": {
+    "title": "문의하기",
+    "nameLabel": "이름",
+    "emailLabel": "이메일",
+    "messageLabel": "내용",
+    "sendButton": "이메일 보내기",
+    "openClientButton": "메일 클라이언트 열기",
+    "placeholderName": "이름을 입력하세요",
+    "placeholderEmail": "회신용 이메일",
+    "placeholderMessage": "질문 또는 의견을 입력하세요",
+    "emailSubject": "{name}님의 사이트 문의",
+    "emailBodyTemplate": "이름: {name}\n이메일: {email}\n\n내용:\n{message}",
+    "anonymous": "익명"
+  },
   "nav": {
     "home": "홈",
     "resources": "리소스",

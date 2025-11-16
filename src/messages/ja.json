@@ -16,6 +16,20 @@
       "copyright": "© 2024 数学リソースライブラリ. All rights reserved."
     }
   },
+  "contact": {
+    "title": "お問い合わせ",
+    "nameLabel": "お名前",
+    "emailLabel": "メール",
+    "messageLabel": "内容",
+    "sendButton": "メールを送信",
+    "openClientButton": "メールクライアントを開く",
+    "placeholderName": "お名前を入力してください",
+    "placeholderEmail": "返信用メールアドレス",
+    "placeholderMessage": "質問やフィードバックを入力してください",
+    "emailSubject": "{name} からのお問い合わせ",
+    "emailBodyTemplate": "名前: {name}\nメール: {email}\n\n内容:\n{message}",
+    "anonymous": "匿名"
+  },
   "home": {
     "hero": {
       "title": "数学の無限の可能性を探索",

@@ -16,6 +16,20 @@
       "copyright": "© 2024 Mathematik-Ressourcen-Repository. Alle Rechte vorbehalten."
     }
   },
+  "contact": {
+    "title": "Kontakt",
+    "nameLabel": "Name",
+    "emailLabel": "E-Mail",
+    "messageLabel": "Nachricht",
+    "sendButton": "E-Mail senden",
+    "openClientButton": "Mail-Client öffnen",
+    "placeholderName": "Geben Sie Ihren Namen ein",
+    "placeholderEmail": "Ihre Antwort-E-Mail",
+    "placeholderMessage": "Geben Sie Ihre Frage oder Ihr Feedback ein",
+    "emailSubject": "Website-Kontakt von {name}",
+    "emailBodyTemplate": "Name: {name}\nE-Mail: {email}\n\nNachricht:\n{message}",
+    "anonymous": "Anonym"
+  },
   "nav": {
     "home": "Startseite",
     "resources": "Ressourcen",

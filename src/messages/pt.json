@@ -16,6 +16,20 @@
       "copyright": "© 2024 Repositório de Recursos Matemáticos. Todos os direitos reservados."
     }
   },
+  "contact": {
+    "title": "Entre em contato",
+    "nameLabel": "Nome",
+    "emailLabel": "E-mail",
+    "messageLabel": "Mensagem",
+    "sendButton": "Enviar e-mail",
+    "openClientButton": "Abrir cliente de e-mail",
+    "placeholderName": "Digite seu nome",
+    "placeholderEmail": "Seu e-mail para resposta",
+    "placeholderMessage": "Digite sua dúvida ou feedback",
+    "emailSubject": "Contato do site de {name}",
+    "emailBodyTemplate": "Nome: {name}\nE-mail: {email}\n\nMensagem:\n{message}",
+    "anonymous": "Anônimo"
+  },
   "nav": {
     "home": "Início",
     "resources": "Recursos",
