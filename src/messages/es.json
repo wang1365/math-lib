@@ -16,31 +16,60 @@
       "copyright": "© 2024 Biblioteca de Recursos Matemáticos. Todos los derechos reservados."
     }
   },
+  "contact": {
+    "title": "Contáctame",
+    "nameLabel": "Nombre",
+    "emailLabel": "Correo electrónico",
+    "messageLabel": "Contenido",
+    "sendButton": "Enviar correo",
+    "openClientButton": "Abrir cliente de correo",
+    "placeholderName": "Ingrese su nombre",
+    "placeholderEmail": "Su correo para respuesta",
+    "placeholderMessage": "Ingrese su pregunta o comentario",
+    "emailSubject": "Contacto del sitio de {name}",
+    "emailBodyTemplate": "Nombre: {name}\nCorreo: {email}\n\nContenido:\n{message}",
+    "anonymous": "Anónimo"
+  },
   "home": {
     "hero": {
       "title": "Explora las Posibilidades Infinitas de las Matemáticas",
+      "title1": "Explora las",
+      "title2": "Posibilidades Infinitas de las Matemáticas",
       "subtitle": "Reuniendo recursos de aprendizaje matemático de calidad global, proporcionando sistemas de conocimiento matemático completos y herramientas de aprendizaje. Desde matemáticas básicas hasta matemáticas avanzadas, de la teoría a la aplicación, haciendo el aprendizaje de las matemáticas más interesante y eficiente.",
-      "cta": "Comenzar a Aprender",
-      "ctaSecondary": "Explorar Ramas de las Matemáticas"
+      "cta": {
+        "start": "Comenzar a Aprender",
+        "branches": "Explorar Ramas de las Matemáticas"
+      }
     },
     "features": {
       "title": "Por Qué Elegirnos",
       "subtitle": "Nos comprometemos a proporcionar los recursos y herramientas de aprendizaje más de alta calidad y más completos para los estudiantes de matemáticas",
-      "richResources": {
+      "resources": {
         "title": "Recursos de Aprendizaje Ricos",
-        "description": "Reuniendo recursos de aprendizaje matemático de calidad global, incluyendo cursos en línea, libros de texto, libros, conferencias en video, etc."
+        "description": "Reúne recursos de aprendizaje matemático de calidad global, incluyendo cursos en línea, libros de texto y conferencias en video",
+        "subtitle": "Recursos matemáticos de alta calidad",
+        "platforms": "Plataformas de Aprendizaje en Línea",
+        "visit": "Visitar sitio"
       },
-      "powerfulTools": {
+      "tools": {
         "title": "Herramientas Matemáticas Poderosas",
-        "description": "Proporcionando varias herramientas de cálculo matemático y software de visualización para ayudar en el aprendizaje y la investigación de las matemáticas"
+        "description": "Proporciona diversas herramientas de cálculo y software de visualización para apoyar el aprendizaje y la investigación"
       },
-      "immersiveExperience": {
-        "title": "Experiencia de Aprendizaje Inmersiva",
-        "description": "Haciendo el aprendizaje de las matemáticas más vivo e interesante a través de plataformas de aprendizaje interactivas y contenido multimedia"
+      "videos": {
+        "title": "Cursos de Video Seleccionados",
+        "description": "Cursos y conferencias de matemáticas seleccionados de YouTube y otras plataformas"
       },
-      "curatedCourses": {
-        "title": "Cursos en Video Curados",
-        "description": "Excelentes cursos y conferencias de matemáticas seleccionadas de YouTube y otras plataformas"
+      "encyclopedia": {
+        "title": "Enciclopedia Matemática Integral",
+        "description": "Cubre conocimientos detallados y explicaciones de conceptos en varias ramas de las matemáticas"
+      },
+      "community": {
+        "title": "Comunidad Activa",
+        "description": "Conecta entusiastas de las matemáticas de todo el mundo, compartiendo experiencias de aprendizaje e ideas de solución"
+      },
+      "recommendations": {
+        "title": "Recomendaciones Inteligentes",
+        "description": "Basadas en tu progreso e intereses, recomienda inteligentemente recursos relacionados"
       }
     },
     "popularResources": {
@@ -101,5 +130,28 @@
   "examples": {
     "title": "Ejemplos de Fórmulas Matemáticas",
     "subtitle": "Mostrando la belleza y elegancia de las fórmulas matemáticas clásicas"
+  },
+  "calculator": {
+    "title": "Calculadora Matemática",
+    "subtitle": "Potente calculadora matemática en línea que admite operaciones básicas, cálculo científico, operaciones algebraicas y más.",
+    "description": "Usa nuestra calculadora en línea para operaciones matemáticas básicas",
+    "basic": "Modo Básico",
+    "scientific": "Modo Científico",
+    "clear": "Limpiar",
+    "equals": "Igual",
+    "history": "Historial",
+    "memory": "Memoria",
+    "backspace": "Retroceso",
+    "functions": {
+      "sin": "Seno",
+      "cos": "Coseno",
+      "tan": "Tangente",
+      "log": "Logaritmo",
+      "ln": "Logaritmo natural",
+      "sqrt": "Raíz cuadrada",
+      "pow": "Potencia",
+      "pi": "Pi",
+      "e": "Número de Euler"
+    }
   }
 }

@@ -16,6 +16,20 @@
       "copyright": "© 2024 Repositório de Recursos Matemáticos. Todos os direitos reservados."
     }
   },
+  "contact": {
+    "title": "Entre em contato",
+    "nameLabel": "Nome",
+    "emailLabel": "E-mail",
+    "messageLabel": "Mensagem",
+    "sendButton": "Enviar e-mail",
+    "openClientButton": "Abrir cliente de e-mail",
+    "placeholderName": "Digite seu nome",
+    "placeholderEmail": "Seu e-mail para resposta",
+    "placeholderMessage": "Digite sua dúvida ou feedback",
+    "emailSubject": "Contato do site de {name}",
+    "emailBodyTemplate": "Nome: {name}\nE-mail: {email}\n\nMensagem:\n{message}",
+    "anonymous": "Anônimo"
+  },
   "nav": {
     "home": "Início",
     "resources": "Recursos",
@@ -25,12 +39,22 @@
     "examples": "Exemplos"
   },
   "home": {
+    "hero": {
+      "title1": "Explore as",
+      "title2": "Infinitas Possibilidades da Matemática",
+      "subtitle": "Reunimos recursos de alta qualidade e fornecemos um sistema de conhecimento e ferramentas",
+      "cta": {
+        "start": "Começar a Aprender",
+        "branches": "Explorar Ramos da Matemática"
+      }
+    },
     "title": "Repositório de Recursos Matemáticos",
     "subtitle": "Explore as Infinitas Possibilidades da Matemática",
     "description": "Reunimos recursos de aprendizagem matemática de alta qualidade do mundo todo, fornecendo um sistema de conhecimento matemático abrangente e ferramentas de aprendizagem para entusiastas da matemática, estudantes e pesquisadores.",
-    "cta": "Começar a Aprender",
+    
     "features": {
       "title": "Por Que Escolher Nosso Repositório de Recursos",
+      "subtitle": "Comprometidos em oferecer recursos e ferramentas de alta qualidade e abrangentes",
       "comprehensive": {
         "title": "Recursos Abrangentes",
         "desc": "Cobrindo desde matemática básica até matemática avançada, atendendo a diferentes níveis de necessidades de aprendizagem"
@@ -43,9 +67,32 @@
         "title": "Ferramentas Interativas",
         "desc": "Ferramentas de aprendizagem interativas para tornar o aprendizado de matemática mais fácil e interessante"
       },
+      "resources": {
+        "title": "Recursos de Aprendizagem Ricos",
+        "description": "Reúne recursos matemáticos de qualidade global, incluindo cursos online, livros didáticos e conferências em vídeo",
+        "subtitle": "Recursos matemáticos de alta qualidade",
+        "platforms": "Plataformas de Aprendizagem Online",
+        "visit": "Visitar site"
+      },
+      "tools": {
+        "title": "Ferramentas Matemáticas Poderosas",
+        "description": "Fornece diversas ferramentas de cálculo e softwares de visualização para apoiar o aprendizado e a pesquisa"
+      },
+      "videos": {
+        "title": "Cursos em Vídeo Selecionados",
+        "description": "Cursos e palestras de matemática selecionados do YouTube e outras plataformas"
+      },
+      "encyclopedia": {
+        "title": "Enciclopédia Matemática Completa",
+        "description": "Cobre conhecimentos detalhados e explicações de conceitos em vários ramos da matemática"
+      },
       "community": {
-        "title": "Apoio Comunitário",
-        "desc": "Uma comunidade vibrante de entusiastas da matemática para compartilhar e discutir"
+        "title": "Comunidade Ativa",
+        "description": "Conecta entusiastas da matemática em todo o mundo para compartilhar experiências de aprendizado e ideias de solução"
+      },
+      "recommendations": {
+        "title": "Recomendações Inteligentes",
+        "description": "Recomenda inteligentemente recursos relevantes com base no seu progresso e interesses"
       }
     },
     "stats": {
@@ -174,5 +221,28 @@
     "privacy": "Política de Privacidade",
     "terms": "Termos de Serviço",
     "copyright": "© 2024 Repositório de Recursos Matemáticos. Todos os direitos reservados."
+  },
+  "calculator": {
+    "title": "Calculadora Matemática",
+    "subtitle": "Poderosa calculadora matemática online que suporta operações básicas, cálculo científico, operações algébricas e mais.",
+    "description": "Use nossa calculadora online para operações matemáticas básicas",
+    "basic": "Modo Básico",
+    "scientific": "Modo Científico",
+    "clear": "Limpar",
+    "equals": "Igual",
+    "history": "Histórico",
+    "memory": "Memória",
+    "backspace": "Retroceder",
+    "functions": {
+      "sin": "Seno",
+      "cos": "Cosseno",
+      "tan": "Tangente",
+      "log": "Logaritmo",
+      "ln": "Logaritmo natural",
+      "sqrt": "Raiz quadrada",
+      "pow": "Potência",
+      "pi": "Pi",
+      "e": "Número de Euler"
+    }
   }
 }

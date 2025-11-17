@@ -1,11 +1,16 @@
+"use client"
+
 import AdBanner from '@/app/components/AdBanner'
-import Layout from '@/app/components/LayoutIntl'
 import { Calculator, BookOpen, Video, Globe, ExternalLink, Star, Users } from 'lucide-react'
 import Link from 'next/link'
 import { useTranslations } from 'next-intl'
+import { useLocale } from 'next-intl'
 
 export default function ResourcesPage() {
   const t = useTranslations('resources');
+  const locale = useLocale();
+  const withLocale = (href: string) =>
+    locale === 'zh-CN' ? href : `/${locale}${href.startsWith('/') ? href : `/${href}`}`
   
   const resourceCategories = [
     {
@@ -98,16 +103,15 @@ export default function ResourcesPage() {
   }
 
   return (
-    <Layout>
-      <div className="py-16 px-4 sm:px-6 lg:px-8">
+    <div className="py-4 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
           {/* Ad Banner - Top */}
-          <div className="mb-8 text-center">
+          <div className="mb-4 text-center">
             <AdBanner slot="1234567890" format="horizontal" responsive={true} />
           </div>
 
           {/* Page Header */}
-          <div className="text-center mb-12">
+          <div className="text-center mb-6">
             <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
               {t('title')}
             </h1>
@@ -120,16 +124,11 @@ export default function ResourcesPage() {
           <div className="space-y-16">
             {resourceCategories.map((category, categoryIndex) => (
               <div key={categoryIndex} className="">
-                <div className="flex items-center mb-8">
+                <div className="flex items-center mb-4">
                   <div className={`w-12 h-12 rounded-lg bg-gradient-to-r ${category.color} flex items-center justify-center mr-4`}>
                     <category.icon className="w-6 h-6 text-white" />
                   </div>
                   <h2 className="text-3xl font-bold text-gray-900">{category.title}</h2>
-                </div>
-                
-                {/* Ad Banner - Middle */}
-                <div className="mb-8 text-center">
-                  <AdBanner slot="2345678901" format="rectangle" responsive={true} />
                 </div>
                 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -192,13 +191,13 @@ export default function ResourcesPage() {
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Link
-                  href="/branches"
+                  href={withLocale('/branches')}
                   className="bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors duration-300"
                 >
                   {t('moreResources.browseBranches')}
                 </Link>
                 <Link
-                  href="/tools"
+                  href={withLocale('/tools')}
                   className="border-2 border-blue-600 text-blue-600 px-6 py-3 rounded-lg font-semibold hover:bg-blue-600 hover:text-white transition-colors duration-300"
                 >
                   {t('moreResources.viewTools')}
@@ -208,6 +207,6 @@ export default function ResourcesPage() {
           </div>
         </div>
       </div>
-    </Layout>
+    
   )
 }

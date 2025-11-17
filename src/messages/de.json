@@ -16,6 +16,20 @@
       "copyright": "© 2024 Mathematik-Ressourcen-Repository. Alle Rechte vorbehalten."
     }
   },
+  "contact": {
+    "title": "Kontakt",
+    "nameLabel": "Name",
+    "emailLabel": "E-Mail",
+    "messageLabel": "Nachricht",
+    "sendButton": "E-Mail senden",
+    "openClientButton": "Mail-Client öffnen",
+    "placeholderName": "Geben Sie Ihren Namen ein",
+    "placeholderEmail": "Ihre Antwort-E-Mail",
+    "placeholderMessage": "Geben Sie Ihre Frage oder Ihr Feedback ein",
+    "emailSubject": "Website-Kontakt von {name}",
+    "emailBodyTemplate": "Name: {name}\nE-Mail: {email}\n\nNachricht:\n{message}",
+    "anonymous": "Anonym"
+  },
   "nav": {
     "home": "Startseite",
     "resources": "Ressourcen",
@@ -25,12 +39,22 @@
     "examples": "Beispiele"
   },
   "home": {
+    "hero": {
+      "title1": "Entdecken Sie die",
+      "title2": "Unendlichen Möglichkeiten der Mathematik",
+      "subtitle": "Wir sammeln hochwertige Lernressourcen und bieten ein umfassendes Wissenssystem und Werkzeuge",
+      "cta": {
+        "start": "Lernen beginnen",
+        "branches": "Mathematik-Bereiche erkunden"
+      }
+    },
     "title": "Mathematik-Ressourcen-Repository",
     "subtitle": "Entdecken Sie die Unendlichen Möglichkeiten der Mathematik",
     "description": "Wir sammeln hochwertige Mathematik-Lernressourcen aus der ganzen Welt und bieten ein umfassendes mathematisches Wissenssystem und Lernwerkzeuge für Mathematik-Enthusiasten, Studenten und Forscher.",
-    "cta": "Lernen beginnen",
+    
     "features": {
       "title": "Warum unser Ressourcen-Repository wählen",
+      "subtitle": "Wir stellen die hochwertigsten und umfassendsten Lernressourcen und Werkzeuge bereit",
       "comprehensive": {
         "title": "Umfassende Ressourcen",
         "desc": "Abgedeckt von Grundmathematik bis zur höheren Mathematik, um verschiedene Lernbedürfnisse zu erfüllen"
@@ -43,9 +67,32 @@
         "title": "Interaktive Werkzeuge",
         "desc": "Interaktive Lernwerkzeuge, die das Mathematiklernen einfacher und interessanter machen"
       },
+      "resources": {
+        "title": "Reiche Lernressourcen",
+        "description": "Globale hochwertige Mathematik-Lernressourcen, einschließlich Online-Kurse, Lehrbücher und Videovorlesungen",
+        "subtitle": "Hochwertige Mathematik-Lernressourcen",
+        "platforms": "Online-Lernplattformen",
+        "visit": "Website besuchen"
+      },
+      "tools": {
+        "title": "Leistungsstarke Mathematik-Werkzeuge",
+        "description": "Verschiedene Rechenwerkzeuge und Visualisierungssoftware zur Unterstützung von Lernen und Forschung"
+      },
+      "videos": {
+        "title": "Ausgewählte Videokurse",
+        "description": "Ausgewählte hervorragende Mathematikkurse und Vorlesungen von YouTube und anderen Plattformen"
+      },
+      "encyclopedia": {
+        "title": "Umfassende Mathematik-Enzyklopädie",
+        "description": "Umfasst detailliertes Wissen und Konzept-Erklärungen in verschiedenen Zweigen der Mathematik"
+      },
       "community": {
-        "title": "Community-Unterstützung",
-        "desc": "Eine lebendige Gemeinschaft von Mathematik-Enthusiasten zum Teilen und Diskutieren"
+        "title": "Aktive Community",
+        "description": "Verbindet Mathematik-Enthusiasten weltweit, um Lernerfahrungen und Lösungsansätze zu teilen"
+      },
+      "recommendations": {
+        "title": "Intelligente Empfehlungen",
+        "description": "Empfiehlt basierend auf deinem Lernfortschritt und Interessen relevante Ressourcen"
       }
     },
     "stats": {
@@ -174,5 +221,28 @@
     "privacy": "Datenschutzrichtlinie",
     "terms": "Nutzungsbedingungen",
     "copyright": "© 2024 Mathematik-Ressourcen-Repository. Alle Rechte vorbehalten."
+  },
+  "calculator": {
+    "title": "Mathematischer Rechner",
+    "subtitle": "Leistungsstarker Online‑Rechner für Grundrechenarten, wissenschaftliche Berechnungen und algebraische Operationen.",
+    "description": "Verwenden Sie unseren Online‑Rechner für grundlegende mathematische Operationen",
+    "basic": "Basismodus",
+    "scientific": "Wissenschaftsmodus",
+    "clear": "Löschen",
+    "equals": "Gleich",
+    "history": "Verlauf",
+    "memory": "Speicher",
+    "backspace": "Rücktaste",
+    "functions": {
+      "sin": "Sinus",
+      "cos": "Kosinus",
+      "tan": "Tangens",
+      "log": "Logarithmus",
+      "ln": "Natürlicher Logarithmus",
+      "sqrt": "Quadratwurzel",
+      "pow": "Potenz",
+      "pi": "Pi",
+      "e": "Eulersche Zahl"
+    }
   }
 }

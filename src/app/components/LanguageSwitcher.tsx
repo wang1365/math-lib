@@ -16,8 +16,9 @@ export default function LanguageSwitcher() {
 
   const handleLanguageChange = (newLocale: Locale) => {
     startTransition(() => {
-      // Remove the current locale from the pathname
-      const pathWithoutLocale = pathname.replace(/^\/[a-z]{2}(-[A-Z]{2})?/, '') || '/'
+      // Remove only a valid locale prefix from the pathname
+      const localePrefixPattern = /^\/(zh-CN|zh-TW|en|fr|ja|es|pt|ko|ar|de)(?=\/|$)/
+      const pathWithoutLocale = pathname.replace(localePrefixPattern, '') || '/'
       const normalizedPath = pathWithoutLocale.startsWith('/') ? pathWithoutLocale : `/${pathWithoutLocale}`
       
       // Navigate to the new locale
@@ -34,9 +35,9 @@ export default function LanguageSwitcher() {
 
   return (
     <div className="relative group">
-      <button className="flex items-center space-x-2 px-3 py-2 rounded-lg bg-white/80 hover:bg-white border border-gray-200 text-sm font-medium text-gray-700 hover:text-blue-600 transition-all duration-200">
+      <button className="flex items-center space-x-2 px-3 py-2 rounded-lg bg-white/80 hover:bg-white border border-gray-200 text-sm font-medium text-gray-700 hover:text-blue-600 transition-all duration-200 whitespace-nowrap">
         <Globe className="w-4 h-4" />
-        <span>{locales.find(l => l.code === currentLocale)?.flag} {locales.find(l => l.code === currentLocale)?.name}</span>
+        <span className="whitespace-nowrap">{locales.find(l => l.code === currentLocale)?.flag} {locales.find(l => l.code === currentLocale)?.name}</span>
         <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
         </svg>

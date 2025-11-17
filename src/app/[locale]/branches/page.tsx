@@ -1,4 +1,3 @@
-import Layout from '@/app/components/LayoutIntl'
 import { Brain, Hash, Shapes, BarChart3, FunctionSquare, Atom, Network, PieChart } from 'lucide-react'
 import Link from 'next/link'
 import { useTranslations } from 'next-intl'
@@ -102,8 +101,7 @@ export default function BranchesPage() {
   ]
 
   return (
-    <Layout>
-      <div className="py-16 px-4 sm:px-6 lg:px-8">
+    <div className="py-16 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
           {/* Page Header */}
           <div className="text-center mb-16">
@@ -188,6 +186,6 @@ export default function BranchesPage() {
           </div>
         </div>
       </div>
-    </Layout>
+    
   )
 }

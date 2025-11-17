@@ -1,6 +1,4 @@
 'use client'
-
-import Layout from '@/app/components/LayoutIntl'
 import MathFormula from '@/app/components/MathFormula'
 import { BookOpen, Calculator, PenTool, Brain } from 'lucide-react'
 import { useTranslations } from 'next-intl'
@@ -66,8 +64,7 @@ export default function MathExamplesPage() {
   ]
 
   return (
-    <Layout>
-      <div className="py-16 px-4 sm:px-6 lg:px-8">
+    <div className="py-16 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
           {/* Page Header */}
           <div className="text-center mb-12">
@@ -156,6 +153,6 @@ export default function MathExamplesPage() {
           </div>
         </div>
       </div>
-    </Layout>
+    
   )
 }

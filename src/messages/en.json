@@ -16,6 +16,20 @@
       "copyright": "© 2024 Math Resources Repository. All rights reserved."
     }
   },
+  "contact": {
+    "title": "Contact Me",
+    "nameLabel": "Name",
+    "emailLabel": "Email",
+    "messageLabel": "Message",
+    "sendButton": "Send Email",
+    "openClientButton": "Open mail client",
+    "placeholderName": "Enter your name",
+    "placeholderEmail": "Your reply-to email",
+    "placeholderMessage": "Enter your question or feedback",
+    "emailSubject": "Website contact from {name}",
+    "emailBodyTemplate": "Name: {name}\nEmail: {email}\n\nMessage:\n{message}",
+    "anonymous": "Anonymous"
+  },
   "nav": {
     "home": "Home",
     "resources": "Resources",
@@ -40,7 +54,10 @@
       "subtitle": "We are committed to providing the most qualified and comprehensive learning resources and tools for mathematics learners",
       "resources": {
         "title": "Rich Learning Resources",
-        "description": "Bringing together global quality mathematics learning resources, including online courses, textbooks, video lectures, etc."
+        "description": "Bringing together global quality mathematics learning resources, including online courses, textbooks, video lectures, etc.",
+        "subtitle": "Curated high-quality mathematics resources",
+        "platforms": "Learning Platforms",
+        "visit": "Visit Site"
       },
       "tools": {
         "title": "Powerful Mathematics Tools",
@@ -364,6 +381,29 @@
       "desmos": "Free online graphing calculator with user-friendly interface",
       "geogebra": "Dynamic mathematics software supporting geometry, algebra, statistics, etc.",
       "visit": "Visit Website"
+    }
+  },
+  "calculator": {
+    "title": "Mathematics Calculator",
+    "subtitle": "Powerful online mathematics calculator supporting basic operations, scientific calculation, algebraic operations, and more.",
+    "description": "Use our online calculator for basic math operations",
+    "basic": "Basic Mode",
+    "scientific": "Scientific Mode",
+    "clear": "Clear",
+    "equals": "Equals",
+    "history": "History",
+    "memory": "Memory",
+    "backspace": "Backspace",
+    "functions": {
+      "sin": "Sine",
+      "cos": "Cosine",
+      "tan": "Tangent",
+      "log": "Logarithm",
+      "ln": "Natural Logarithm",
+      "sqrt": "Square Root",
+      "pow": "Power",
+      "pi": "Pi",
+      "e": "Euler's Number"
     }
   }
 }

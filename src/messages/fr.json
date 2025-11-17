@@ -16,31 +16,60 @@
       "copyright": "© 2024 Bibliothèque de Ressources Mathématiques. Tous droits réservés."
     }
   },
+  "contact": {
+    "title": "Me contacter",
+    "nameLabel": "Nom",
+    "emailLabel": "E-mail",
+    "messageLabel": "Message",
+    "sendButton": "Envoyer l'e-mail",
+    "openClientButton": "Ouvrir le client mail",
+    "placeholderName": "Entrez votre nom",
+    "placeholderEmail": "Votre e-mail de réponse",
+    "placeholderMessage": "Saisissez votre question ou votre retour",
+    "emailSubject": "Contact du site de {name}",
+    "emailBodyTemplate": "Nom : {name}\nE-mail : {email}\n\nMessage :\n{message}",
+    "anonymous": "Anonyme"
+  },
   "home": {
     "hero": {
       "title": "Explorer les Possibilités Infinies des Mathématiques",
+      "title1": "Explorer les",
+      "title2": "Possibilités Infinies des Mathématiques",
       "subtitle": "Rassembler des ressources d'apprentissage mathématiques de qualité mondiale, fournissant des systèmes de connaissances mathématiques complets et des outils d'apprentissage. Des mathématiques de base aux mathématiques avancées, de la théorie à l'application, rendre l'apprentissage des mathématiques plus intéressant et efficace.",
-      "cta": "Commencer à Apprendre",
-      "ctaSecondary": "Parcourir les Branches des Mathématiques"
+      "cta": {
+        "start": "Commencer à Apprendre",
+        "branches": "Parcourir les Branches des Mathématiques"
+      }
     },
     "features": {
       "title": "Pourquoi Nous Choisir",
       "subtitle": "Nous nous engageons à fournir les ressources et outils d'apprentissage les plus de haute qualité et les plus complets pour les apprenants en mathématiques",
-      "richResources": {
-        "title": "Riches Ressources d'Apprentissage",
-        "description": "Rassembler des ressources d'apprentissage mathématiques de qualité mondiale, incluant des cours en ligne, des manuels, des livres, des conférences vidéo, etc."
+      "resources": {
+        "title": "Ressources d'Apprentissage Riches",
+        "description": "Rassemble des ressources mathématiques de qualité mondiale, incluant des cours en ligne, des manuels et des conférences vidéo",
+        "subtitle": "Ressources mathématiques de haute qualité",
+        "platforms": "Plateformes d'Apprentissage en Ligne",
+        "visit": "Visiter le site"
       },
-      "powerfulTools": {
+      "tools": {
         "title": "Outils Mathématiques Puissants",
-        "description": "Fournir divers outils de calcul mathématique et logiciels de visualisation pour aider à l'apprentissage et à la recherche en mathématiques"
+        "description": "Fournit divers outils de calcul et des logiciels de visualisation pour soutenir l'apprentissage et la recherche"
       },
-      "immersiveExperience": {
-        "title": "Expérience d'Apprentissage Immersive",
-        "description": "Rendre l'apprentissage des mathématiques plus vivant et intéressant grâce à des plateformes d'apprentissage interactives et du contenu multimédia"
-      },
-      "curatedCourses": {
+      "videos": {
         "title": "Cours Vidéo Sélectionnés",
-        "description": "Excellentes cours et conférences de mathématiques sélectionnées sur YouTube et d'autres plateformes"
+        "description": "Cours et conférences de mathématiques sélectionnés depuis YouTube et d'autres plateformes"
+      },
+      "encyclopedia": {
+        "title": "Encyclopédie Mathématique Complète",
+        "description": "Couvre des connaissances détaillées et des explications de concepts dans diverses branches des mathématiques"
+      },
+      "community": {
+        "title": "Communauté Active",
+        "description": "Relie des passionnés de mathématiques du monde entier pour partager expériences et idées de résolution"
+      },
+      "recommendations": {
+        "title": "Recommandations Intelligentes",
+        "description": "Recommande intelligemment des ressources pertinentes selon vos progrès et intérêts"
       }
     },
     "popularResources": {
@@ -101,5 +130,28 @@
   "examples": {
     "title": "Exemples de Formules Mathématiques",
     "subtitle": "Présentant la beauté et l'élégance des formules mathématiques classiques"
+  },
+  "calculator": {
+    "title": "Calculatrice Mathématique",
+    "subtitle": "Puissante calculatrice mathématique en ligne prenant en charge les opérations de base, le calcul scientifique, les opérations algébriques, etc.",
+    "description": "Utilisez notre calculatrice en ligne pour les opérations mathématiques de base",
+    "basic": "Mode Basique",
+    "scientific": "Mode Scientifique",
+    "clear": "Effacer",
+    "equals": "Égal",
+    "history": "Historique",
+    "memory": "Mémoire",
+    "backspace": "Retour arrière",
+    "functions": {
+      "sin": "Sinus",
+      "cos": "Cosinus",
+      "tan": "Tangente",
+      "log": "Logarithme",
+      "ln": "Logarithme naturel",
+      "sqrt": "Racine carrée",
+      "pow": "Puissance",
+      "pi": "Pi",
+      "e": "Nombre d'Euler"
+    }
   }
 }

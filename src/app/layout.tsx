@@ -4,6 +4,7 @@ import Script from 'next/script';
 import { locales, defaultLocale } from '@/config/i18n';
 import './globals.css';
 import { Metadata } from 'next';
+import Analytics from './components/Analytics';
  
 
 export function generateStaticParams() {
@@ -77,14 +78,14 @@ export default async function RootLayout({
 }) {
   const { locale: paramsLocale } = await params;
   let locale = paramsLocale || defaultLocale;
-  
+  const messages = await getMessages();
+  const GA_ID = process.env.NEXT_PUBLIC_GA_ID || '';
   // Ensure the locale is valid
   if (!locales.some(l => l.code === locale)) {
     // Redirect to default locale if invalid
     locale = defaultLocale;
   }
 
-  const messages = await getMessages();
 
   return (
     <html lang={locale}>
@@ -106,7 +107,7 @@ export default async function RootLayout({
 
         {/* Google Analytics */}
         <Script
-          src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"
+          src={`https://www.googletagmanager.com/gtag/js?id=G-C1QDG4M016`}
           strategy="afterInteractive"
         />
         <Script id="gtag-init" strategy="afterInteractive">
@@ -114,14 +115,31 @@ export default async function RootLayout({
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
-            gtag('config', 'G-XXXXXXXXXX');
+            gtag('config', 'G-C1QDG4M016');
           `}
         </Script>
       </head>
       <body>
-        <NextIntlClientProvider messages={messages}>
+        <NextIntlClientProvider locale={locale} messages={messages}>
           {children}
         </NextIntlClientProvider>
+        {GA_ID && (
+          <>
+            <Script
+              src={`https://www.googletagmanager.com/gtag/js?id=G-C1QDG4M016`}
+              strategy="afterInteractive"
+            />
+            <Script id="gtag-init" strategy="afterInteractive">
+              {`
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){dataLayer.push(arguments);} 
+                gtag('js', new Date());
+                gtag('config', 'G-C1QDG4M016');
+              `}
+            </Script>
+          </>
+        )}
+        {GA_ID && <Analytics gaId='G-C1QDG4M016' />}
       </body>
     </html>
   );

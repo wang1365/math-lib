@@ -16,31 +16,60 @@
       "copyright": "© 2024 数学リソースライブラリ. All rights reserved."
     }
   },
+  "contact": {
+    "title": "お問い合わせ",
+    "nameLabel": "お名前",
+    "emailLabel": "メール",
+    "messageLabel": "内容",
+    "sendButton": "メールを送信",
+    "openClientButton": "メールクライアントを開く",
+    "placeholderName": "お名前を入力してください",
+    "placeholderEmail": "返信用メールアドレス",
+    "placeholderMessage": "質問やフィードバックを入力してください",
+    "emailSubject": "{name} からのお問い合わせ",
+    "emailBodyTemplate": "名前: {name}\nメール: {email}\n\n内容:\n{message}",
+    "anonymous": "匿名"
+  },
   "home": {
     "hero": {
       "title": "数学の無限の可能性を探索",
+      "title1": "数学の",
+      "title2": "無限の可能性",
       "subtitle": "世界中の優れた数学学習リソースを集め、学習者のための包括的な数学知識体系と学習ツールを提供します。基礎数学から高等数学まで、理論から応用まで、数学学習をより面白く効率的にします。",
-      "cta": "学習を開始",
-      "ctaSecondary": "数学の分野を見る"
+      "cta": {
+        "start": "学習を開始",
+        "branches": "数学の分野を見る"
+      }
     },
     "features": {
       "title": "なぜ私たちを選ぶのか",
       "subtitle": "数学学習者に最高品質で最も包括的な学習リソースとツールを提供することに尽力しています",
-      "richResources": {
+      "resources": {
         "title": "豊富な学習リソース",
-        "description": "世界中の優れた数学学習リソースを集め、オンラインコース、教科書、書籍、ビデオ講義などを含む"
+        "description": "世界中の高品質な数学学習リソースを集め、オンラインコース、教科書、ビデオ講義などを含みます",
+        "subtitle": "高品質な数学学習リソース",
+        "platforms": "オンライン学習プラットフォーム",
+        "visit": "サイトを訪問"
       },
-      "powerfulTools": {
+      "tools": {
         "title": "強力な数学ツール",
-        "description": "数学学習と研究を支援する、さまざまな数学計算ツールと可視化ソフトウェアを提供"
+        "description": "学習と研究を支援する各種計算ツールと可視化ソフトウェアを提供します"
       },
-      "immersiveExperience": {
-        "title": "没入型学習体験",
-        "description": "インタラクティブな学習プラットフォームとマルチメディアコンテンツを通じて、数学学習をより生き生きと面白くする"
-      },
-      "curatedCourses": {
+      "videos": {
         "title": "厳選されたビデオコース",
-        "description": "YouTubeや他のプラットフォームから厳選された優れた数学コースと講義"
+        "description": "YouTube 等のプラットフォームから厳選された優れた数学コースと講義"
+      },
+      "encyclopedia": {
+        "title": "包括的な数学百科事典",
+        "description": "各数学分野の詳細な知識と概念解説を網羅します"
+      },
+      "community": {
+        "title": "活発なコミュニティ",
+        "description": "世界中の数学愛好家をつなぎ、学習体験や問題解決のアイデアを共有します"
+      },
+      "recommendations": {
+        "title": "スマートレコメンド",
+        "description": "学習進捗と興味に基づき、関連する数学リソースを賢く推薦します"
       }
     },
     "popularResources": {
@@ -101,5 +130,28 @@
   "examples": {
     "title": "数学公式例",
     "subtitle": "古典的な数学公式の美しさと優雅さを展示"
+  },
+  "calculator": {
+    "title": "数学計算機",
+    "subtitle": "強力なオンライン数学計算機。基礎演算、科学計算、代数演算などに対応。",
+    "description": "オンライン計算機で基礎的な数学演算を行います",
+    "basic": "基本モード",
+    "scientific": "科学モード",
+    "clear": "クリア",
+    "equals": "イコール",
+    "history": "履歴",
+    "memory": "メモリ",
+    "backspace": "バックスペース",
+    "functions": {
+      "sin": "サイン",
+      "cos": "コサイン",
+      "tan": "タンジェント",
+      "log": "対数",
+      "ln": "自然対数",
+      "sqrt": "平方根",
+      "pow": "べき乗",
+      "pi": "円周率",
+      "e": "自然定数"
+    }
   }
 }

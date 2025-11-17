@@ -49,6 +49,8 @@ export default function CalculatorPage() {
         return firstValue * secondValue
       case '÷':
         return firstValue / secondValue
+      case 'pow':
+        return Math.pow(firstValue, secondValue)
       case '=':
         return secondValue
       default:
@@ -94,6 +96,49 @@ export default function CalculatorPage() {
     )
   }
 
+  const insertConstant = (value: number) => {
+    setDisplay(String(value))
+    setWaitingForOperand(false)
+  }
+
+  const applyUnary = (type: string) => {
+    const x = parseFloat(display)
+    if (!Number.isFinite(x)) return
+    let r = x
+    switch (type) {
+      case 'sin':
+        r = Math.sin(x)
+        break
+      case 'cos':
+        r = Math.cos(x)
+        break
+      case 'tan':
+        r = Math.tan(x)
+        break
+      case 'log':
+        r = Math.log10 ? Math.log10(x) : Math.log(x) / Math.LN10
+        break
+      case 'ln':
+        r = Math.log(x)
+        break
+      case 'sqrt':
+        r = Math.sqrt(x)
+        break
+    }
+    setDisplay(String(r))
+    setWaitingForOperand(true)
+  }
+
+  const startPow = () => {
+    const x = parseFloat(display)
+    setPreviousValue(x)
+    setOperation('pow')
+    setWaitingForOperand(true)
+  }
+
+  const whiteBtnClass = "h-16 rounded-lg font-semibold text-lg transition-all duration-200 active:scale-95 bg-gray-100 hover:bg-gray-200 text-gray-800";
+  const blueBtnClass = "h-16 rounded-lg font-semibold text-lg transition-all duration-200 active:scale-95 bg-blue-500 hover:bg-blue-600 text-white";
+                  
   return (
     <Layout>
       <div className="py-16 px-4 sm:px-6 lg:px-8">
@@ -117,35 +162,82 @@ export default function CalculatorPage() {
 
                 {/* Button Grid */}
                 <div className="grid grid-cols-4 gap-2">
-                  <Button onClick={clearAll} variant="clear" className="col-span-2">{t('clear')}</Button>
-                  <Button onClick={() => inputOperation('÷')} variant="operator">
+                  <button
+                    onClick={clearAll}
+                    className="h-16 rounded-lg font-semibold text-lg transition-all duration-200 active:scale-95 bg-red-500 hover:bg-red-600 text-white col-span-2"
+                  >
+                    {t('clear')}
+                  </button>
+                  <button
+                    onClick={() => setDisplay(display.slice(0, -1) || '0')}
+                    className={ blueBtnClass }
+                  >
+                    {t('backspace')}
+                  </button>
+                  <button
+                    onClick={() => inputOperation('÷')}
+                    className={ blueBtnClass }
+                  >
                     <Divide className="w-5 h-5 mx-auto" />
-                  </Button>
-                  <Button onClick={() => inputOperation('×')} variant="operator">
-                    <X className="w-5 h-5 mx-auto" />
-                  </Button>
+                  </button>
 
-                  <Button onClick={() => inputNumber('7')}>7</Button>
-                  <Button onClick={() => inputNumber('8')}>8</Button>
-                  <Button onClick={() => inputNumber('9')}>9</Button>
-                  <Button onClick={() => inputOperation('-')} variant="operator">
+                  <button
+                    onClick={() => inputNumber('7')}
+                    className={whiteBtnClass}
+                  >
+                    7
+                  </button>
+                  <button
+                    onClick={() => inputNumber('8')}
+                    className={whiteBtnClass}
+                  >
+                    8
+                  </button>
+                  <button
+                    onClick={() => inputNumber('9')}
+                    className={whiteBtnClass}
+                  >
+                    9
+                  </button>
+                  <button
+                    onClick={() => inputOperation('-')}
+                    className={ blueBtnClass }
+                  >
                     <Minus className="w-5 h-5 mx-auto" />
-                  </Button>
+                  </button>
 
-                  <Button onClick={() => inputNumber('4')}>4</Button>
-                  <Button onClick={() => inputNumber('5')}>5</Button>
-                  <Button onClick={() => inputNumber('6')}>6</Button>
-                  <Button onClick={() => inputOperation('+')} variant="operator">
+                  <button onClick={() => inputNumber('4')} className={whiteBtnClass}> 4 </button>
+                  <button onClick={() => inputNumber('5')} className={whiteBtnClass}> 5 </button>
+                  <button onClick={() => inputNumber('6')} className={whiteBtnClass}> 6 </button>
+                  <button onClick={() => inputOperation('+')} className={ blueBtnClass }>
                     <Plus className="w-5 h-5 mx-auto" />
-                  </Button>
+                  </button>
 
-                  <Button onClick={() => inputNumber('1')}>1</Button>
-                  <Button onClick={() => inputNumber('2')}>2</Button>
-                  <Button onClick={() => inputNumber('3')}>3</Button>
-                  <Button onClick={performCalculation} variant="equals" className="row-span-2">{t('equals')}</Button>
+                  <button onClick={() => inputNumber('1')} className={whiteBtnClass}> 1 </button>
+                  <button onClick={() => inputNumber('2')} className={whiteBtnClass}> 2 </button>
+                  <button onClick={() => inputNumber('3')} className={whiteBtnClass}> 3 </button>
+                  <button
+                    onClick={performCalculation}
+                    className="row-span-2 h-16 rounded-lg font-semibold text-lg transition-all duration-200 active:scale-95 bg-green-500 hover:bg-green-600 text-white"
+                  >
+                    {t('equals')}
+                  </button>
 
-                  <Button onClick={() => inputNumber('0')} className="col-span-2">0</Button>
-                  <Button onClick={() => inputNumber('.')}>.</Button>
+                  <button onClick={() => inputNumber('0')} className={whiteBtnClass}> 0 </button>
+                  <button onClick={() => inputNumber('.')} className={whiteBtnClass}>.</button>
+                </div>
+
+                <div className="mt-4 grid grid-cols-4 gap-2">
+                  <button onClick={() => insertConstant(Math.PI)} className={blueBtnClass}>{t('functions.pi')}</button>
+                  <button onClick={() => insertConstant(Math.E)} className={blueBtnClass}>{t('functions.e')}</button>
+                  <button onClick={() => applyUnary('sqrt')} className={blueBtnClass}>{t('functions.sqrt')}</button>
+                  <button onClick={() => inputOperation('×')} className={blueBtnClass}>×</button>
+                  <button onClick={() => applyUnary('sin')} className={blueBtnClass}>{t('functions.sin')}</button>
+                  <button onClick={() => applyUnary('cos')} className={blueBtnClass}>{t('functions.cos')}</button>
+                  <button onClick={() => applyUnary('tan')} className={blueBtnClass}>{t('functions.tan')}</button>
+                  <button onClick={startPow} className={blueBtnClass}>{t('functions.pow')}</button>
+                  <button onClick={() => applyUnary('log')} className={blueBtnClass}>{t('functions.log')}</button>
+                  <button onClick={() => applyUnary('ln')} className={blueBtnClass}> {t('functions.ln')} </button>
                 </div>
               </div>
             </div>
