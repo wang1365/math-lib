@@ -1,10 +1,15 @@
-import { useTranslations } from 'next-intl';
+import { getTranslations, getLocale } from 'next-intl/server';
 import Layout from './components/LayoutIntl';
 import { Calculator, BookOpen, Video, Globe, Users, Sparkles } from 'lucide-react';
 import Link from 'next/link';
 
-export default function Home() {
-  const t = useTranslations('home');
+export default async function Home() {
+  const t = await getTranslations('home');
+  const locale = await getLocale();
+  const withLocale = (href: string) => {
+    const normalized = href.startsWith('/') ? href : `/${href}`;
+    return locale !== 'zh-CN' ? `/${locale}${normalized}` : normalized;
+  };
   
   const features = [
     {
@@ -65,7 +70,7 @@ export default function Home() {
   ];
 
   return (
-    <div>
+    <Layout locale={locale}>
       <section className="relative py-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto text-center">
           <div className="mb-8">
@@ -80,13 +85,13 @@ export default function Home() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
-                href="/resources"
+                href={withLocale('/resources')}
                 className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-8 py-3 rounded-lg font-semibold hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1"
               >
                 {t('hero.cta.start')}
               </Link>
               <Link
-                href="/branches"
+                href={withLocale('/branches')}
                 className="border-2 border-blue-600 text-blue-600 px-8 py-3 rounded-lg font-semibold hover:bg-blue-600 hover:text-white transition-all duration-300"
               >
                 {t('hero.cta.branches')}
@@ -175,13 +180,13 @@ export default function Home() {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
-              href="/resources"
+              href={withLocale('/resources')}
               className="bg-white text-blue-600 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-all duration-300"
             >
               {t('cta.explore')}
             </Link>
             <Link
-              href="/branches"
+              href={withLocale('/branches')}
               className="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-blue-600 transition-all duration-300"
             >
               {t('cta.branches')}
@@ -189,6 +194,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-    </div>
+    </Layout>
   );
 }

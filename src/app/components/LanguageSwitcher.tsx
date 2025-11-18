@@ -21,14 +21,8 @@ export default function LanguageSwitcher() {
       const pathWithoutLocale = pathname.replace(localePrefixPattern, '') || '/'
       const normalizedPath = pathWithoutLocale.startsWith('/') ? pathWithoutLocale : `/${pathWithoutLocale}`
       
-      // Navigate to the new locale
-      if (newLocale === 'zh-CN') {
-        // Default locale, no prefix
-        router.push(normalizedPath)
-      } else {
-        // Other locales need prefix
-        router.push(`/${newLocale}${normalizedPath}`)
-      }
+      const target = `/${newLocale}${normalizedPath}`
+      router.push(target)
       router.refresh()
     })
   }

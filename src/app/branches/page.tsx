@@ -1,11 +1,10 @@
 import Layout from '../components/LayoutIntl';
 import { Brain, Hash, Shapes, BarChart3, FunctionSquare, Atom, Network, PieChart } from 'lucide-react'
 import Link from 'next/link'
-import { useTranslations } from 'next-intl'
-import { getLocale } from 'next-intl/server'
+import { getTranslations, getLocale } from 'next-intl/server'
 
 export default async function BranchesPage() {
-  const t = useTranslations('branches');
+  const t = await getTranslations('branches');
   const locale = await getLocale();
   const withLocale = (href: string) => {
     const normalized = href.startsWith('/') ? href : `/${href}`;

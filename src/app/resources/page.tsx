@@ -2,10 +2,15 @@ import AdBanner from '@/app/components/AdBanner'
 import Layout from '../components/LayoutIntl';
 import { Calculator, BookOpen, Video, Globe, ExternalLink, Star, Users } from 'lucide-react'
 import Link from 'next/link'
-import { useTranslations } from 'next-intl'
+import { getTranslations, getLocale } from 'next-intl/server'
 
-export default function ResourcesPage() {
-  const t = useTranslations('resources')
+export default async function ResourcesPage() {
+  const t = await getTranslations('resources')
+  const locale = await getLocale()
+  const withLocale = (href: string) => {
+    const normalized = href.startsWith('/') ? href : `/${href}`
+    return locale !== 'zh-CN' ? `/${locale}${normalized}` : normalized
+  }
   const resourceCategories = [
     {
       title: t('platforms.title'),
@@ -97,7 +102,7 @@ export default function ResourcesPage() {
   }
 
   return (
-    <Layout>
+    <Layout locale={locale}>
       <div className="py-4 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
           <div className="mb-4 text-center">
@@ -184,13 +189,13 @@ export default function ResourcesPage() {
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Link
-                  href="/branches"
+                  href={withLocale('/branches')}
                   className="bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors duration-300"
                 >
                   {t('moreResources.browseBranches')}
                 </Link>
                 <Link
-                  href="/tools"
+                  href={withLocale('/tools')}
                   className="border-2 border-blue-600 text-blue-600 px-6 py-3 rounded-lg font-semibold hover:bg-blue-600 hover:text-white transition-colors duration-300"
                 >
                   {t('moreResources.viewTools')}
