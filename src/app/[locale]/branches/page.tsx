@@ -1,9 +1,15 @@
 import { Brain, Hash, Shapes, BarChart3, FunctionSquare, Atom, Network, PieChart } from 'lucide-react'
 import Link from 'next/link'
 import { useTranslations } from 'next-intl'
+import { getLocale } from 'next-intl/server'
 
-export default function BranchesPage() {
+export default async function BranchesPage() {
   const t = useTranslations('branches');
+  const locale = await getLocale();
+  const withLocale = (href: string) => {
+    const normalized = href.startsWith('/') ? href : `/${href}`;
+    return locale !== 'zh-CN' ? `/${locale}${normalized}` : normalized;
+  };
   
   const mathBranches = [
     {
@@ -145,7 +151,7 @@ export default function BranchesPage() {
                       </div>
                       <div className="mt-4 pt-4 border-t border-gray-100">
                         <Link
-                          href={`/resources?category=${encodeURIComponent(subcategory.name)}`}
+                          href={withLocale(`/resources?category=${encodeURIComponent(subcategory.name)}`)}
                           className="inline-flex items-center text-blue-600 hover:text-blue-800 font-medium text-sm transition-colors duration-300"
                         >
                           {t('exploreResources')}
@@ -170,13 +176,13 @@ export default function BranchesPage() {
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Link
-                  href="/resources"
+                  href={withLocale('/resources')}
                   className="bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors duration-300"
                 >
                   {t('learningPath.startBasic')}
                 </Link>
                 <Link
-                  href="/calculator"
+                  href={withLocale('/calculator')}
                   className="border-2 border-blue-600 text-blue-600 px-6 py-3 rounded-lg font-semibold hover:bg-blue-600 hover:text-white transition-colors duration-300"
                 >
                   {t('learningPath.tryCalculator')}

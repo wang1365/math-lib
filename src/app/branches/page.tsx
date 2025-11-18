@@ -2,9 +2,15 @@ import Layout from '../components/LayoutIntl';
 import { Brain, Hash, Shapes, BarChart3, FunctionSquare, Atom, Network, PieChart } from 'lucide-react'
 import Link from 'next/link'
 import { useTranslations } from 'next-intl'
+import { getLocale } from 'next-intl/server'
 
-export default function BranchesPage() {
+export default async function BranchesPage() {
   const t = useTranslations('branches');
+  const locale = await getLocale();
+  const withLocale = (href: string) => {
+    const normalized = href.startsWith('/') ? href : `/${href}`;
+    return locale !== 'zh-CN' ? `/${locale}${normalized}` : normalized;
+  };
   
   const mathBranches = [
     {
@@ -102,7 +108,7 @@ export default function BranchesPage() {
   ]
 
   return (
-    <Layout>
+    <Layout locale={locale}>
       <div className="py-16 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
           {/* Page Header */}
@@ -145,7 +151,7 @@ export default function BranchesPage() {
                         </ul>
                       </div>
                       <Link
-                        href={`/branches/${subcategory.name.toLowerCase()}`}
+                        href={withLocale(`/branches/${subcategory.name.toLowerCase()}`)}
                         className="inline-flex items-center mt-4 text-blue-600 hover:text-blue-800 font-medium text-sm"
                       >
                         {t('exploreResources')} →
