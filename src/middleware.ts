@@ -11,8 +11,8 @@ export default createMiddleware({
   // Locale detection
   localePrefix: 'as-needed',
   
-  // Disable locale detection from Accept-Language header
-  localeDetection: false
+  // Enable locale detection from Accept-Language header
+  localeDetection: true
 })
 
 export const config = {

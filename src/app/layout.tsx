@@ -3,6 +3,7 @@ import { getMessages } from 'next-intl/server';
 import Script from 'next/script';
 import { locales, defaultLocale } from '@/config/i18n';
 import './globals.css';
+import { Metadata } from 'next';
 import Analytics from './components/Analytics';
  
 
@@ -10,7 +11,7 @@ export function generateStaticParams() {
   return locales.map((locale) => ({ locale: locale.code }));
 }
 
-export const metadata = {
+export const metadata: Metadata = {
   title: {
     default: '数学资源库 - 探索数学的无限可能',
     template: '%s | 数学资源库'
@@ -25,18 +26,18 @@ export const metadata = {
     address: false,
     telephone: false,
   },
-  metadataBase: new URL('https://math-resources-site.vercel.app'),
+  metadataBase: new URL('https://www.onlymath.org'),
   alternates: {
     canonical: '/',
   },
   openGraph: {
     title: '数学资源库 - 探索数学的无限可能',
     description: '汇集全球优质数学学习资源，为数学爱好者、学生和研究者提供全面的数学知识体系和学习工具。',
-    url: 'https://math-resources-site.vercel.app',
+    url: 'https://www.onlymath.org',
     siteName: '数学资源库',
     images: [
       {
-        url: 'https://math-resources-site.vercel.app/og-image.jpg',
+        url: 'https://www.onlymath.org/og-image.jpg',
         width: 1200,
         height: 630,
         alt: '数学资源库',
@@ -49,7 +50,7 @@ export const metadata = {
     card: 'summary_large_image',
     title: '数学资源库 - 探索数学的无限可能',
     description: '汇集全球优质数学学习资源，为数学爱好者、学生和研究者提供全面的数学知识体系和学习工具。',
-    images: ['https://math-resources-site.vercel.app/twitter-image.jpg'],
+    images: ['https://www.onlymath.org/twitter-image.jpg'],
   },
   robots: {
     index: true,
@@ -66,13 +67,6 @@ export const metadata = {
     google: 'your-google-verification-code',
     yandex: 'your-yandex-verification-code',
   },
-};
-
-export const viewport = {
-  width: 'device-width',
-  initialScale: 1,
-  maximumScale: 1,
-  userScalable: false,
 };
 
 export default async function RootLayout({
