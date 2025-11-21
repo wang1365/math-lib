@@ -2,6 +2,7 @@ import { locales } from '@/config/i18n';
 import Layout from '../components/LayoutIntl';
 import { setRequestLocale } from 'next-intl/server';
 import { NextIntlClientProvider } from 'next-intl';
+import { notFound } from 'next/navigation';
 
 export function generateStaticParams() {
   return locales.map((locale) => ({ locale: locale.code }));
@@ -15,6 +16,9 @@ export default async function LocaleLayout({
   params: Promise<{ locale: string }>;
 }) {
   const { locale } = await params;
+  if (!locales.some(l => l.code === locale)) {
+    return notFound();
+  }
   
   // Enable static rendering
   setRequestLocale(locale);

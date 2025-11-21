@@ -1,6 +1,7 @@
 'use client'
 
 import Layout from '../components/LayoutIntl';
+import AdBanner from '@/app/components/AdBanner'
 import { Calculator, FunctionSquare, BarChart3, Atom, Sigma, TrendingUp, PieChart, Grid } from 'lucide-react'
 import { useState } from 'react'
 import { useTranslations } from 'next-intl'
@@ -136,6 +137,9 @@ export default function ToolsPage() {
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               {t('subtitle')}
             </p>
+          </div>
+          <div className="mb-8 text-center">
+            <AdBanner slot="2000000002" format="horizontal" responsive={true} />
           </div>
 
           {/* Category Filter */}

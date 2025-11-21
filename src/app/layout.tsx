@@ -104,9 +104,7 @@ export default async function RootLayout({
           crossOrigin="anonymous"
         /> */}
 
-        <script async custom-element="amp-auto-ads"
-        src="https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js">
-        </script>
+        
 
         {/* Google Analytics */}
         <Script
@@ -123,9 +121,7 @@ export default async function RootLayout({
         </Script>
       </head>
       <body>
-        <amp-auto-ads type="adsense"
-          data-ad-client="ca-pub-9789961264819993">
-        </amp-auto-ads>
+        
         <NextIntlClientProvider locale={locale} messages={messages}>
           {children}
         </NextIntlClientProvider>
