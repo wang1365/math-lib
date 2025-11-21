@@ -95,12 +95,14 @@ export default async function RootLayout({
         <meta name="theme-color" content="#2563eb" />
         
         {/* Google AdSense */}
-        <Script
-          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX"
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9789961264819993"
+                crossOrigin="anonymous"></script>
+        {/* <Script
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9789961264819993"
           strategy="afterInteractive"
           async
           crossOrigin="anonymous"
-        />
+        /> */}
 
         {/* Google Analytics */}
         <Script
