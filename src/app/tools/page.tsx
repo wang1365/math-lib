@@ -139,7 +139,7 @@ export default function ToolsPage() {
             </p>
           </div>
           <div className="mb-8 text-center">
-            <AdBanner slot="2000000002" format="horizontal" responsive={true} />
+            <AdBanner slot="4182268685" format="auto" responsive={true} />
           </div>
 
           {/* Category Filter */}

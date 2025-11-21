@@ -119,7 +119,7 @@ export default async function Home() {
             </p>
           </div>
           <div className="mb-8 text-center">
-            <AdBanner slot="1000000001" format="horizontal" responsive={true} />
+            <AdBanner slot="4182268685" format="auto" responsive={true} />
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {features.map((feature, index) => (

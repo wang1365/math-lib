@@ -106,7 +106,7 @@ export default async function ResourcesPage() {
       <div className="py-4 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
           <div className="mb-4 text-center">
-            <AdBanner slot="1234567890" format="horizontal" responsive={true} />
+            <AdBanner slot="4182268685" format="auto" responsive={true} />
           </div>
 
           {/* Page Header */}
@@ -177,7 +177,7 @@ export default async function ResourcesPage() {
           </div>
 
           <div className="mt-12 text-center">
-            <AdBanner slot="3456789012" format="horizontal" responsive={true} />
+            <AdBanner slot="4182268685" format="auto" responsive={true} />
           </div>
 
           {/* Additional Resources */}
