@@ -1,5 +1,5 @@
 import { NextIntlClientProvider } from 'next-intl';
-import { getMessages } from 'next-intl/server';
+import { getMessages, getTranslations, getLocale } from 'next-intl/server';
 import { GoogleAnalytics } from '@next/third-parties/google'
 import Script from 'next/script';
 import { locales, defaultLocale } from '@/config/i18n';
@@ -12,66 +12,89 @@ export function generateStaticParams() {
   return locales.map((locale) => ({ locale: locale.code }));
 }
 
-export const metadata: Metadata = {
-  title: {
-    default: '数学资源库 - 探索数学的无限可能',
-    template: '%s | 数学资源库'
-  },
-  description: '汇集全球优质数学学习资源，为数学爱好者、学生和研究者提供全面的数学知识体系和学习工具。从基础数学到高等数学，从理论到应用。',
-  keywords: ['数学', '数学学习', '数学资源', '在线数学', '数学教育', '数学工具', '数学课程', '数学视频', '数学百科'],
-  authors: [{ name: '数学资源库团队' }],
-  creator: '数学资源库',
-  publisher: '数学资源库',
-  formatDetection: {
-    email: false,
-    address: false,
-    telephone: false,
-  },
-  metadataBase: new URL('https://www.onlymath.org'),
-  alternates: {
-    canonical: '/',
-    languages: Object.fromEntries(
-      locales.map(l => [l.code, l.code === 'zh-CN' ? '/' : `/${l.code}`])
-    ),
-  },
-  openGraph: {
-    title: '数学资源库 - 探索数学的无限可能',
-    description: '汇集全球优质数学学习资源，为数学爱好者、学生和研究者提供全面的数学知识体系和学习工具。',
-    url: 'https://www.onlymath.org',
-    siteName: '数学资源库',
-    images: [
-      {
-        url: 'https://www.onlymath.org/og-image.jpg',
-        width: 1200,
-        height: 630,
-        alt: '数学资源库',
-      }
-    ],
-    locale: 'zh_CN',
-    type: 'website',
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: '数学资源库 - 探索数学的无限可能',
-    description: '汇集全球优质数学学习资源，为数学爱好者、学生和研究者提供全面的数学知识体系和学习工具。',
-    images: ['https://www.onlymath.org/twitter-image.jpg'],
-  },
-  robots: {
-    index: true,
-    follow: true,
-    googleBot: {
+const ogLocaleMap: Record<string, string> = {
+  'zh-CN': 'zh_CN',
+  'zh-TW': 'zh_TW',
+  'en': 'en_US',
+  'fr': 'fr_FR',
+  'ja': 'ja_JP',
+  'es': 'es_ES',
+  'pt': 'pt_PT',
+  'ko': 'ko_KR',
+  'ar': 'ar_SA',
+  'de': 'de_DE'
+}
+
+export async function generateMetadata(): Promise<Metadata> {
+  const t = await getTranslations('common')
+  const currentLocale = await getLocale()
+  const siteTitle = t('siteTitle')
+  const siteDescription = t('siteDescription')
+  const defaultLocaleCode = defaultLocale
+  const languages = Object.fromEntries(
+    locales.map(l => [l.code, l.code === defaultLocaleCode ? '/' : `/${l.code}`])
+  )
+  const ogLocale = ogLocaleMap[currentLocale] || ogLocaleMap[defaultLocaleCode] || 'zh_CN'
+
+  return {
+    title: {
+      default: siteTitle,
+      template: `%s | ${siteTitle}`
+    },
+    description: siteDescription,
+    keywords: ['数学', '数学学习', '数学资源', '在线数学', '数学教育', '数学工具', '数学课程', '数学视频', '数学百科'],
+    authors: [{ name: '数学资源库团队' }],
+    creator: siteTitle,
+    publisher: siteTitle,
+    formatDetection: {
+      email: false,
+      address: false,
+      telephone: false,
+    },
+    metadataBase: new URL('https://www.onlymath.org'),
+    alternates: {
+      canonical: '/',
+      languages
+    },
+    openGraph: {
+      title: siteTitle,
+      description: siteDescription,
+      url: 'https://www.onlymath.org',
+      siteName: siteTitle,
+      images: [
+        {
+          url: 'https://www.onlymath.org/og-image.jpg',
+          width: 1200,
+          height: 630,
+          alt: siteTitle,
+        }
+      ],
+      locale: ogLocale,
+      type: 'website',
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: siteTitle,
+      description: siteDescription,
+      images: ['https://www.onlymath.org/twitter-image.jpg'],
+    },
+    robots: {
       index: true,
       follow: true,
-      'max-video-preview': -1,
-      'max-image-preview': 'large',
-      'max-snippet': -1,
+      googleBot: {
+        index: true,
+        follow: true,
+        'max-video-preview': -1,
+        'max-image-preview': 'large',
+        'max-snippet': -1,
+      },
     },
-  },
-  verification: {
-    google: 'your-google-verification-code',
-    yandex: 'your-yandex-verification-code',
-  },
-};
+    verification: {
+      google: 'NurRRpvl5lSXtyTwRWaWCm6i_s4Nyg9L0BJ_bzxNkE4',
+      yandex: 'your-yandex-verification-code',
+    },
+  }
+}
 
 export default async function RootLayout({
   children,
