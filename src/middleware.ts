@@ -9,7 +9,7 @@ export default createMiddleware({
   defaultLocale: defaultLocale,
   
   // Locale detection
-  localePrefix: 'as-needed',
+  localePrefix: 'always',
   
   // Enable locale detection from Accept-Language header
   localeDetection: true

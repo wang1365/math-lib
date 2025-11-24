@@ -27,7 +27,7 @@ export default function Layout({ children, locale }: LayoutProps) {
 
   const withLocale = (href: string) => {
     const normalized = href.startsWith('/') ? href : `/${href}`
-    return locale && locale !== defaultLocale ? `/${locale}${normalized}` : normalized
+    return `/${locale}${normalized}`
   }
 
   return (
