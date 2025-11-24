@@ -95,16 +95,30 @@ export default async function RootLayout({
         <link rel="manifest" href="/site.webmanifest" />
         <meta name="theme-color" content="#2563eb" />
         
-        {/* Google AdSense */}
-        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9789961264819993"
-                crossOrigin="anonymous"></script>
+        <Script
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9789961264819993"
+          strategy="afterInteractive"
+          async
+          crossOrigin="anonymous"
+        />
       </head>
       <body>
         <NextIntlClientProvider locale={locale} messages={messages}>
           {children}
         </NextIntlClientProvider>
+        <ins
+          className="adsbygoogle"
+          style={{ display: 'block' }}
+          data-ad-client="ca-pub-9789961264819993"
+          data-ad-slot="4182268685"
+          data-ad-format="auto"
+          data-full-width-responsive="true"
+        ></ins>
+        <Script id="adsbygoogle-init" strategy="afterInteractive">
+          {`(adsbygoogle = window.adsbygoogle || []).push({});`}
+        </Script>
+        <GoogleAnalytics gaId='G-C1QDG4M016' />
       </body>
-      <GoogleAnalytics gaId='G-C1QDG4M016' />
     </html>
   );
 }
