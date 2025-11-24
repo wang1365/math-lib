@@ -30,6 +30,9 @@ export const metadata: Metadata = {
   metadataBase: new URL('https://www.onlymath.org'),
   alternates: {
     canonical: '/',
+    languages: Object.fromEntries(
+      locales.map(l => [l.code, l.code === 'zh-CN' ? '/' : `/${l.code}`])
+    ),
   },
   openGraph: {
     title: '数学资源库 - 探索数学的无限可能',
@@ -101,6 +104,24 @@ export default async function RootLayout({
           async
           crossOrigin="anonymous"
         />
+
+        <Script id="schema-org-website" type="application/ld+json" strategy="afterInteractive">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "WebSite",
+            name: "数学资源库",
+            url: "https://www.onlymath.org"
+          })}
+        </Script>
+        <Script id="schema-org-organization" type="application/ld+json" strategy="afterInteractive">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Organization",
+            name: "数学资源库",
+            url: "https://www.onlymath.org",
+            logo: "https://www.onlymath.org/logo.svg"
+          })}
+        </Script>
       </head>
       <body>
         <NextIntlClientProvider locale={locale} messages={messages}>
