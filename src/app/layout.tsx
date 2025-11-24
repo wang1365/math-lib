@@ -1,5 +1,6 @@
 import { NextIntlClientProvider } from 'next-intl';
 import { getMessages } from 'next-intl/server';
+import { GoogleAnalytics } from '@next/third-parties/google'
 import Script from 'next/script';
 import { locales, defaultLocale } from '@/config/i18n';
 import './globals.css';
@@ -97,52 +98,13 @@ export default async function RootLayout({
         {/* Google AdSense */}
         <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9789961264819993"
                 crossOrigin="anonymous"></script>
-        {/* <Script
-          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9789961264819993"
-          strategy="afterInteractive"
-          async
-          crossOrigin="anonymous"
-        /> */}
-
-        
-
-        {/* Google Analytics */}
-        <Script
-          src={`https://www.googletagmanager.com/gtag/js?id=G-C1QDG4M016`}
-          strategy="afterInteractive"
-        />
-        <Script id="gtag-init" strategy="afterInteractive">
-          {`
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', 'G-C1QDG4M016');
-          `}
-        </Script>
       </head>
       <body>
-        
         <NextIntlClientProvider locale={locale} messages={messages}>
           {children}
         </NextIntlClientProvider>
-        {GA_ID && (
-          <>
-            <Script
-              src={`https://www.googletagmanager.com/gtag/js?id=G-C1QDG4M016`}
-              strategy="afterInteractive"
-            />
-            <Script id="gtag-init" strategy="afterInteractive">
-              {`
-                window.dataLayer = window.dataLayer || [];
-                function gtag(){dataLayer.push(arguments);} 
-                gtag('js', new Date());
-                gtag('config', 'G-C1QDG4M016');
-              `}
-            </Script>
-          </>
-        )}
-        {GA_ID && <Analytics gaId='G-C1QDG4M016' />}
       </body>
+      <GoogleAnalytics gaId='G-C1QDG4M016' />
     </html>
   );
 }
