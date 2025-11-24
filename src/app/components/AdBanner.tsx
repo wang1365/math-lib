@@ -17,13 +17,9 @@ export default function AdBanner({
 }: AdBannerProps) {
   useEffect(() => {
     try {
-      // @ts-expect-error: The push method is not defined on the adsbygoogle array
-      (window.adsbygoogle = window.adsbygoogle || []).push({})
-    } catch (error) {
-      // @ts-expect-error: The push method is not defined on the adsbygoogle array
-      window.adsbygoogle = window.adsbygoogle || []
-      // Queue will be processed once the script loads
-    }
+      const w = window as any
+      ;(w.adsbygoogle = w.adsbygoogle || []).push({})
+    } catch {}
   }, [])
 
   return (
