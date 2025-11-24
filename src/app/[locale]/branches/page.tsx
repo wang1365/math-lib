@@ -1,14 +1,16 @@
+"use client"
 import { Brain, Hash, Shapes, BarChart3, FunctionSquare, Atom, Network, PieChart } from 'lucide-react'
 import Link from 'next/link'
-import { getTranslations, getLocale } from 'next-intl/server'
+import { useTranslations, useLocale } from 'next-intl'
+import { setRequestLocale } from 'next-intl/server'
 
-export default async function BranchesPage() {
-  const t = await getTranslations('branches');
-  const locale = await getLocale();
+export default function BranchesPage() {
+  const t = useTranslations('branches')
+  const locale = useLocale()
   const withLocale = (href: string) => {
-    const normalized = href.startsWith('/') ? href : `/${href}`;
-    return locale !== 'zh-CN' ? `/${locale}${normalized}` : normalized;
-  };
+    const normalized = href.startsWith('/') ? href : `/${href}`
+    return `/${locale}${normalized}`
+  }
   
   const mathBranches = [
     {
@@ -170,18 +172,16 @@ export default async function BranchesPage() {
           <div className="mt-20 bg-gradient-to-r from-blue-50 to-indigo-100 rounded-xl p-8">
             <div className="text-center">
               <h3 className="text-2xl font-bold text-gray-900 mb-4">{t('learningPath.title')}</h3>
-              <p className="text-gray-600 mb-6">
-                {t('learningPath.subtitle')}
-              </p>
+              <p className="text-gray-600 mb-6">{t('learningPath.subtitle')}</p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Link
-                  href={withLocale('/resources')}
+                  href={`/${locale}/resources`}
                   className="bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors duration-300"
                 >
                   {t('learningPath.startBasic')}
                 </Link>
                 <Link
-                  href={withLocale('/calculator')}
+                  href={`/${locale}/calculator`}
                   className="border-2 border-blue-600 text-blue-600 px-6 py-3 rounded-lg font-semibold hover:bg-blue-600 hover:text-white transition-colors duration-300"
                 >
                   {t('learningPath.tryCalculator')}

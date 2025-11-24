@@ -29,6 +29,7 @@ export async function generateMetadata(): Promise<Metadata> {
   const t = await getTranslations('common')
   const currentLocale = await getLocale()
   const siteTitle = t('siteTitle')
+  console.log('====>', currentLocale, siteTitle)
   const siteDescription = t('siteDescription')
   const defaultLocaleCode = defaultLocale
   const languages = Object.fromEntries(
@@ -97,11 +98,14 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 
 export default async function RootLayout({
-  children
+  children,
+  params
 }: {
   children: React.ReactNode;
+  params: Promise<{ locale?: string }>;
 }) {
-  let locale = await getLocale();
+  const { locale: paramsLocale } = await params
+  let locale = paramsLocale || await getLocale();
   const messages = await getMessages();
   // Ensure the locale is valid
   if (!locales.some(l => l.code === locale)) {
