@@ -42,8 +42,8 @@ export async function generateMetadata(): Promise<Metadata> {
       template: `%s | ${siteTitle}`
     },
     description: siteDescription,
-    keywords: ['数学', '数学学习', '数学资源', '在线数学', '数学教育', '数学工具', '数学课程', '数学视频', '数学百科'],
-    authors: [{ name: '数学资源库团队' }],
+    keywords: ['数学', '数学学习', '数学资源', '在线数学', '数学教育', '数学工具', '数学课程', 'Math', 'Math Resource'],
+    authors: [{ name: 'Xiaochuan Wang' }],
     creator: siteTitle,
     publisher: siteTitle,
     formatDetection: {
@@ -97,16 +97,12 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 
 export default async function RootLayout({
-  children,
-  params
+  children
 }: {
   children: React.ReactNode;
-  params: Promise<{ locale?: string }>;
 }) {
-  const { locale: paramsLocale } = await params;
-  let locale = paramsLocale || defaultLocale;
+  let locale = await getLocale();
   const messages = await getMessages();
-  const GA_ID = process.env.NEXT_PUBLIC_GA_ID || '';
   // Ensure the locale is valid
   if (!locales.some(l => l.code === locale)) {
     // Redirect to default locale if invalid
