@@ -17,13 +17,12 @@ export default function AdBanner({
 }: AdBannerProps) {
   useEffect(() => {
     try {
-      // @ts-ignore
-      if (window.adsbygoogle && typeof window.adsbygoogle.loaded !== 'undefined') {
-        // @ts-ignore
-        (window.adsbygoogle = window.adsbygoogle || []).push({})
-      }
+      // @ts-expect-error: The push method is not defined on the adsbygoogle array
+      (window.adsbygoogle = window.adsbygoogle || []).push({})
     } catch (error) {
-      console.log('AdSense error:', error)
+      // @ts-expect-error: The push method is not defined on the adsbygoogle array
+      window.adsbygoogle = window.adsbygoogle || []
+      // Queue will be processed once the script loads
     }
   }, [])
 
