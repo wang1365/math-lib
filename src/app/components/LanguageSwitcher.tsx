@@ -24,10 +24,6 @@ export default function LanguageSwitcher() {
       : `/${newLocale}${normalizedPath === '/' ? '' : normalizedPath}`
   }
 
-  const rememberLocale = (newLocale: Locale) => {
-    document.cookie = `NEXT_LOCALE=${newLocale}; path=/; max-age=31536000; SameSite=Lax`
-  }
-
   return (
     <details className="group relative">
       <summary className="flex h-10 cursor-pointer list-none items-center gap-2 rounded-lg border border-gray-200 bg-white/80 px-3 text-sm font-medium text-gray-700 transition-all duration-200 hover:bg-white hover:text-blue-600 focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-200 [&::-webkit-details-marker]:hidden">
@@ -47,7 +43,6 @@ export default function LanguageSwitcher() {
               key={locale.code}
               href={localizedHref(locale.code)}
               hrefLang={locale.code}
-              onClick={() => rememberLocale(locale.code)}
               className={`flex items-center gap-2 px-3 py-2 text-sm transition-colors ${
                 isActive
                   ? 'bg-blue-50 font-semibold text-blue-700'
