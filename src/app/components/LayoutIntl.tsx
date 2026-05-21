@@ -17,9 +17,14 @@ export default function Layout({ children, locale }: LayoutProps) {
   const t = useTranslations('common')
   const currentLocale = useLocale()
   const activeLocale = locale || currentLocale
+  const trustLabels = activeLocale === 'zh-CN' || activeLocale === 'zh-TW'
+    ? { about: '关于', privacy: '隐私政策', terms: '使用条款', contact: '联系' }
+    : { about: 'About', privacy: 'Privacy', terms: 'Terms', contact: 'Contact' }
+  const guidesLabel = activeLocale === 'zh-CN' || activeLocale === 'zh-TW' ? '学习指南' : 'Guides'
 
   const navigation = [
     { name: t('navigation.home'), href: '/', icon: Home },
+    { name: guidesLabel, href: '/guides', icon: BookOpen },
     { name: t('navigation.resources'), href: '/resources', icon: BookOpen },
     { name: t('navigation.branches'), href: '/branches', icon: Library },
     { name: t('navigation.tools'), href: '/tools', icon: Calculator },
@@ -141,8 +146,12 @@ export default function Layout({ children, locale }: LayoutProps) {
               </h3>
               <ul className="space-y-3">
                 <li><Link href={withLocale('/resources')} className="group flex items-center text-gray-300 hover:text-white transition-all duration-300"><span className="w-2 h-0.5 bg-gradient-to-r from-blue-400 to-purple-400 mr-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>{t('navigation.resources')}</Link></li>
+                <li><Link href={withLocale('/guides')} className="group flex items-center text-gray-300 hover:text-white transition-all duration-300"><span className="w-2 h-0.5 bg-gradient-to-r from-blue-400 to-purple-400 mr-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>{guidesLabel}</Link></li>
                 <li><Link href={withLocale('/branches')} className="group flex items-center text-gray-300 hover:text-white transition-all duration-300"><span className="w-2 h-0.5 bg-gradient-to-r from-blue-400 to-purple-400 mr-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>{t('navigation.branches')}</Link></li>
                 <li><Link href={withLocale('/tools')} className="group flex items-center text-gray-300 hover:text-white transition-all duration-300"><span className="w-2 h-0.5 bg-gradient-to-r from-blue-400 to-purple-400 mr-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>{t('navigation.tools')}</Link></li>
+                <li><Link href={withLocale('/about')} className="group flex items-center text-gray-300 hover:text-white transition-all duration-300"><span className="w-2 h-0.5 bg-gradient-to-r from-blue-400 to-purple-400 mr-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>{trustLabels.about}</Link></li>
+                <li><Link href={withLocale('/privacy')} className="group flex items-center text-gray-300 hover:text-white transition-all duration-300"><span className="w-2 h-0.5 bg-gradient-to-r from-blue-400 to-purple-400 mr-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>{trustLabels.privacy}</Link></li>
+                <li><Link href={withLocale('/terms')} className="group flex items-center text-gray-300 hover:text-white transition-all duration-300"><span className="w-2 h-0.5 bg-gradient-to-r from-blue-400 to-purple-400 mr-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>{trustLabels.terms}</Link></li>
               </ul>
             </div>
             <div>
@@ -150,8 +159,13 @@ export default function Layout({ children, locale }: LayoutProps) {
                 {t('footer.contactUs')}
               </h3>
               <p className="text-gray-300 text-sm">
-                有任何问题或建议，欢迎联系我们。
+                {activeLocale === 'zh-CN' || activeLocale === 'zh-TW'
+                  ? '有任何问题、纠错或资源推荐，欢迎通过联系页面发送邮件。'
+                  : 'For corrections, questions, or resource suggestions, please use the contact page.'}
               </p>
+              <Link href={withLocale('/contact')} className="mt-4 inline-flex text-sm font-medium text-blue-300 hover:text-white transition-colors duration-300">
+                {trustLabels.contact}
+              </Link>
             </div>
           </div>
         </div>

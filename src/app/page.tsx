@@ -1,5 +1,4 @@
 import { getTranslations, getLocale } from 'next-intl/server';
-import AdBanner from '@/app/components/AdBanner';
 import Layout from './components/LayoutIntl';
 import { Calculator, BookOpen, Video, Globe, Users, Sparkles } from 'lucide-react';
 import Link from 'next/link';
@@ -120,9 +119,6 @@ export default async function Home() {
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
               {t('features.subtitle')}
             </p>
-          </div>
-          <div className="mb-8 text-center">
-            <AdBanner slot="4182268685" format="auto" responsive={true} />
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {features.map((feature, index) => (

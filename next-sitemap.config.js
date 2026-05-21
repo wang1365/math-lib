@@ -2,20 +2,14 @@ const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.onlymath.org'
 
 const locales = [
   'en',
-  'zh-CN',
-  'zh-TW',
-  'fr',
-  'ja',
-  'es',
-  'pt',
-  'ko',
-  'ar',
-  'de'
+  'zh-CN'
 ]
 
 const defaultLocale = 'zh-CN'
 
 const localePattern = /^\/(zh-CN|zh-TW|en|fr|ja|es|pt|ko|ar|de)(?=\/|$)/
+const indexableLocalePattern = /^\/(zh-CN|en)(?=\/|$)/
+const nonContentPaths = new Set(['/opengraph-image', '/twitter-image'])
 
 const stripLocale = (path) => {
   const p = path.replace(localePattern, '')
@@ -37,6 +31,16 @@ module.exports = {
   outDir: 'public',
   generateRobotsTxt: false,
   transform: async (_cfg, path) => {
+    if (nonContentPaths.has(stripLocale(path))) {
+      return null
+    }
+
+    const firstSegment = path.split('/').filter(Boolean)[0]
+    const hasLocalePrefix = firstSegment && localePattern.test(`/${firstSegment}`)
+    if (hasLocalePrefix && !indexableLocalePattern.test(`/${firstSegment}`)) {
+      return null
+    }
+
     if (path === `/${defaultLocale}` || path.startsWith(`/${defaultLocale}/`)) {
       return null
     }

@@ -1,4 +1,3 @@
-import AdBanner from '@/app/components/AdBanner'
 import Layout from '../components/LayoutIntl';
 import { BookOpen, Video, ExternalLink, Star, Users } from 'lucide-react'
 import Link from 'next/link'
@@ -105,10 +104,6 @@ export default async function ResourcesPage() {
     <Layout locale={locale}>
       <div className="py-4 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
-          <div className="mb-4 text-center">
-            <AdBanner slot="4182268685" format="auto" responsive={true} />
-          </div>
-
           {/* Page Header */}
           <div className="text-center mb-6">
             <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
@@ -174,10 +169,6 @@ export default async function ResourcesPage() {
                 </div>
               </div>
             ))}
-          </div>
-
-          <div className="mt-12 text-center">
-            <AdBanner slot="4182268685" format="auto" responsive={true} />
           </div>
 
           {/* Additional Resources */}

@@ -156,17 +156,6 @@ export default async function RootLayout({
         <NextIntlClientProvider locale={locale} messages={messages}>
           {children}
         </NextIntlClientProvider>
-        <ins
-          className="adsbygoogle"
-          style={{ display: 'block' }}
-          data-ad-client="ca-pub-9789961264819993"
-          data-ad-slot="4182268685"
-          data-ad-format="auto"
-          data-full-width-responsive="true"
-        ></ins>
-        <Script id="adsbygoogle-init" strategy="afterInteractive">
-          {`(adsbygoogle = window.adsbygoogle || []).push({});`}
-        </Script>
         <GoogleAnalytics gaId='G-C1QDG4M016' />
       </body>
     </html>

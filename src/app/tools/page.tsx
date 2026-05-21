@@ -1,14 +1,19 @@
 'use client'
 
 import Layout from '../components/LayoutIntl';
-import AdBanner from '@/app/components/AdBanner'
-import { Calculator, FunctionSquare, BarChart3, Atom, Sigma, TrendingUp, PieChart, Grid } from 'lucide-react'
+import { Calculator, FunctionSquare, BarChart3, Atom, Sigma, TrendingUp, PieChart, Grid, ExternalLink } from 'lucide-react'
+import Link from 'next/link'
 import { useState } from 'react'
-import { useTranslations } from 'next-intl'
+import { useLocale, useTranslations } from 'next-intl'
 
 export default function ToolsPage() {
   const t = useTranslations('tools')
+  const locale = useLocale()
   const [selectedTool, setSelectedTool] = useState<string | null>(null)
+  const withLocale = (href: string) => {
+    const normalized = href.startsWith('/') ? href : `/${href}`
+    return locale === 'zh-CN' ? normalized : `/${locale}${normalized}`
+  }
 
   const mathTools = [
     {
@@ -21,7 +26,9 @@ export default function ToolsPage() {
         t('basicCalculator.features.arithmetic'),
         t('basicCalculator.features.percentage'),
         t('basicCalculator.features.sqrt')
-      ]
+      ],
+      href: withLocale('/calculator'),
+      external: false
     },
     {
       name: t('functionPlotter.name'),
@@ -33,7 +40,9 @@ export default function ToolsPage() {
         t('functionPlotter.features.2dPlotting'),
         t('functionPlotter.features.parametric'),
         t('functionPlotter.features.polar')
-      ]
+      ],
+      href: 'https://www.desmos.com/calculator',
+      external: true
     },
     {
       name: t('statisticsCalculator.name'),
@@ -45,7 +54,9 @@ export default function ToolsPage() {
         t('statisticsCalculator.features.descriptive'),
         t('statisticsCalculator.features.regression'),
         t('statisticsCalculator.features.distributions')
-      ]
+      ],
+      href: 'https://www.wolframalpha.com/input?i=statistics+calculator',
+      external: true
     },
     {
       name: t('scientificCalculator.name'),
@@ -57,7 +68,9 @@ export default function ToolsPage() {
         t('scientificCalculator.features.trigonometric'),
         t('scientificCalculator.features.logarithmic'),
         t('scientificCalculator.features.complex')
-      ]
+      ],
+      href: 'https://www.wolframalpha.com/calculators/scientific-calculator',
+      external: true
     },
     {
       name: t('algebraCalculator.name'),
@@ -69,7 +82,9 @@ export default function ToolsPage() {
         t('algebraCalculator.features.equations'),
         t('algebraCalculator.features.factorization'),
         t('algebraCalculator.features.polynomials')
-      ]
+      ],
+      href: 'https://www.wolframalpha.com/input?i=algebra+calculator',
+      external: true
     },
     {
       name: t('calculusTools.name'),
@@ -81,7 +96,9 @@ export default function ToolsPage() {
         t('calculusTools.features.derivatives'),
         t('calculusTools.features.integrals'),
         t('calculusTools.features.limits')
-      ]
+      ],
+      href: 'https://www.wolframalpha.com/input?i=calculus+calculator',
+      external: true
     },
     {
       name: t('geometryCalculator.name'),
@@ -93,7 +110,9 @@ export default function ToolsPage() {
         t('geometryCalculator.features.area'),
         t('geometryCalculator.features.volume'),
         t('geometryCalculator.features.trigonometry')
-      ]
+      ],
+      href: 'https://www.geogebra.org/geometry',
+      external: true
     },
     {
       name: t('matrixCalculator.name'),
@@ -105,7 +124,9 @@ export default function ToolsPage() {
         t('matrixCalculator.features.multiplication'),
         t('matrixCalculator.features.determinant'),
         t('matrixCalculator.features.inverse')
-      ]
+      ],
+      href: 'https://www.wolframalpha.com/input?i=matrix+calculator',
+      external: true
     }
   ]
 
@@ -138,19 +159,15 @@ export default function ToolsPage() {
               {t('subtitle')}
             </p>
           </div>
-          <div className="mb-8 text-center">
-            <AdBanner slot="4182268685" format="auto" responsive={true} />
-          </div>
-
           {/* Category Filter */}
           <div className="mb-8">
             <div className="flex flex-wrap gap-2 justify-center">
               {categories.map((category) => (
                 <button
                   key={category}
-                  onClick={() => setSelectedTool(category === '全部' ? null : category)}
+                  onClick={() => setSelectedTool(category === t('filter.all') ? null : category)}
                   className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 ${
-                    (selectedTool === category) || (selectedTool === null && category === '全部')
+                    (selectedTool === category) || (selectedTool === null && category === t('filter.all'))
                       ? 'bg-blue-600 text-white shadow-lg'
                       : 'bg-white text-gray-700 border border-gray-300 hover:bg-gray-50'
                   }`}
@@ -184,9 +201,24 @@ export default function ToolsPage() {
                     ))}
                   </ul>
                 </div>
-                <button className="w-full mt-4 bg-blue-600 text-white py-2 px-4 rounded-lg hover:bg-blue-700 transition-colors duration-300 text-sm font-medium">
-                  {t('useTool')}
-                </button>
+                {tool.external ? (
+                  <a
+                    href={tool.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex w-full items-center justify-center mt-4 bg-blue-600 text-white py-2 px-4 rounded-lg hover:bg-blue-700 transition-colors duration-300 text-sm font-medium"
+                  >
+                    {t('useTool')}
+                    <ExternalLink className="w-4 h-4 ml-2" />
+                  </a>
+                ) : (
+                  <Link
+                    href={tool.href}
+                    className="inline-flex w-full items-center justify-center mt-4 bg-blue-600 text-white py-2 px-4 rounded-lg hover:bg-blue-700 transition-colors duration-300 text-sm font-medium"
+                  >
+                    {t('useTool')}
+                  </Link>
+                )}
               </div>
             ))}
           </div>

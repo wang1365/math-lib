@@ -3,6 +3,7 @@ import { defaultLocale, locales, type Locale } from '@/config/i18n'
 
 export const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.onlymath.org'
 export const siteName = 'OnlyMath'
+export const indexableLocales = ['zh-CN', 'en'] as const
 
 export const localizedPath = (locale: string, path = '/') => {
   const normalizedPath = path.startsWith('/') ? path : `/${path}`
@@ -49,6 +50,7 @@ export function buildPageMetadata({
 }: BuildMetadataOptions): Metadata {
   const canonicalPath = localizedPath(locale, path)
   const imageUrl = absoluteUrl('/opengraph-image')
+  const isIndexableLocale = indexableLocales.includes(locale as typeof indexableLocales[number])
 
   return {
     title,
@@ -79,7 +81,17 @@ export function buildPageMetadata({
       title,
       description,
       images: [imageUrl]
+    },
+    robots: {
+      index: isIndexableLocale,
+      follow: isIndexableLocale,
+      googleBot: {
+        index: isIndexableLocale,
+        follow: isIndexableLocale,
+        'max-video-preview': -1,
+        'max-image-preview': 'large',
+        'max-snippet': -1
+      }
     }
   }
 }
-

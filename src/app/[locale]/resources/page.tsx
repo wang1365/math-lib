@@ -1,6 +1,5 @@
 "use client"
 
-import AdBanner from '@/app/components/AdBanner'
 import { BookOpen, Video, ExternalLink, Star, Users } from 'lucide-react'
 import Link from 'next/link'
 import { useTranslations } from 'next-intl'
@@ -105,11 +104,6 @@ export default function ResourcesPage() {
   return (
     <div className="py-4 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
-          {/* Ad Banner - Top */}
-          <div className="mb-4 text-center">
-            <AdBanner slot="1234567890" format="horizontal" responsive={true} />
-          </div>
-
           {/* Page Header */}
           <div className="text-center mb-6">
             <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
@@ -175,11 +169,6 @@ export default function ResourcesPage() {
                 </div>
               </div>
             ))}
-          </div>
-
-          {/* Ad Banner - Bottom */}
-          <div className="mt-12 text-center">
-            <AdBanner slot="3456789012" format="horizontal" responsive={true} />
           </div>
 
           {/* Additional Resources */}
