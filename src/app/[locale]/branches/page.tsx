@@ -1,8 +1,7 @@
 "use client"
-import { Brain, Hash, Shapes, BarChart3, FunctionSquare, Atom, Network, PieChart } from 'lucide-react'
+import { Hash, BarChart3, FunctionSquare, Atom } from 'lucide-react'
 import Link from 'next/link'
 import { useTranslations, useLocale } from 'next-intl'
-import { setRequestLocale } from 'next-intl/server'
 
 export default function BranchesPage() {
   const t = useTranslations('branches')

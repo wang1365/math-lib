@@ -3,7 +3,7 @@
 import Layout from '../components/LayoutIntl';
 import MathFormula from '@/app/components/MathFormula'
 import { useState } from 'react'
-import { Calculator, Plus, Minus, X, Divide, RefreshCw } from 'lucide-react'
+import { Calculator, Plus, Minus, Divide } from 'lucide-react'
 import { useTranslations } from 'next-intl'
 
 export default function CalculatorPage() {
@@ -75,25 +75,6 @@ export default function CalculatorPage() {
     setPreviousValue(null)
     setOperation(null)
     setWaitingForOperand(false)
-  }
-
-  const Button = ({ onClick, children, className = '', variant = 'default' }: any) => {
-    const baseClasses = 'h-16 rounded-lg font-semibold text-lg transition-all duration-200 active:scale-95'
-    const variantClasses = {
-      default: 'bg-gray-100 hover:bg-gray-200 text-gray-800',
-      operator: 'bg-blue-500 hover:bg-blue-600 text-white',
-      equals: 'bg-green-500 hover:bg-green-600 text-white',
-      clear: 'bg-red-500 hover:bg-red-600 text-white'
-    } as const
-
-    return (
-      <button
-        onClick={onClick}
-        className={`${baseClasses} ${variantClasses[variant as keyof typeof variantClasses]} ${className}`}
-      >
-        {children}
-      </button>
-    )
   }
 
   const insertConstant = (value: number) => {

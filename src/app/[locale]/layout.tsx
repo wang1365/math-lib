@@ -3,6 +3,18 @@ import Layout from '../components/LayoutIntl';
 import { setRequestLocale } from 'next-intl/server';
 import { NextIntlClientProvider } from 'next-intl';
 import { notFound } from 'next/navigation';
+import { buildRouteMetadata } from '@/lib/routeMetadata';
+
+type Messages = Record<string, unknown>;
+
+export async function generateMetadata({
+  params
+}: {
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale } = await params;
+  return buildRouteMetadata('home', locale);
+}
 
 export function generateStaticParams() {
   return locales.map((locale) => ({ locale: locale.code }));
@@ -23,15 +35,17 @@ export default async function LocaleLayout({
   // Enable static rendering
   setRequestLocale(locale);
 
-  const baseMessages = (await import('@/messages/zh-CN.json')).default as any;
-  const localeMessages = (await import(`@/messages/${locale}.json`)).default as any;
+  const baseMessages = (await import('@/messages/zh-CN.json')).default as Messages;
+  const localeMessages = (await import(`@/messages/${locale}.json`)).default as Messages;
 
-  const deepMerge = (base: any, override: any): any => {
+  const deepMerge = (base: unknown, override: unknown): unknown => {
     if (typeof base !== 'object' || base === null) return override ?? base;
-    const result: any = Array.isArray(base) ? [...base] : { ...base };
-    for (const key of Object.keys(override || {})) {
-      const bv = base[key];
-      const ov = override[key];
+    const baseRecord = base as Messages;
+    const overrideRecord = (override && typeof override === 'object' ? override : {}) as Messages;
+    const result: Messages = Array.isArray(base) ? { ...baseRecord } : { ...baseRecord };
+    for (const key of Object.keys(overrideRecord)) {
+      const bv = baseRecord[key];
+      const ov = overrideRecord[key];
       result[key] = (bv && typeof bv === 'object' && !Array.isArray(bv))
         ? deepMerge(bv, ov)
         : ov;
@@ -39,7 +53,7 @@ export default async function LocaleLayout({
     return result;
   };
 
-  const messages = deepMerge(baseMessages, localeMessages);
+  const messages = deepMerge(baseMessages, localeMessages) as Messages;
 
   return (
     <NextIntlClientProvider locale={locale} messages={messages}>

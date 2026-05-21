@@ -1,7 +1,6 @@
 'use client'
 
 import { useTranslations, useLocale } from 'next-intl';
-import Layout from '../components/LayoutIntl';
 import { Calculator, BookOpen, Video, Globe, Users, Sparkles } from 'lucide-react';
 import Link from 'next/link';
 import ContactForm from '../components/ContactForm';
@@ -10,12 +9,9 @@ export default function Home() {
   const t = useTranslations('home');
   const ct = useTranslations('contact');
   const locale = useLocale();
-  console.log('current locale:', locale);
 
   const withLocale = (href: string) =>
     locale === 'zh-CN' ? href : `/${locale}${href.startsWith('/') ? href : `/${href}`}`
-  console.log('===============>>>', t);
-  console.log('===============>>>tttt', t('features.resources.title'));
   
   const features = [
     {

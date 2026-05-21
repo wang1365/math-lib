@@ -1,5 +1,5 @@
 import Layout from '../components/LayoutIntl';
-import { Brain, Hash, Shapes, BarChart3, FunctionSquare, Atom, Network, PieChart } from 'lucide-react'
+import { Hash, FunctionSquare, Atom, PieChart } from 'lucide-react'
 import Link from 'next/link'
 import { getTranslations, getLocale } from 'next-intl/server'
 

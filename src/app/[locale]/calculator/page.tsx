@@ -1,8 +1,38 @@
 'use client'
 import MathFormula from '@/app/components/MathFormula'
 import { useState } from 'react'
-import { Calculator, Plus, Minus, X, Divide, RefreshCw } from 'lucide-react'
+import { Calculator, Plus, Minus, X, Divide } from 'lucide-react'
 import { useTranslations } from 'next-intl'
+
+type CalculatorButtonProps = {
+  onClick: () => void
+  children: React.ReactNode
+  className?: string
+  variant?: 'default' | 'operator' | 'equals' | 'clear'
+}
+
+function CalculatorButton({
+  onClick,
+  children,
+  className = '',
+  variant = 'default'
+}: CalculatorButtonProps) {
+  const variantClasses = {
+    default: 'bg-white hover:bg-gray-50 text-gray-800 border-gray-200',
+    operator: 'bg-blue-50 hover:bg-blue-100 text-blue-600 border-blue-200',
+    equals: 'bg-blue-600 hover:bg-blue-700 text-white border-blue-600',
+    clear: 'bg-red-50 hover:bg-red-100 text-red-600 border-red-200'
+  }
+
+  return (
+    <button
+      onClick={onClick}
+      className={`h-14 rounded-lg border font-semibold text-lg transition-all duration-200 transform hover:scale-105 active:scale-95 shadow-sm hover:shadow-md ${variantClasses[variant]} ${className}`}
+    >
+      {children}
+    </button>
+  )
+}
 
 export default function CalculatorPage() {
   const t = useTranslations('calculator')
@@ -83,29 +113,6 @@ export default function CalculatorPage() {
     }
   }
 
-  const Button = ({ onClick, children, className = '', variant = 'default' }: {
-    onClick: () => void
-    children: React.ReactNode
-    className?: string
-    variant?: 'default' | 'operator' | 'equals' | 'clear'
-  }) => {
-    const variantClasses = {
-      default: 'bg-white hover:bg-gray-50 text-gray-800 border-gray-200',
-      operator: 'bg-blue-50 hover:bg-blue-100 text-blue-600 border-blue-200',
-      equals: 'bg-blue-600 hover:bg-blue-700 text-white border-blue-600',
-      clear: 'bg-red-50 hover:bg-red-100 text-red-600 border-red-200'
-    }
-
-    return (
-      <button
-        onClick={onClick}
-        className={`h-14 rounded-lg border font-semibold text-lg transition-all duration-200 transform hover:scale-105 active:scale-95 shadow-sm hover:shadow-md ${variantClasses[variant]} ${className}`}
-      >
-        {children}
-      </button>
-    )
-  }
-
   return (
     <div className="py-16 px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto">
@@ -137,42 +144,42 @@ export default function CalculatorPage() {
                 
                 <div className="grid grid-cols-4 gap-3">
                   {/* First Row */}
-                  <Button onClick={clearAll} variant="clear" className="col-span-2">
+                  <CalculatorButton onClick={clearAll} variant="clear" className="col-span-2">
                     {t('clear')}
-                  </Button>
-                  <Button onClick={() => setDisplay(display.slice(0, -1) || '0')} variant="operator">
+                  </CalculatorButton>
+                  <CalculatorButton onClick={() => setDisplay(display.slice(0, -1) || '0')} variant="operator">
                     {t('backspace')}
-                  </Button>
-                  <Button onClick={() => inputOperation('÷')} variant="operator">
+                  </CalculatorButton>
+                  <CalculatorButton onClick={() => inputOperation('÷')} variant="operator">
                     <Divide className="w-5 h-5 mx-auto" />
-                  </Button>
+                  </CalculatorButton>
 
                   {/* Number Rows */}
                   {[['7', '8', '9'], ['4', '5', '6'], ['1', '2', '3']].map((row, rowIndex) => (
                     <div key={rowIndex} className="col-span-4 grid grid-cols-4 gap-3">
                       {row.map(num => (
-                        <Button key={num} onClick={() => inputNumber(num)}>
+                        <CalculatorButton key={num} onClick={() => inputNumber(num)}>
                           {num}
-                        </Button>
+                        </CalculatorButton>
                       ))}
-                      <Button onClick={() => inputOperation(['×', '-', '+'][rowIndex])} variant="operator">
+                      <CalculatorButton onClick={() => inputOperation(['×', '-', '+'][rowIndex])} variant="operator">
                         {rowIndex === 0 ? <X className="w-5 h-5 mx-auto" /> : 
                          rowIndex === 1 ? <Minus className="w-5 h-5 mx-auto" /> : 
                          <Plus className="w-5 h-5 mx-auto" />}
-                      </Button>
+                      </CalculatorButton>
                     </div>
                   ))}
 
                   {/* Last Row */}
-                  <Button onClick={() => inputNumber('0')} className="col-span-2">
+                  <CalculatorButton onClick={() => inputNumber('0')} className="col-span-2">
                     0
-                  </Button>
-                  <Button onClick={inputDecimal}>
+                  </CalculatorButton>
+                  <CalculatorButton onClick={inputDecimal}>
                     .
-                  </Button>
-                  <Button onClick={performCalculation} variant="equals">
+                  </CalculatorButton>
+                  <CalculatorButton onClick={performCalculation} variant="equals">
                     {t('equals')}
-                  </Button>
+                  </CalculatorButton>
                 </div>
               </div>
             </div>

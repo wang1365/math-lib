@@ -1,6 +1,6 @@
 'use client'
 
-// @ts-ignore
+// @ts-expect-error react-katex does not ship complete React 19 type metadata.
 import { InlineMath, BlockMath } from 'react-katex'
 import 'katex/dist/katex.min.css'
 

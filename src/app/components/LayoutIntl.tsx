@@ -1,9 +1,9 @@
 'use client'
 
 import Link from 'next/link'
-import { BookOpen, Home, Library, Calculator, Menu, X, Plus, Hash } from 'lucide-react'
+import { BookOpen, Home, Library, Calculator, Menu, X, Hash } from 'lucide-react'
 import { useState } from 'react'
-import { useTranslations } from 'next-intl'
+import { useLocale, useTranslations } from 'next-intl'
 import LanguageSwitcher from './LanguageSwitcher'
 import { defaultLocale } from '@/config/i18n'
 
@@ -15,6 +15,8 @@ interface LayoutProps {
 export default function Layout({ children, locale }: LayoutProps) {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const t = useTranslations('common')
+  const currentLocale = useLocale()
+  const activeLocale = locale || currentLocale
 
   const navigation = [
     { name: t('navigation.home'), href: '/', icon: Home },
@@ -27,7 +29,7 @@ export default function Layout({ children, locale }: LayoutProps) {
 
   const withLocale = (href: string) => {
     const normalized = href.startsWith('/') ? href : `/${href}`
-    return `/${locale}${normalized}`
+    return activeLocale === defaultLocale ? normalized : `/${activeLocale}${normalized === '/' ? '' : normalized}`
   }
 
   return (

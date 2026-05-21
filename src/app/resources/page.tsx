@@ -1,6 +1,6 @@
 import AdBanner from '@/app/components/AdBanner'
 import Layout from '../components/LayoutIntl';
-import { Calculator, BookOpen, Video, Globe, ExternalLink, Star, Users } from 'lucide-react'
+import { BookOpen, Video, ExternalLink, Star, Users } from 'lucide-react'
 import Link from 'next/link'
 import { getTranslations, getLocale } from 'next-intl/server'
 

@@ -2,6 +2,12 @@
 
 import { useEffect } from 'react'
 
+declare global {
+  interface Window {
+    adsbygoogle?: unknown[]
+  }
+}
+
 interface AdBannerProps {
   className?: string
   slot: string
@@ -17,8 +23,8 @@ export default function AdBanner({
 }: AdBannerProps) {
   useEffect(() => {
     try {
-      const w = window as any
-      ;(w.adsbygoogle = w.adsbygoogle || []).push({})
+      window.adsbygoogle = window.adsbygoogle || []
+      window.adsbygoogle.push({})
     } catch {}
   }, [])
 

@@ -5,37 +5,19 @@ import Script from 'next/script';
 import { locales, defaultLocale } from '@/config/i18n';
 import './globals.css';
 import { Metadata } from 'next';
-import Analytics from './components/Analytics';
+import { absoluteUrl, ogLocaleMap, siteName, siteUrl } from '@/lib/seo';
  
 
 export function generateStaticParams() {
   return locales.map((locale) => ({ locale: locale.code }));
 }
 
-const ogLocaleMap: Record<string, string> = {
-  'zh-CN': 'zh_CN',
-  'zh-TW': 'zh_TW',
-  'en': 'en_US',
-  'fr': 'fr_FR',
-  'ja': 'ja_JP',
-  'es': 'es_ES',
-  'pt': 'pt_PT',
-  'ko': 'ko_KR',
-  'ar': 'ar_SA',
-  'de': 'de_DE'
-}
-
 export async function generateMetadata(): Promise<Metadata> {
   const t = await getTranslations('common')
   const currentLocale = await getLocale()
   const siteTitle = t('siteTitle')
-  console.log('====>', currentLocale, siteTitle)
   const siteDescription = t('siteDescription')
-  const defaultLocaleCode = defaultLocale
-  const languages = Object.fromEntries(
-    locales.map(l => [l.code, l.code === defaultLocaleCode ? '/' : `/${l.code}`])
-  )
-  const ogLocale = ogLocaleMap[currentLocale] || ogLocaleMap[defaultLocaleCode] || 'zh_CN'
+  const ogLocale = ogLocaleMap[currentLocale as keyof typeof ogLocaleMap] || ogLocaleMap[defaultLocale]
 
   return {
     title: {
@@ -43,7 +25,21 @@ export async function generateMetadata(): Promise<Metadata> {
       template: `%s | ${siteTitle}`
     },
     description: siteDescription,
-    keywords: ['数学', '数学学习', '数学资源', '在线数学', '数学教育', '数学工具', '数学课程', 'Math', 'Math Resource'],
+    keywords: [
+      'mathematics',
+      'math resources',
+      'math learning',
+      'online math tools',
+      'math education',
+      'calculus',
+      'algebra',
+      'geometry',
+      'statistics',
+      '数学',
+      '数学学习',
+      '数学资源',
+      '在线数学工具'
+    ],
     authors: [{ name: 'Xiaochuan Wang' }],
     creator: siteTitle,
     publisher: siteTitle,
@@ -52,19 +48,15 @@ export async function generateMetadata(): Promise<Metadata> {
       address: false,
       telephone: false,
     },
-    metadataBase: new URL('https://www.onlymath.org'),
-    alternates: {
-      canonical: '/',
-      languages
-    },
+    metadataBase: new URL(siteUrl),
     openGraph: {
       title: siteTitle,
       description: siteDescription,
-      url: 'https://www.onlymath.org',
+      url: siteUrl,
       siteName: siteTitle,
       images: [
         {
-          url: 'https://www.onlymath.org/og-image.jpg',
+          url: absoluteUrl('/opengraph-image'),
           width: 1200,
           height: 630,
           alt: siteTitle,
@@ -77,7 +69,7 @@ export async function generateMetadata(): Promise<Metadata> {
       card: 'summary_large_image',
       title: siteTitle,
       description: siteDescription,
-      images: ['https://www.onlymath.org/twitter-image.jpg'],
+      images: [absoluteUrl('/opengraph-image')],
     },
     robots: {
       index: true,
@@ -92,7 +84,6 @@ export async function generateMetadata(): Promise<Metadata> {
     },
     verification: {
       google: 'NurRRpvl5lSXtyTwRWaWCm6i_s4Nyg9L0BJ_bzxNkE4',
-      yandex: 'your-yandex-verification-code',
     },
   }
 }
@@ -128,23 +119,38 @@ export default async function RootLayout({
           crossOrigin="anonymous"
         />
 
-        <Script id="schema-org-website" type="application/ld+json" strategy="afterInteractive">
-          {JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "WebSite",
-            name: "数学资源库",
-            url: "https://www.onlymath.org"
-          })}
-        </Script>
-        <Script id="schema-org-organization" type="application/ld+json" strategy="afterInteractive">
-          {JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "Organization",
-            name: "数学资源库",
-            url: "https://www.onlymath.org",
-            logo: "https://www.onlymath.org/logo.svg"
-          })}
-        </Script>
+        <script
+          id="schema-org-website"
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              '@context': 'https://schema.org',
+              '@type': 'WebSite',
+              name: siteName,
+              alternateName: ['Only Math', 'Math Resources Repository', '数学资源库'],
+              url: siteUrl,
+              inLanguage: locales.map(locale => locale.code),
+              potentialAction: {
+                '@type': 'SearchAction',
+                target: `${siteUrl}/resources?q={search_term_string}`,
+                'query-input': 'required name=search_term_string'
+              }
+            })
+          }}
+        />
+        <script
+          id="schema-org-organization"
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              '@context': 'https://schema.org',
+              '@type': 'Organization',
+              name: siteName,
+              url: siteUrl,
+              logo: absoluteUrl('/logo.svg')
+            })
+          }}
+        />
       </head>
       <body>
         <NextIntlClientProvider locale={locale} messages={messages}>

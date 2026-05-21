@@ -3,6 +3,9 @@ import AdBanner from '@/app/components/AdBanner';
 import Layout from './components/LayoutIntl';
 import { Calculator, BookOpen, Video, Globe, Users, Sparkles } from 'lucide-react';
 import Link from 'next/link';
+import { buildRouteMetadata } from '@/lib/routeMetadata';
+
+export const generateMetadata = () => buildRouteMetadata('home');
 
 export default async function Home() {
   const t = await getTranslations('home');

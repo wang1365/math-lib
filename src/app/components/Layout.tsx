@@ -1,7 +1,7 @@
 "use client"
 
 import Link from 'next/link'
-import { BookOpen, Home, Library, Calculator, Menu, X, Plus, Hash } from 'lucide-react'
+import { BookOpen, Home, Library, Calculator, Menu, X, Hash } from 'lucide-react'
 import { useState } from 'react'
 
 interface LayoutProps {

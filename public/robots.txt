@@ -1,24 +1,13 @@
-# https://www.robotstxt.org/robotstxt.html
-
 User-agent: *
 Allow: /
-
-# Sitemap
-Sitemap: https://www.onlymath.org/sitemap.xml
-
-# Block access to admin and private areas
 Disallow: /admin/
 Disallow: /private/
 Disallow: /api/
 
-# Allow Googlebot to crawl everything
 User-agent: Googlebot
 Allow: /
 
-# Allow Bingbot to crawl everything
 User-agent: Bingbot
 Allow: /
 
-# Crawl-delay for other bots
-User-agent: *
-Crawl-delay: 1
+Sitemap: https://www.onlymath.org/sitemap.xml

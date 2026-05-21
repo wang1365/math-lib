@@ -1,7 +1,7 @@
 "use client"
 
 import AdBanner from '@/app/components/AdBanner'
-import { Calculator, BookOpen, Video, Globe, ExternalLink, Star, Users } from 'lucide-react'
+import { BookOpen, Video, ExternalLink, Star, Users } from 'lucide-react'
 import Link from 'next/link'
 import { useTranslations } from 'next-intl'
 import { useLocale } from 'next-intl'

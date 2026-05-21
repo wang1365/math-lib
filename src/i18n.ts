@@ -1,6 +1,6 @@
 import { notFound } from 'next/navigation'
 import { getRequestConfig } from 'next-intl/server'
-import { locales, defaultLocale } from './config/i18n'
+import { locales, defaultLocale, type Locale } from './config/i18n'
 
 const localeMessages = {
   'zh-CN': () => import('./messages/zh-CN.json').then(m => m.default),
@@ -17,10 +17,11 @@ const localeMessages = {
 
 export default getRequestConfig(async ({ locale }) => {
   // Validate that the incoming `locale` parameter is valid
-  if (!locales.map(l => l.code).includes(locale as any)) notFound()
+  if (!locales.some(l => l.code === locale)) notFound()
+  const activeLocale = (locale || defaultLocale) as Locale
 
   return {
-    locale: locale || defaultLocale,
-    messages: await localeMessages[locale as keyof typeof localeMessages]()
+    locale: activeLocale,
+    messages: await localeMessages[activeLocale]()
   }
 })

@@ -37,6 +37,10 @@ module.exports = {
   outDir: 'public',
   generateRobotsTxt: false,
   transform: async (_cfg, path) => {
+    if (path === `/${defaultLocale}` || path.startsWith(`/${defaultLocale}/`)) {
+      return null
+    }
+
     const base = stripLocale(path)
     const isHome = base === '/'
     const priority = isHome ? 1.0 : 0.8
