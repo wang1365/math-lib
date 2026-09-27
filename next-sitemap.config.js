@@ -27,7 +27,7 @@ const buildAlternateRefs = (path) => {
 module.exports = {
   siteUrl,
   outDir: 'public',
-  exclude: ['/en', '/en/*'],
+  exclude: ['/en', '/en/*', '/opengraph-image', '/twitter-image'],
   generateRobotsTxt: false,
   transform: async (_cfg, path) => {
     const base = stripLocale(path)

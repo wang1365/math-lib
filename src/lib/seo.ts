@@ -22,15 +22,7 @@ export const alternateLanguages = (path = '/') => {
 
 export const ogLocaleMap: Record<Locale, string> = {
   'zh-CN': 'zh_CN',
-  'zh-TW': 'zh_TW',
-  en: 'en_US',
-  fr: 'fr_FR',
-  ja: 'ja_JP',
-  es: 'es_ES',
-  pt: 'pt_PT',
-  ko: 'ko_KR',
-  ar: 'ar_SA',
-  de: 'de_DE'
+  en: 'en_US'
 }
 
 type BuildMetadataOptions = {
@@ -49,7 +41,7 @@ export function buildPageMetadata({
   keywords = []
 }: BuildMetadataOptions): Metadata {
   const canonicalPath = localizedPath(locale, path)
-  const imageUrl = absoluteUrl('/opengraph-image')
+  const imageUrl = absoluteUrl('/api/og')
   const isIndexableLocale = indexableLocales.includes(locale as typeof indexableLocales[number])
 
   return {

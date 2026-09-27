@@ -19,7 +19,7 @@ export function pageMetadata(locale: string, section: Section): Metadata {
   return {
     title, description,
     alternates: { canonical, languages: { en: localPath('en', item.path), 'zh-CN': localPath('zh-CN', item.path) } },
-    openGraph: { title, description, url: canonical, siteName: siteCopy(locale).brand, type: 'website', locale: locale.replace('-', '_') },
-    twitter: { card: 'summary', title, description },
+    openGraph: { title, description, url: canonical, siteName: siteCopy(locale).brand, type: 'website', locale: locale.replace('-', '_'), images: [{ url: '/api/og', width: 1200, height: 630, alt: 'OnlyMath math learning resources' }] },
+    twitter: { card: 'summary_large_image', title, description, images: ['/api/og'] },
   }
 }

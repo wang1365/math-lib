@@ -50,7 +50,7 @@ const zhContent: TrustContent = {
       {
         heading: '我们收集的信息',
         body: [
-          '当你通过联系表单发送反馈时，表单会打开你的邮件客户端；网站本身不会保存表单数据库。',
+          '联系页面的邮件链接会打开你的邮件客户端；网站本身不会保存网页表单记录。',
           '我们可能使用 Google Analytics 了解页面访问、设备类型、来源页面和基础互动情况，用于改进内容和体验。'
         ]
       },
@@ -140,7 +140,7 @@ const enContent: TrustContent = {
       {
         heading: 'Information we collect',
         body: [
-          'When you use the contact form, the form opens your email client; the site does not store messages in its own database.',
+          'The contact link opens your email client; the site does not store a web form submission.',
           'We may use Google Analytics to understand page visits, device types, traffic sources, and basic interactions so we can improve the site.'
         ]
       },

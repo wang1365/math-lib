@@ -17,6 +17,7 @@ export default function Layout({ children, locale: suppliedLocale }: { children:
   const nav = [
     { label: c.topics, path: '/branches' },
     { label: c.resources, path: '/resources' },
+    { label: c.guides, path: '/guides' },
     { label: c.tools, path: '/tools' },
     { label: c.calculator, path: '/calculator' },
   ]
@@ -44,8 +45,8 @@ export default function Layout({ children, locale: suppliedLocale }: { children:
     <main id="main-content">{children}</main>
     <footer className="site-footer"><div className="container-wide footer-grid">
       <div><Link className="brand footer-brand" href={localPath(locale, '/')}><span className="brand-mark" aria-hidden="true">∑</span><span>{c.brand}</span></Link><p>{c.footer}</p></div>
-      <div><h2>{locale.startsWith('zh') ? '探索' : 'Explore'}</h2><Link href={localPath(locale, '/branches')}>{c.topics}</Link><Link href={localPath(locale, '/resources')}>{c.resources}</Link><Link href={localPath(locale, '/tools')}>{c.tools}</Link><Link href={localPath(locale, '/examples')}>{c.examples}</Link></div>
-      <div><h2>{locale.startsWith('zh') ? '联系' : 'Get in touch'}</h2><a href="mailto:wangxiaochuan01@163.com?subject=OnlyMath%20feedback">{c.contact} <ArrowUpRight size={15} aria-hidden="true" /></a><p className="footer-note">© {new Date().getFullYear()} OnlyMath</p></div>
+      <div><h2>{locale.startsWith('zh') ? '探索' : 'Explore'}</h2><Link href={localPath(locale, '/branches')}>{c.topics}</Link><Link href={localPath(locale, '/resources')}>{c.resources}</Link><Link href={localPath(locale, '/guides')}>{c.guides}</Link><Link href={localPath(locale, '/tools')}>{c.tools}</Link><Link href={localPath(locale, '/examples')}>{c.examples}</Link></div>
+      <div><h2>{locale.startsWith('zh') ? '网站' : 'Site'}</h2><Link href={localPath(locale, '/about')}>{c.about}</Link><Link href={localPath(locale, '/contact')}>{c.contactPage}</Link><Link href={localPath(locale, '/privacy')}>{c.privacy}</Link><Link href={localPath(locale, '/terms')}>{c.terms}</Link><p className="footer-note">© {new Date().getFullYear()} OnlyMath</p></div>
     </div></footer>
   </div>
 }
