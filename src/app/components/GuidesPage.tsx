@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import { ArrowUpRight } from 'lucide-react'
 import { getGuides } from '@/lib/guideContent'
+import { resources } from '@/lib/catalog'
 import { localPath } from '@/lib/site-copy'
 
 export default function GuidesPage({ locale }: { locale: string }) {
@@ -23,7 +24,14 @@ export default function GuidesPage({ locale }: { locale: string }) {
             <h3>{section.heading}</h3>
             {section.body.map(paragraph => <p key={paragraph}>{paragraph}</p>)}
           </section>)}
-          <Link className="text-link" href={localPath(locale, '/resources')}>{zh ? '浏览相关资源' : 'Browse related resources'} <ArrowUpRight size={16} /></Link>
+          <div className="guide-resources">
+            <h3>{zh ? '建议搭配的资源' : 'Resources for this path'}</h3>
+            <ul>{guide.resourceIds.map(id => {
+              const resource = resources.find(item => item.id === id)
+              return resource ? <li key={id}><a href={resource.url} target="_blank" rel="noopener noreferrer"><strong>{resource.name}</strong><span>{zh ? resource.bestForZh : resource.bestFor}</span><ArrowUpRight size={16} aria-hidden="true" /></a></li> : null
+            })}</ul>
+            <Link className="text-link" href={localPath(locale, '/resources')}>{zh ? '比较全部资源' : 'Compare all resources'} <ArrowUpRight size={16} aria-hidden="true" /></Link>
+          </div>
         </div>
       </article>)}
     </div>

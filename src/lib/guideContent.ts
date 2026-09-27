@@ -3,6 +3,7 @@ export type Guide = {
   title: string
   summary: string
   level: string
+  resourceIds: string[]
   sections: {
     heading: string
     body: string[]
@@ -15,6 +16,7 @@ const zhGuides: Guide[] = [
     title: '微积分自学路线：从函数到积分应用',
     summary: '一条适合高中后到大学初学者的微积分学习路线，强调概念、计算和应用的顺序。',
     level: '入门到中级',
+    resourceIds: ['openstax-precalculus', '3b1b', 'pauls-notes', 'openstax-calculus'],
     sections: [
       {
         heading: '先补齐函数语言',
@@ -44,6 +46,7 @@ const zhGuides: Guide[] = [
     title: '线性代数学习路线：矩阵计算背后的结构',
     summary: '从向量、矩阵到线性变换，帮助学习者把计算步骤和几何意义连接起来。',
     level: '大学基础',
+    resourceIds: ['3b1b', 'libretexts-linear', 'mit'],
     sections: [
       {
         heading: '把矩阵看作变换',
@@ -73,6 +76,7 @@ const zhGuides: Guide[] = [
     title: '如何选择数学学习资源：课程、视频、教材和工具的搭配',
     summary: '给自学者的资源选择框架，避免在大量数学资源中反复切换却没有稳定进展。',
     level: '所有阶段',
+    resourceIds: ['khan', 'openstax-algebra', 'merlot'],
     sections: [
       {
         heading: '先确定学习目标',
@@ -82,9 +86,9 @@ const zhGuides: Guide[] = [
         ]
       },
       {
-        heading: '资源搭配比例',
+        heading: '搭配主线与补充资源',
         body: [
-          '建议采用“教材或课程 50%，练习 30%，可视化和工具 20%”的比例。',
+          '先选一本教材或一门课程作为主线。每学完一个小节，做题检验理解；卡住时再找视频、图像或工具补充解释。',
           '视频适合理解动机和图像，教材适合建立严谨结构，练习用于暴露漏洞，工具用于验证猜想。'
         ]
       },
@@ -96,6 +100,24 @@ const zhGuides: Guide[] = [
         ]
       }
     ]
+  },
+  {
+    slug: 'algebra-foundations', title: '代数基础补习路线：从方程到函数', summary: '适合准备 Algebra 1、重修基础或进入预备微积分前自查的学习者。', level: '高中基础',
+    resourceIds: ['khan', 'ck12-flexmath', 'math-is-fun', 'openstax-algebra'],
+    sections: [
+      { heading: '先找出真正卡住的环节', body: ['用几个方程与图像题检查负数运算、分数、比例和一次方程。若这些步骤不稳，先回到对应小节练习。', '做题时记录错误原因：计算、符号、建立方程，还是无法解释图像。针对原因补习比从头重看整门课更有效。'] },
+      { heading: '按方程、图像、函数推进', body: ['先练一次方程和不等式，再把解与数轴、坐标图联系起来。接着学习斜率、截距与函数符号。', '能够用文字解释直线斜率与截距后，再进入二次函数、多项式和指数函数。每个新主题都画图并尝试解释图像变化。'] },
+      { heading: '每周做一次迁移检查', body: ['不要只做重复题。尝试用同一个概念解一道文字题、一张图像题和一道符号计算题。', '如果三种表达方式不能互相转换，先继续巩固当前主题，再进入下一章。'] },
+    ],
+  },
+  {
+    slug: 'statistics-foundations', title: '统计学入门路线：从数据到推断', summary: '先学如何阅读数据，再逐步理解概率、抽样和统计结论。', level: '高中到大学入门',
+    resourceIds: ['openstax-statistics', 'openintro-statistics', 'statquest', 'mathigon-polypad'],
+    sections: [
+      { heading: '先描述数据，不急着做检验', body: ['从数据来源、变量类型、图表和分布开始。解释中位数、均值与离群值分别告诉了你什么。', '遇到一个图表时，先问样本来自哪里、坐标轴如何设置、是否遗漏了重要分组。'] },
+      { heading: '把概率和抽样连起来', body: ['用简单试验理解条件概率和独立性，再比较总体、样本与抽样误差。', '在计算置信区间或 p 值前，先用自己的话说清楚问题、假设和数据是如何收集的。'] },
+      { heading: '用真实问题检查结论', body: ['每学一个方法，找一个小数据集，写下计算结果、它支持的结论及其局限。', '特别注意相关不等于因果，统计显著性也不自动代表实际影响很大。'] },
+    ],
   }
 ]
 
@@ -105,6 +127,7 @@ const enGuides: Guide[] = [
     title: 'A Calculus Roadmap: From Functions to Applications',
     summary: 'A practical sequence for first-time calculus learners, connecting concepts, computation, and applications.',
     level: 'Beginner to intermediate',
+    resourceIds: ['openstax-precalculus', '3b1b', 'pauls-notes', 'openstax-calculus'],
     sections: [
       {
         heading: 'Start with the language of functions',
@@ -134,6 +157,7 @@ const enGuides: Guide[] = [
     title: 'A Linear Algebra Roadmap: Structure Behind Matrix Computation',
     summary: 'A guide to connect vectors, matrices, systems, determinants, and eigenvectors with geometric meaning.',
     level: 'College foundation',
+    resourceIds: ['3b1b', 'libretexts-linear', 'mit'],
     sections: [
       {
         heading: 'See matrices as transformations',
@@ -163,6 +187,7 @@ const enGuides: Guide[] = [
     title: 'How to Choose Math Learning Resources',
     summary: 'A framework for combining courses, videos, textbooks, exercises, and tools without constantly switching resources.',
     level: 'All levels',
+    resourceIds: ['khan', 'openstax-algebra', 'merlot'],
     sections: [
       {
         heading: 'Define the goal first',
@@ -172,9 +197,9 @@ const enGuides: Guide[] = [
         ]
       },
       {
-        heading: 'Use a balanced resource mix',
+        heading: 'Choose a main path and supporting tools',
         body: [
-          'A useful split is 50% textbook or course, 30% exercises, and 20% visualization or tools.',
+          'Choose one textbook or course as your main path. Try problems after each small section, then use a video, diagram, or tool when you need another explanation.',
           'Videos explain motivation, textbooks build structure, exercises expose gaps, and tools help test conjectures.'
         ]
       },
@@ -186,6 +211,24 @@ const enGuides: Guide[] = [
         ]
       }
     ]
+  },
+  {
+    slug: 'algebra-foundations', title: 'Rebuild Algebra: From Equations to Functions', summary: 'A focused path for Algebra 1 review or for checking foundations before precalculus.', level: 'High school foundation',
+    resourceIds: ['khan', 'ck12-flexmath', 'math-is-fun', 'openstax-algebra'],
+    sections: [
+      { heading: 'Find the actual gap first', body: ['Use a few equation and graph questions to check signed numbers, fractions, ratios, and linear equations. If one step is shaky, practice that step before moving on.', 'Record whether each mistake came from arithmetic, notation, translating words into an equation, or reading a graph. A targeted review is usually more useful than replaying an entire course.'] },
+      { heading: 'Move from equations to graphs to functions', body: ['Practice linear equations and inequalities, then connect solutions to number lines and coordinate graphs. Next, learn slope, intercepts, and function notation.', 'Once you can explain slope and intercepts in words, move to quadratics, polynomials, and exponentials. Sketch each new family and describe how its graph changes.'] },
+      { heading: 'Check transfer each week', body: ['Use the same idea in a word problem, a graph question, and a symbolic calculation instead of repeating only one exercise type.', 'If you cannot move between those representations, strengthen the current topic before opening the next chapter.'] },
+    ],
+  },
+  {
+    slug: 'statistics-foundations', title: 'Start Statistics: From Data to Inference', summary: 'Learn to read data before moving into probability, sampling, and statistical claims.', level: 'High school to college',
+    resourceIds: ['openstax-statistics', 'openintro-statistics', 'statquest', 'mathigon-polypad'],
+    sections: [
+      { heading: 'Describe data before testing claims', body: ['Begin with data sources, variable types, graphs, and distributions. Explain what a mean, median, and outlier each tell you.', 'For any chart, ask where the sample came from, how the axes were drawn, and whether important groups were omitted.'] },
+      { heading: 'Connect probability to sampling', body: ['Use simple experiments to understand conditional probability and independence, then distinguish a population from a sample and sampling error.', 'Before computing a confidence interval or p-value, state the question, the assumptions, and how the data were collected in plain language.'] },
+      { heading: 'Use a real question to check the conclusion', body: ['With each new method, use a small data set and write down the result, what it supports, and what it cannot establish.', 'Keep correlation separate from causation, and distinguish statistical significance from practical importance.'] },
+    ],
   }
 ]
 

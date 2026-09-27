@@ -16,6 +16,7 @@ Visit `http://localhost:3000`. The default site is English. Simplified Chinese i
 - `/`: topic-led home page
 - `/branches`: math topic guides and starting sequences
 - `/resources`: searchable resource directory with topic and format filters
+- `/guides`: original learning paths with relevant resource recommendations
 - `/tools`: working on-site and clearly labeled external tools
 - `/calculator`: keyboard-accessible basic arithmetic calculator
 - `/examples`: formulas with usage notes and worked examples
@@ -24,7 +25,7 @@ The Chinese pages use the same paths under `/zh-CN`. Default-locale `/en` links 
 
 ## Content maintenance
 
-Edit `src/lib/catalog.ts` to change topics and resource listings. Every resource includes a short description, the learner it suits, a limitation, format, cost category, and topic tags. Verify the destination and access terms before changing a listing. Avoid unsupported ratings and claims about site features.
+Edit `src/lib/catalog.ts` and `src/lib/resource-additions.ts` to change topics and resource listings. Every resource includes a short description, the learner it suits, a limitation, format, cost category, and topic tags. Verify the destination and access terms before changing a listing. The [resource sourcing record](docs/resource-sourcing.md) lists the provider pages used for the expanded directory. Avoid unsupported ratings and claims about site features.
 
 Interface copy is in `src/lib/site-copy.ts`. Page titles, descriptions, canonical URLs, and language alternates are in `src/lib/metadata.ts`. To add another locale, provide complete editorial copy and verify all pages before adding it to `src/config/i18n.ts` and `next-sitemap.config.js`.
 

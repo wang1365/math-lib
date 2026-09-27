@@ -29,6 +29,7 @@ module.exports = {
   outDir: 'public',
   exclude: ['/en', '/en/*', '/opengraph-image', '/twitter-image'],
   generateRobotsTxt: false,
+  additionalPaths: async config => Promise.all(['/resources', '/zh-CN/resources'].map(path => config.transform(config, path))),
   transform: async (_cfg, path) => {
     const base = stripLocale(path)
     const isHome = base === '/'

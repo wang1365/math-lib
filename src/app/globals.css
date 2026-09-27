@@ -161,6 +161,13 @@ h1,h2,h3,p { margin-top:0; }
 .guide-body h3 { margin-bottom:8px; font-size:19px; letter-spacing:-.02em; }
 .guide-body section p { margin-bottom:11px; color:var(--muted); font-size:15px; }
 .guide-body .text-link { margin-top:9px; }
+.guide-resources { padding-top:23px; margin-top:24px; border-top:1px solid var(--line); }
+.guide-resources h3 { margin-bottom:11px; font-size:17px; }
+.guide-resources ul { padding:0; margin:0 0 18px; list-style:none; }
+.guide-resources li { border-bottom:1px solid var(--line); }
+.guide-resources li a { display:grid; grid-template-columns:minmax(150px,.75fr) minmax(0,1.25fr) 18px; gap:16px; align-items:center; padding:12px 0; font-size:13px; }
+.guide-resources li a:hover strong { color:var(--blue); }
+.guide-resources li span { color:var(--muted); }
 .prose-page { max-width:800px; }
 .prose-page .page-heading { margin-bottom:50px; }
 .content-date { display:inline-block; margin-top:17px; color:#78818b; font-size:12px; }
@@ -176,7 +183,7 @@ h1,h2,h3,p { margin-top:0; }
 .contact-card .button { max-width:100%; overflow-wrap:anywhere; text-align:center; }
 .contact-card .contact-hint { margin:17px 0 0; font-size:12px; }
 @media (max-width:780px) { .guide-article { grid-template-columns:145px minmax(0,1fr); gap:22px; } .contact-layout { grid-template-columns:1fr; gap:8px; } }
-@media (max-width:560px) { .guide-article { grid-template-columns:1fr; gap:7px; padding:34px 0 40px; } .guide-summary { font-size:15px; } .contact-card { padding:23px; } }
+@media (max-width:560px) { .guide-article { grid-template-columns:1fr; gap:7px; padding:34px 0 40px; } .guide-summary { font-size:15px; } .guide-resources li a { grid-template-columns:1fr 18px; gap:3px 10px; } .guide-resources li span { grid-column:1; grid-row:2; } .guide-resources li svg { grid-column:2; grid-row:1; } .contact-card { padding:23px; } }
 @media (max-width:1000px) { .site-header-inner { gap:20px; } .desktop-nav { gap:17px; } .home-hero { gap:44px; } .directory-grid { grid-template-columns:1fr; } }
 @media (max-width:780px) { .container-wide { width:min(100% - 36px,1160px); } .desktop-nav { display:none; } .header-actions { margin-left:auto; } .menu-toggle { display:flex; } .mobile-nav { display:grid; padding-bottom:16px; } .mobile-nav a { display:flex; justify-content:space-between; align-items:center; min-height:46px; padding:8px 4px; border-top:1px solid var(--line); font-weight:650; } .home-hero { min-height:0; grid-template-columns:1fr; padding-block:60px 74px; } .hero-aside { width:min(100% - 15px,500px); margin:0 0 8px 3px; } .topic-grid,.resource-grid,.tool-grid { grid-template-columns:repeat(2,minmax(0,1fr)); } .footer-grid { grid-template-columns:1.5fr 1fr; gap:35px; } .footer-grid>div:last-child { grid-column:1 / -1; } .directory-layout,.topics-layout { grid-template-columns:1fr; gap:25px; } .filter-panel { position:static; grid-template-columns:1fr 1fr; } .filter-panel h2 { grid-column:1 / -1; } .filter-panel label { align-self:end; } .filter-panel input,.filter-panel select { grid-row:auto; } .topic-index-nav { position:static; display:flex; flex-wrap:wrap; gap:8px 16px; } .topic-index-nav a { padding:3px 0; } .calculator-layout { gap:35px; } }
 @media (max-width:560px) { .site-header-inner { min-height:66px; } .brand { font-size:19px; } .brand-mark { width:31px; height:31px; } .language-select select { max-width:76px; } .home-hero { gap:53px; padding-block:45px 72px; } .home-hero h1 { font-size:42px; } .hero-lead,.page-heading>p:last-child { font-size:16px; } .section-inner { padding-block:64px; } .section-heading { display:block; } .section-heading .text-link { margin-top:16px; } .topic-grid,.resource-grid,.tool-grid,.directory-grid { grid-template-columns:1fr; } .topic-tile { min-height:157px; } .topic-tile h3 { margin-top:17px; } .goal-row { min-height:112px; grid-template-columns:32px 1fr 22px; gap:10px; } .goal-row strong { font-size:18px; } .editorial-strip { grid-template-columns:1fr; gap:15px; padding-block:60px; } .footer-grid { grid-template-columns:1fr 1fr; gap:34px 18px; } .footer-grid>div:first-child { grid-column:1 / -1; } .page-content { padding-block:48px 80px; } .page-heading { margin-bottom:35px; } .page-heading h1 { font-size:39px; } .filter-panel { grid-template-columns:1fr; } .topic-section-body,.formula-card,.formula-explanation,.calculator-layout { grid-template-columns:1fr; } .formula-card { gap:14px; padding:22px; } .formula-explanation { gap:17px; } .calculator-help { padding-top:0; } }

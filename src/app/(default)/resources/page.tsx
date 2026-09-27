@@ -1,6 +1,10 @@
 import ResourcesView from '@/app/components/ResourcesView'
 import { pageMetadata } from '@/lib/metadata'
-import { Suspense } from 'react'
+import { parseResourceFilters } from '@/lib/resourceFilters'
 
 export const metadata = pageMetadata('en', 'resources')
-export default function Page() { return <Suspense fallback={<div className="container-wide page-content">Loading resources…</div>}><ResourcesView /></Suspense> }
+
+export default async function Page({ searchParams }: { searchParams: Promise<Record<string, string | string[] | undefined>> }) {
+  const initialFilters = parseResourceFilters(await searchParams)
+  return <ResourcesView key={`${initialFilters.q}|${initialFilters.topic}|${initialFilters.format}`} initialFilters={initialFilters} />
+}

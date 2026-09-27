@@ -1,5 +1,7 @@
+import { additionalResources } from './resource-additions'
+
 export type TopicId = 'algebra' | 'geometry' | 'precalculus' | 'calculus' | 'statistics' | 'linear-algebra'
-export type Format = 'Course' | 'Video' | 'Practice' | 'Tool'
+export type Format = 'Course' | 'Video' | 'Practice' | 'Tool' | 'Textbook' | 'Notes' | 'Collection'
 
 export const topics: { id: TopicId; name: string; zh: string; level: string; levelZh: string; description: string; descriptionZh: string; steps: string[]; stepsZh: string[]; checkpoint: string; checkpointZh: string }[] = [
   { id: 'algebra', name: 'Algebra 1 & 2', zh: '代数 1 与 2', level: 'High school', levelZh: '高中', description: 'Equations, functions, and the skills that support later math.', descriptionZh: '从方程到函数，为后续数学学习打好基础。', steps: ['Solve linear equations and inequalities', 'Connect tables, graphs, and function notation', 'Study quadratics, polynomials, and exponentials'], stepsZh: ['求解一次方程与不等式', '建立表格、图像与函数符号的联系', '学习二次函数、多项式与指数函数'], checkpoint: 'Can you explain what the slope and intercept mean in a real problem?', checkpointZh: '你能解释实际问题中斜率与截距的含义吗？' },
@@ -24,6 +26,7 @@ export type Resource = {
   bestForZh: string
   caveat: string
   caveatZh: string
+  checkedAt?: string
 }
 
 export const resources: Resource[] = [
@@ -35,6 +38,7 @@ export const resources: Resource[] = [
   { id: 'leonard', name: 'Professor Leonard', url: 'https://www.youtube.com/@ProfessorLeonard', format: 'Video', cost: 'Free', level: 'Intermediate', topics: ['precalculus', 'calculus', 'statistics'], summary: 'Long-form classroom-style math lectures.', summaryZh: '以课堂讲授形式提供较完整的视频课程。', bestFor: 'Following a structured explanation from start to finish.', bestForZh: '希望跟随完整讲授逐步学习的人。', caveat: 'Lectures are long; plan time for notes and practice.', caveatZh: '视频较长，建议预留记笔记与练习时间。' },
   { id: 'coursera', name: 'Coursera', url: 'https://www.coursera.org/courses?query=mathematics', format: 'Course', cost: 'Free / paid', level: 'All levels', topics: ['algebra', 'calculus', 'statistics', 'linear-algebra'], summary: 'Math courses from multiple providers in one catalog.', summaryZh: '汇集不同提供方的数学课程。', bestFor: 'Comparing course structures and instructors.', bestForZh: '比较课程结构与讲师风格。', caveat: 'Access and certificate prices vary by course; check before enrolling.', caveatZh: '访问权限和证书价格因课程而异，请在报名时确认。' },
   { id: 'edx', name: 'edX', url: 'https://www.edx.org/learn/math', format: 'Course', cost: 'Free / paid', level: 'All levels', topics: ['calculus', 'statistics', 'linear-algebra'], summary: 'Online math courses from universities and other providers.', summaryZh: '提供大学及其他机构的在线数学课程。', bestFor: 'Learners who want a guided course format.', bestForZh: '希望按课程结构系统学习的人。', caveat: 'Audit access and paid options depend on the course.', caveatZh: '旁听与付费选项取决于具体课程。' },
+  ...additionalResources,
 ]
 
 export const featuredResourceIds = ['khan', '3b1b', 'desmos']
