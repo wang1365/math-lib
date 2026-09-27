@@ -5,11 +5,9 @@ const locales = [
   'zh-CN'
 ]
 
-const defaultLocale = 'zh-CN'
+const defaultLocale = 'en'
 
-const localePattern = /^\/(zh-CN|zh-TW|en|fr|ja|es|pt|ko|ar|de)(?=\/|$)/
-const indexableLocalePattern = /^\/(zh-CN|en)(?=\/|$)/
-const nonContentPaths = new Set(['/opengraph-image', '/twitter-image'])
+const localePattern = /^\/(zh-CN|en)(?=\/|$)/
 
 const stripLocale = (path) => {
   const p = path.replace(localePattern, '')
@@ -29,22 +27,9 @@ const buildAlternateRefs = (path) => {
 module.exports = {
   siteUrl,
   outDir: 'public',
+  exclude: ['/en', '/en/*'],
   generateRobotsTxt: false,
   transform: async (_cfg, path) => {
-    if (nonContentPaths.has(stripLocale(path))) {
-      return null
-    }
-
-    const firstSegment = path.split('/').filter(Boolean)[0]
-    const hasLocalePrefix = firstSegment && localePattern.test(`/${firstSegment}`)
-    if (hasLocalePrefix && !indexableLocalePattern.test(`/${firstSegment}`)) {
-      return null
-    }
-
-    if (path === `/${defaultLocale}` || path.startsWith(`/${defaultLocale}/`)) {
-      return null
-    }
-
     const base = stripLocale(path)
     const isHome = base === '/'
     const priority = isHome ? 1.0 : 0.8

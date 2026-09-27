@@ -1,21 +1,11 @@
 import createMiddleware from 'next-intl/middleware'
-import { locales, defaultLocale } from './config/i18n'
-import type { NextRequest } from 'next/server'
+import { defaultLocale, locales } from './config/i18n'
 
-const handleI18nRouting = createMiddleware({
-  locales: locales.map(l => l.code),
+export default createMiddleware({
+  locales: locales.map(item => item.code),
   defaultLocale,
   localePrefix: 'as-needed',
-  localeDetection: true
+  localeDetection: true,
 })
 
-export default function proxy(request: NextRequest) {
-  return handleI18nRouting(request)
-}
-
-export const config = {
-  matcher: [
-    '/((?!api|_next|.*\..*).*)',
-    '/(zh-CN|zh-TW|en|fr|ja|es|pt|ko|ar|de)/:path*'
-  ]
-}
+export const config = { matcher: ['/((?!api|_next|.*\\..*).*)'] }

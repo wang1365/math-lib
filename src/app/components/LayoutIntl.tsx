@@ -1,175 +1,51 @@
 'use client'
 
 import Link from 'next/link'
-import { BookOpen, Home, Library, Calculator, Menu, X, Hash } from 'lucide-react'
+import { usePathname } from 'next/navigation'
+import { useLocale } from 'next-intl'
 import { useState } from 'react'
-import { useLocale, useTranslations } from 'next-intl'
+import { ArrowUpRight, Menu, X } from 'lucide-react'
 import LanguageSwitcher from './LanguageSwitcher'
-import { defaultLocale } from '@/config/i18n'
+import { localPath, siteCopy } from '@/lib/site-copy'
 
-interface LayoutProps {
-  children: React.ReactNode
-  locale?: string
-}
-
-export default function Layout({ children, locale }: LayoutProps) {
-  const [isMenuOpen, setIsMenuOpen] = useState(false)
-  const t = useTranslations('common')
+export default function Layout({ children, locale: suppliedLocale }: { children: React.ReactNode; locale?: string }) {
   const currentLocale = useLocale()
-  const activeLocale = locale || currentLocale
-  const trustLabels = activeLocale === 'zh-CN' || activeLocale === 'zh-TW'
-    ? { about: '关于', privacy: '隐私政策', terms: '使用条款', contact: '联系' }
-    : { about: 'About', privacy: 'Privacy', terms: 'Terms', contact: 'Contact' }
-  const guidesLabel = activeLocale === 'zh-CN' || activeLocale === 'zh-TW' ? '学习指南' : 'Guides'
-
-  const navigation = [
-    { name: t('navigation.home'), href: '/', icon: Home },
-    { name: guidesLabel, href: '/guides', icon: BookOpen },
-    { name: t('navigation.resources'), href: '/resources', icon: BookOpen },
-    { name: t('navigation.branches'), href: '/branches', icon: Library },
-    { name: t('navigation.tools'), href: '/tools', icon: Calculator },
-    { name: t('navigation.calculator'), href: '/calculator', icon: Calculator },
-    { name: t('navigation.examples'), href: '/examples', icon: Hash },
+  const locale = suppliedLocale || currentLocale
+  const c = siteCopy(locale)
+  const pathname = usePathname()
+  const [menuOpen, setMenuOpen] = useState(false)
+  const nav = [
+    { label: c.topics, path: '/branches' },
+    { label: c.resources, path: '/resources' },
+    { label: c.tools, path: '/tools' },
+    { label: c.calculator, path: '/calculator' },
   ]
 
-  const withLocale = (href: string) => {
-    const normalized = href.startsWith('/') ? href : `/${href}`
-    return activeLocale === defaultLocale ? normalized : `/${activeLocale}${normalized === '/' ? '' : normalized}`
-  }
-
-  return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100">
-      {/* Navigation */}
-      <nav className="bg-white/80 backdrop-blur-lg border-b border-gray-200/50 sticky top-0 z-50 shadow-sm">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between h-20">
-            <div className="flex items-center">
-              <Link href={withLocale('/')} className="flex items-center space-x-3 group">
-                <div className="w-10 h-10 bg-gradient-to-br from-blue-600 via-purple-600 to-indigo-600 rounded-xl flex items-center justify-center shadow-lg group-hover:shadow-xl transition-all duration-300 transform group-hover:scale-105">
-                  <span className="text-white font-bold text-xl">∑</span>
-                </div>
-                <span className="text-2xl font-bold bg-gradient-to-r from-gray-900 to-gray-700 bg-clip-text text-transparent group-hover:from-blue-600 group-hover:to-purple-600 transition-all duration-300 whitespace-nowrap flex-shrink-0">
-                  {t('siteTitle')}
-                </span>
-              </Link>
-            </div>
-
-            {/* Desktop Navigation */}
-            <div className="hidden md:flex items-center space-x-2">
-              {navigation.map((item) => (
-                <Link
-                  key={item.name}
-                  href={withLocale(item.href)}
-                  className="group relative flex items-center space-x-2 text-gray-600 hover:text-blue-600 px-4 py-3 rounded-xl text-sm font-medium transition-all duration-300 hover:bg-blue-50/50 hover:shadow-sm"
-                >
-                  <item.icon className="w-5 h-5 transition-transform duration-300 group-hover:scale-110" />
-                  <span className="relative">
-                    {item.name}
-                    <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-600 to-purple-600 transition-all duration-300 group-hover:w-full"></span>
-                  </span>
-                </Link>
-              ))}
-              
-              {/* Language Switcher */}
-              <div className="ml-4">
-                <LanguageSwitcher />
-              </div>
-            </div>
-
-            {/* Mobile menu button */}
-            <div className="md:hidden flex items-center">
-              <div className="mr-2">
-                <LanguageSwitcher />
-              </div>
-              <button
-                onClick={() => setIsMenuOpen(!isMenuOpen)}
-                className="text-gray-600 hover:text-blue-600 p-3 rounded-lg hover:bg-blue-50/50 transition-all duration-300"
-              >
-                {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-              </button>
-            </div>
-          </div>
-
-          {/* Mobile Navigation */}
-          {isMenuOpen && (
-            <div className="md:hidden bg-white/95 backdrop-blur-lg border-t border-gray-200/50">
-              <div className="px-4 py-4 space-y-2">
-              {navigation.map((item) => (
-                <Link
-                  key={item.name}
-                  href={withLocale(item.href)}
-                  className="group flex items-center space-x-3 text-gray-700 hover:text-blue-600 hover:bg-blue-50/50 px-4 py-3 rounded-xl text-base font-medium transition-all duration-300 transform hover:translate-x-1"
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                    <item.icon className="w-5 h-5 transition-transform duration-300 group-hover:scale-110" />
-                    <span className="relative">
-                      {item.name}
-                      <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-600 to-purple-600 transition-all duration-300 group-hover:w-full"></span>
-                    </span>
-                  </Link>
-                ))}
-              </div>
-            </div>
-          )}
-        </div>
-      </nav>
-
-      {/* Main Content */}
-      <main className="flex-1">
-        {children}
-      </main>
-
-      {/* Footer */}
-      <footer className="bg-gray-900 text-white relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-blue-900/20 via-purple-900/20 to-indigo-900/20"></div>
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-            <div className="col-span-1 md:col-span-2">
-              <div className="flex items-center space-x-3 mb-6">
-                <div className="w-10 h-10 bg-gradient-to-br from-blue-600 via-purple-600 to-indigo-600 rounded-xl flex items-center justify-center shadow-lg">
-                  <span className="text-white font-bold text-xl">∑</span>
-                </div>
-                <span className="text-2xl font-bold bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent whitespace-nowrap">
-                  {t('siteTitle')}
-                </span>
-              </div>
-              <p className="text-gray-300 mb-6">
-                {t('siteDescription')}
-              </p>
-              <div className="text-sm text-gray-400">
-                <p>{t('footer.copyright')}</p>
-              </div>
-            </div>
-            <div>
-              <h3 className="text-xl font-bold mb-6 bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">
-                {t('footer.quickLinks')}
-              </h3>
-              <ul className="space-y-3">
-                <li><Link href={withLocale('/resources')} className="group flex items-center text-gray-300 hover:text-white transition-all duration-300"><span className="w-2 h-0.5 bg-gradient-to-r from-blue-400 to-purple-400 mr-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>{t('navigation.resources')}</Link></li>
-                <li><Link href={withLocale('/guides')} className="group flex items-center text-gray-300 hover:text-white transition-all duration-300"><span className="w-2 h-0.5 bg-gradient-to-r from-blue-400 to-purple-400 mr-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>{guidesLabel}</Link></li>
-                <li><Link href={withLocale('/branches')} className="group flex items-center text-gray-300 hover:text-white transition-all duration-300"><span className="w-2 h-0.5 bg-gradient-to-r from-blue-400 to-purple-400 mr-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>{t('navigation.branches')}</Link></li>
-                <li><Link href={withLocale('/tools')} className="group flex items-center text-gray-300 hover:text-white transition-all duration-300"><span className="w-2 h-0.5 bg-gradient-to-r from-blue-400 to-purple-400 mr-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>{t('navigation.tools')}</Link></li>
-                <li><Link href={withLocale('/about')} className="group flex items-center text-gray-300 hover:text-white transition-all duration-300"><span className="w-2 h-0.5 bg-gradient-to-r from-blue-400 to-purple-400 mr-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>{trustLabels.about}</Link></li>
-                <li><Link href={withLocale('/privacy')} className="group flex items-center text-gray-300 hover:text-white transition-all duration-300"><span className="w-2 h-0.5 bg-gradient-to-r from-blue-400 to-purple-400 mr-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>{trustLabels.privacy}</Link></li>
-                <li><Link href={withLocale('/terms')} className="group flex items-center text-gray-300 hover:text-white transition-all duration-300"><span className="w-2 h-0.5 bg-gradient-to-r from-blue-400 to-purple-400 mr-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>{trustLabels.terms}</Link></li>
-              </ul>
-            </div>
-            <div>
-              <h3 className="text-xl font-bold mb-6 bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">
-                {t('footer.contactUs')}
-              </h3>
-              <p className="text-gray-300 text-sm">
-                {activeLocale === 'zh-CN' || activeLocale === 'zh-TW'
-                  ? '有任何问题、纠错或资源推荐，欢迎通过联系页面发送邮件。'
-                  : 'For corrections, questions, or resource suggestions, please use the contact page.'}
-              </p>
-              <Link href={withLocale('/contact')} className="mt-4 inline-flex text-sm font-medium text-blue-300 hover:text-white transition-colors duration-300">
-                {trustLabels.contact}
-              </Link>
-            </div>
-          </div>
-        </div>
-      </footer>
-    </div>
-  )
+  return <div className="site-shell">
+    <a className="skip-link" href="#main-content">{locale.startsWith('zh') ? '跳到主要内容' : 'Skip to content'}</a>
+    <header className="site-header">
+      <div className="site-header-inner container-wide">
+        <Link className="brand" href={localPath(locale, '/')} aria-label={`${c.brand} — ${c.home}`} onClick={() => setMenuOpen(false)}>
+          <span className="brand-mark" aria-hidden="true">∑</span><span>{c.brand}</span>
+        </Link>
+        <nav className="desktop-nav" aria-label={locale.startsWith('zh') ? '主导航' : 'Main navigation'}>
+          {nav.map(item => {
+            const href = localPath(locale, item.path)
+            const active = pathname === href || pathname.startsWith(`${href}/`)
+            return <Link key={item.path} href={href} className={active ? 'nav-link active' : 'nav-link'} aria-current={active ? 'page' : undefined}>{item.label}</Link>
+          })}
+        </nav>
+        <div className="header-actions"><LanguageSwitcher /><button className="menu-toggle" type="button" aria-label={menuOpen ? c.closeMenu : c.menu} aria-expanded={menuOpen} aria-controls="mobile-navigation" onClick={() => setMenuOpen(!menuOpen)}>{menuOpen ? <X size={22} /> : <Menu size={22} />}</button></div>
+      </div>
+      {menuOpen && <nav id="mobile-navigation" className="mobile-nav container-wide" aria-label={locale.startsWith('zh') ? '移动端导航' : 'Mobile navigation'}>
+        {nav.map(item => <Link key={item.path} href={localPath(locale, item.path)} onClick={() => setMenuOpen(false)}>{item.label}<ArrowUpRight size={17} aria-hidden="true" /></Link>)}
+      </nav>}
+    </header>
+    <main id="main-content">{children}</main>
+    <footer className="site-footer"><div className="container-wide footer-grid">
+      <div><Link className="brand footer-brand" href={localPath(locale, '/')}><span className="brand-mark" aria-hidden="true">∑</span><span>{c.brand}</span></Link><p>{c.footer}</p></div>
+      <div><h2>{locale.startsWith('zh') ? '探索' : 'Explore'}</h2><Link href={localPath(locale, '/branches')}>{c.topics}</Link><Link href={localPath(locale, '/resources')}>{c.resources}</Link><Link href={localPath(locale, '/tools')}>{c.tools}</Link><Link href={localPath(locale, '/examples')}>{c.examples}</Link></div>
+      <div><h2>{locale.startsWith('zh') ? '联系' : 'Get in touch'}</h2><a href="mailto:wangxiaochuan01@163.com?subject=OnlyMath%20feedback">{c.contact} <ArrowUpRight size={15} aria-hidden="true" /></a><p className="footer-note">© {new Date().getFullYear()} OnlyMath</p></div>
+    </div></footer>
+  </div>
 }

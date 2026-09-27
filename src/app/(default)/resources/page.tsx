@@ -1,6 +1,6 @@
-import ResourcesView from '../../components/ResourcesView'
+import ResourcesView from '@/app/components/ResourcesView'
 import { pageMetadata } from '@/lib/metadata'
 import { Suspense } from 'react'
 
-export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) { const { locale } = await params; return pageMetadata(locale, 'resources') }
+export const metadata = pageMetadata('en', 'resources')
 export default function Page() { return <Suspense fallback={<div className="container-wide page-content">Loading resources…</div>}><ResourcesView /></Suspense> }
