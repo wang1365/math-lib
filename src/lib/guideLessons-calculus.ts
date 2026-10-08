@@ -43,6 +43,7 @@ export function calculusLesson(t: LessonText): GuideLesson {
           t('Polynomials are continuous, so their limits can be found by substitution. A quotient of continuous functions also permits substitution where its denominator is nonzero. If substitution produces 0/0, simplify or find another argument; do not treat 0/0 as the answer.', '多项式是连续的，因此可通过代入求极限。连续函数的商，在分母不为零时也可以直接代入。如果代入产生 0/0，应化简或寻找其他论证，不能把 0/0 当作答案。'),
         ],
         example: {
+          diagram: 'removable-limit',
           title: t('A removable hole in a graph', '图像中的可去空点'), prompt: t('Find the limit and explain what happens to the graph at x = 3.', '求极限，并解释图像在 x = 3 处的情况。'), equation: '\\lim_{x\\to3}\\frac{x^2-9}{x-3}',
           steps: [
             { text: t('Substitution gives 0/0, which does not determine the limit. Factor the difference of squares.', '直接代入得到 0/0，尚不能确定极限。将平方差分解。'), equation: 'x^2-9=(x-3)(x+3)' },
@@ -121,6 +122,7 @@ export function calculusLesson(t: LessonText): GuideLesson {
           t('A definite integral is a number with accumulated units, not a family of functions. An indefinite integral represents antiderivatives and includes an arbitrary constant. To recover a final amount from a rate, add the net change to the initial amount.', '定积分是具有累积量单位的数，不是一族函数。不定积分表示原函数族，需要包含任意常数。由变化率求最终量时，应把净变化量加到初始量上。'),
         ],
         example: {
+          diagram: 'velocity-area',
           title: t('The same motion has two different totals', '同一运动，对应两种不同的总量'), prompt: t('An object has velocity v(t) = 2t − 4 m/s for 0 ≤ t ≤ 3 and initial position s(0) = 10 m. Find its displacement, final position, and total distance traveled.', '物体在 0 ≤ t ≤ 3 时的速度为 v(t) = 2t − 4 米/秒，初始位置 s(0) = 10 米。求位移、最终位置与总路程。'),
           steps: [
             { text: t('An antiderivative of 2t − 4 is t² − 4t. Evaluate at the upper endpoint minus the lower endpoint to find displacement.', '2t − 4 的一个原函数是 t² − 4t。用上端点值减去下端点值，得到位移。'), equation: '\\int_0^3(2t-4)\\,dt=[t^2-4t]_0^3=-3' },

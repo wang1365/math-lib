@@ -3,6 +3,7 @@ import { ArrowUpRight } from 'lucide-react'
 import type { GuideLesson, LessonProblem } from '@/lib/guideLessons'
 import { localPath } from '@/lib/site-copy'
 import MathFormula from './MathFormula'
+import LessonDiagram from './LessonDiagram'
 
 function Equation({ value }: { value?: string }) {
   return value ? <div className="lesson-math"><MathFormula formula={value} displayMode="block" /></div> : null
@@ -20,6 +21,7 @@ function Problem({ problem, locale, number, level = 'h3' }: { problem: LessonPro
       <div>
         <p><strong>{zh ? '答案：' : 'Answer: '}</strong>{problem.answer}</p>
         <p>{problem.explanation}</p>
+        {problem.diagram && <LessonDiagram diagram={problem.diagram} locale={locale} />}
         <p className="lesson-mistake"><strong>{zh ? '常见错误：' : 'Common mistake: '}</strong>{problem.commonMistake}</p>
         <a className="text-link" href={`#${problem.reviewChapterId}`}>{zh ? '需要补习？回到对应章节' : 'Need a review? Go to the matching chapter'} <ArrowUpRight size={15} aria-hidden="true" /></a>
       </div>
@@ -91,6 +93,7 @@ export default function GuideLessonContent({ locale, lesson }: { locale: string;
             <Equation value={chapter.example.equation} />
             <ol className="lesson-steps">{chapter.example.steps.map((step, index) => <li key={index}><p>{step.text}</p><Equation value={step.equation} /></li>)}</ol>
             <p><strong>{chapter.example.conclusion}</strong></p>
+            {chapter.example.diagram && <LessonDiagram diagram={chapter.example.diagram} locale={locale} />}
           </div>
           <p className="lesson-mistake"><strong>{zh ? '避开误区：' : 'Avoid this trap: '}</strong>{chapter.pitfall}</p>
           <section className="lesson-practice" aria-labelledby={`${chapter.id}-practice`}>

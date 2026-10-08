@@ -33,6 +33,8 @@ Every resource includes a short description, the learner it suits, a limitation,
 
 Original bilingual lesson data lives in `src/lib/guideLessons-algebra.ts` and `src/lib/guideLessons-calculus.ts`; `guideLessons.ts` explicitly lists the completed detail routes. Do not add a detail route for an unfinished guide. Formula mini-guides and their nine practice questions live in `src/lib/formulaExamples.ts`. Keep both languages, answer explanations, domain restrictions, chapter links, and source dates in sync.
 
+The existing lesson examples include original SVG number-line, draining-model, limit, and signed-area diagrams. Their geometry lives in `src/lib/lessonDiagramModels.ts`, bilingual accessible copy in `lessonDiagramCopy.ts`, and rendering in `LessonDiagram.tsx`. Keep models, labels, units, domain restrictions, and text alternatives consistent. The inequality solution diagram remains inside its answer disclosure.
+
 Interface copy is in `src/lib/site-copy.ts`. Page titles, descriptions, canonical URLs, and language alternates are in `src/lib/metadata.ts`. To add another locale, provide complete editorial copy and verify all pages before adding it to `src/config/i18n.ts` and `next-sitemap.config.js`.
 
 ## Quality checks
@@ -47,7 +49,7 @@ npm run test:routes
 npm run check
 ```
 
-Tests use Node’s test runner, tsx, and jsdom. `npm test` covers the calculator reducer and actual React component, resource filters, content integrity, KaTeX, and bilingual metadata. `npm run test:routes` starts the production build itself on local port 3107 and checks HTTP status, redirects, canonical URLs, language alternates, server-rendered content, and sitemap URLs. Run a build first. Node 20.9+ is required by Next.js; the recorded implementation checks used Node 24.19.0. DOM and HTTP tests do not replace visual browser testing.
+Tests use Node’s test runner, tsx, and jsdom. `npm test` covers the calculator reducer and actual React component, resource filtering and history restoration, localized topic-to-lesson links, diagram geometry and accessibility, content integrity, KaTeX, and bilingual metadata. `npm run test:routes` starts the production build itself on local port 3107 and checks HTTP status, redirects, canonical URLs, language alternates, server-rendered content, and sitemap URLs. Run a build first. Node 20.9+ is required by Next.js; the recorded implementation checks used Node 24.19.0. DOM and HTTP tests do not replace visual browser testing.
 
 After deployment, click through the home page, topic guides, filtered directory, calculator, and language switcher on the production domain. Check desktop and mobile layouts, external links, canonical tags, and the generated sitemap.
 
