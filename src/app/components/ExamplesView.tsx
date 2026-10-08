@@ -1,18 +1,87 @@
 'use client'
 
+import Link from 'next/link'
 import { useLocale } from 'next-intl'
-import { siteCopy } from '@/lib/site-copy'
+import { formulaExamples, type FormulaStep, type FormulaText } from '@/lib/formulaExamples'
+import { localPath, siteCopy } from '@/lib/site-copy'
 import MathFormula from './MathFormula'
 
-const examples = [
-  { title: 'Pythagorean theorem', zh: '勾股定理', topic: 'Geometry', topicZh: '几何', formula: 'a^2+b^2=c^2', use: 'Find a missing side in a right triangle.', useZh: '求直角三角形中未知边的长度。', worked: 'If a = 3 and b = 4, then c = √(9 + 16) = 5.', workedZh: '若 a = 3、b = 4，则 c = √(9 + 16) = 5。' },
-  { title: 'Quadratic formula', zh: '一元二次方程求根公式', topic: 'Algebra', topicZh: '代数', formula: 'x=\\frac{-b\\pm\\sqrt{b^2-4ac}}{2a}', use: 'Solve ax² + bx + c = 0 when factoring is difficult (a ≠ 0).', useZh: '当因式分解较困难时，求解 ax² + bx + c = 0（a ≠ 0）。', worked: 'For x² − 5x + 6 = 0: x = (5 ± 1) / 2, so x = 2 or 3.', workedZh: '对于 x² − 5x + 6 = 0：x = (5 ± 1) / 2，因此 x = 2 或 3。' },
-  { title: 'Derivative power rule', zh: '幂函数求导法则', topic: 'Calculus', topicZh: '微积分', formula: '\\frac{d}{dx}x^n=nx^{n-1}', use: 'Find the instantaneous rate of change of a power function.', useZh: '求幂函数在某点的瞬时变化率。', worked: 'For f(x) = x³, f′(x) = 3x². At x = 2, the slope is 12.', workedZh: '对于 f(x) = x³，有 f′(x) = 3x²；在 x = 2 处斜率为 12。' },
-]
+function Step({ step, zh }: { step: FormulaStep; zh: boolean }) {
+  return <>
+    <p>{zh ? step.text.zh : step.text.en}</p>
+    {step.formula && <MathFormula formula={step.formula} displayMode="block" />}
+  </>
+}
 
 export default function ExamplesView() {
   const locale = useLocale()
   const zh = locale.startsWith('zh')
   const c = siteCopy(locale)
-  return <div className="container-wide page-content"><header className="page-heading"><p className="eyebrow accent">OnlyMath / {c.examples}</p><h1>{c.examplesTitle}</h1><p>{c.examplesLead}</p></header><div className="formula-list">{examples.map((item, index) => <article className="formula-card" key={item.title}><div className="formula-heading"><span className="eyebrow">0{index + 1} / {zh ? item.topicZh : item.topic}</span><h2>{zh ? item.zh : item.title}</h2></div><div className="formula-display"><MathFormula formula={item.formula} displayMode="block" /></div><div className="formula-explanation"><div><h3>{zh ? '何时使用' : 'When to use it'}</h3><p>{zh ? item.useZh : item.use}</p></div><div><h3>{zh ? '简单示例' : 'Worked example'}</h3><p>{zh ? item.workedZh : item.worked}</p></div></div></article>)}</div></div>
+  const text = (value: FormulaText) => zh ? value.zh : value.en
+
+  return <div className="container-wide page-content">
+    <header className="page-heading">
+      <p className="eyebrow accent">OnlyMath / {c.examples}</p>
+      <h1>{c.examplesTitle}</h1>
+      <p>{zh
+        ? '先检查条件，再理解推导、跟随例题并独立练习。每个公式都附有检验方法、常见误区和可展开的答案。'
+        : 'Check the conditions, understand the reasoning, and work through an example. Then try a variation, with checks, common pitfalls, and answers when you need them.'}</p>
+    </header>
+    <nav className="formula-jump-links" aria-label={zh ? '跳转到公式' : 'Jump to a formula'}>
+      {formulaExamples.map(item => <a className="text-link" key={item.slug} href={`#${item.slug}`}>{text(item.title)}</a>)}
+    </nav>
+    <div className="formula-list">
+      {formulaExamples.map((item, index) => <article className="formula-card formula-guide" id={item.slug} aria-labelledby={`${item.slug}-title`} key={item.slug}>
+        <div className="formula-heading formula-prose">
+          <span className="eyebrow">{String(index + 1).padStart(2, '0')} / {text(item.topic)}</span>
+          <h2 id={`${item.slug}-title`}>{text(item.title)}</h2>
+          <p>{text(item.use)}</p>
+        </div>
+        <div className="formula-display"><MathFormula formula={item.formula} displayMode="block" /></div>
+        <div className="formula-explanation">
+          <section className="formula-prose">
+            <h3>{zh ? '先检查适用条件' : 'Check the conditions first'}</h3>
+            <ul>{item.conditions.map((condition, i) => <li key={i}>{text(condition)}</li>)}</ul>
+          </section>
+          <section className="formula-prose">
+            <h3>{zh ? '为什么成立' : 'Why it works'}</h3>
+            <ol>{item.reasoning.map((step, i) => <li key={i}><Step step={step} zh={zh} /></li>)}</ol>
+          </section>
+        </div>
+        <div className="formula-explanation">
+          <section className="formula-prose">
+            <h3>{zh ? '逐步例题' : 'Worked example, step by step'}</h3>
+            <p><strong>{text(item.worked.problem)}</strong></p>
+            <ol>{item.worked.steps.map((step, i) => <li key={i}><Step step={step} zh={zh} /></li>)}</ol>
+          </section>
+          <section className="formula-prose">
+            <h3>{zh ? '检验结果' : 'Check your result'}</h3>
+            <Step step={item.check} zh={zh} />
+            <h3>{zh ? '避开常见误区' : 'Avoid these pitfalls'}</h3>
+            <ul>{item.pitfalls.map((pitfall, i) => <li key={i}>{text(pitfall)}</li>)}</ul>
+          </section>
+        </div>
+        <section className="formula-practice formula-prose">
+          <h3>{zh ? '试一试：原创变式练习' : 'Try it: original variation exercises'}</h3>
+          <p>{zh ? '先独立完成，再展开答案核对思路。' : 'Attempt each problem before opening the answer. Compare the reasoning as well as the result.'}</p>
+          <ol className="formula-exercises">
+            {item.exercises.map((exercise, i) => <li key={i}>
+              <p>{text(exercise.prompt)}</p>
+              {exercise.formula && <MathFormula formula={exercise.formula} displayMode="block" />}
+              <details className="formula-answer">
+                <summary>{zh ? '答案与思路' : 'Answer and reasoning'}<span className="sr-only">{zh ? `：练习 ${i + 1}` : ` for exercise ${i + 1}`}</span></summary>
+                <div>{exercise.answer.map((step, j) => <div key={j}><Step step={step} zh={zh} /></div>)}</div>
+              </details>
+            </li>)}
+          </ol>
+        </section>
+        <footer className="formula-next-steps">
+          <Link className="text-link" href={localPath(locale, item.guidePath)}>{text(item.guideLabel)} →</Link>
+          <a className="text-link" href={item.source.url} target="_blank" rel="noopener noreferrer">
+            {zh ? '教材延伸阅读（英文）：' : 'Related textbook chapter: '}{item.source.title}<span className="sr-only">{zh ? '（在新标签页打开）' : ' (opens in a new tab)'}</span> ↗
+          </a>
+        </footer>
+      </article>)}
+    </div>
+  </div>
 }

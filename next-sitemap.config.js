@@ -17,7 +17,7 @@ const stripLocale = (path) => {
 const buildAlternateRefs = (path) => {
   const base = stripLocale(path)
   const refs = locales.map(code => ({
-    href: code === defaultLocale ? `${siteUrl}${base}` : `${siteUrl}/${code}${base}`,
+    href: code === defaultLocale ? `${siteUrl}${base}` : `${siteUrl}/${code}${base === '/' ? '' : base}`,
     hreflang: code,
     hrefIsAbsolute: true
   }))
@@ -31,6 +31,7 @@ module.exports = {
   generateRobotsTxt: false,
   additionalPaths: async config => Promise.all(['/resources', '/zh-CN/resources'].map(path => config.transform(config, path))),
   transform: async (_cfg, path) => {
+    if (path.includes('[') || path.startsWith('/api/')) return null
     const base = stripLocale(path)
     const isHome = base === '/'
     const priority = isHome ? 1.0 : 0.8

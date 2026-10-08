@@ -1,51 +1,54 @@
 'use client'
 
-import { useCallback, useEffect, useState } from 'react'
+import { useEffect, useReducer } from 'react'
+import Link from 'next/link'
 import { useLocale } from 'next-intl'
-import { siteCopy } from '@/lib/site-copy'
-
-type Operation = '+' | '−' | '×' | '÷'
-
-function calculate(a: number, b: number, op: Operation) {
-  if (op === '+') return a + b
-  if (op === '−') return a - b
-  if (op === '×') return a * b
-  return b === 0 ? null : a / b
-}
+import { localPath, siteCopy } from '@/lib/site-copy'
+import { calculatorKeyboardKey, calculatorReducer, initialCalculatorState } from '@/lib/calculator'
 
 export default function CalculatorView() {
   const locale = useLocale()
   const c = siteCopy(locale)
-  const [display, setDisplay] = useState('0')
-  const [previous, setPrevious] = useState<number | null>(null)
-  const [operation, setOperation] = useState<Operation | null>(null)
-  const [fresh, setFresh] = useState(false)
-
-  const press = useCallback((value: string) => {
-    if (value === 'AC') { setDisplay('0'); setPrevious(null); setOperation(null); setFresh(false); return }
-    if (value === '⌫') { setDisplay(current => current.length > 1 ? current.slice(0, -1) : '0'); return }
-    if (/^\d$/.test(value)) { setDisplay(current => fresh || current === '0' || current === c.calcError ? value : current + value); setFresh(false); return }
-    if (value === '.') { setDisplay(current => fresh ? '0.' : current.includes('.') ? current : `${current}.`); setFresh(false); return }
-    if (['+', '−', '×', '÷'].includes(value)) {
-      const next = value as Operation
-      if (previous !== null && operation && !fresh) { const result = calculate(previous, Number(display), operation); if (result === null) { setDisplay(c.calcError); setPrevious(null); setOperation(null); return }; setDisplay(String(Number(result.toPrecision(12)))); setPrevious(result) }
-      else setPrevious(Number(display))
-      setOperation(next); setFresh(true); return
-    }
-    if (value === '=' && previous !== null && operation) { const result = calculate(previous, Number(display), operation); setDisplay(result === null ? c.calcError : String(Number(result.toPrecision(12)))); setPrevious(null); setOperation(null); setFresh(true) }
-  }, [c.calcError, display, fresh, operation, previous])
+  const zh = locale === 'zh-CN'
+  const [state, press] = useReducer(calculatorReducer, initialCalculatorState)
+  const display = state.error === 'divide-by-zero' ? c.calcError
+    : state.error === 'overflow' ? (zh ? '结果超出范围' : 'Result out of range') : state.display
 
   useEffect(() => {
     const handler = (event: KeyboardEvent) => {
-      if (event.target instanceof HTMLInputElement || event.target instanceof HTMLTextAreaElement || event.target instanceof HTMLSelectElement) return
-      const mapped: Record<string, string> = { Backspace: '⌫', Escape: 'AC', Enter: '=', '*': '×', '/': '÷', '-': '−' }
-      const key = mapped[event.key] || event.key
-      if (/^\d$/.test(key) || ['.', '+', '−', '×', '÷', '=', '⌫', 'AC'].includes(key)) { event.preventDefault(); press(key) }
+      if (event.ctrlKey || event.metaKey || event.altKey || event.isComposing) return
+      const target = event.target
+      if (target instanceof HTMLElement && (target.isContentEditable || target.closest('input, textarea, select, [contenteditable="true"]'))) return
+      // Let Enter activate a focused button or link using its native behavior.
+      if (event.key === 'Enter' && target instanceof HTMLElement && target.closest('button, a')) return
+      const key = calculatorKeyboardKey(event.key)
+      if (key) { event.preventDefault(); press(key) }
     }
     window.addEventListener('keydown', handler)
     return () => window.removeEventListener('keydown', handler)
-  }, [press])
+  }, [])
 
   const buttons = ['AC', '⌫', '÷', '×', '7', '8', '9', '−', '4', '5', '6', '+', '1', '2', '3', '=', '0', '.']
-  return <div className="container-wide page-content"><header className="page-heading"><p className="eyebrow accent">OnlyMath / {c.tools}</p><h1>{c.calcTitle}</h1><p>{c.calcLead}</p></header><div className="calculator-layout"><div className="calculator"><div className="calculator-display" role="status" aria-live="polite" aria-label={locale.startsWith('zh') ? '计算结果' : 'Calculator display'}>{display}</div><div className="calculator-keys">{buttons.map(value => <button type="button" key={value} className={`calc-key ${value === '=' ? 'equals' : ''} ${value === '0' ? 'zero' : ''}`} onClick={() => press(value)} aria-label={value === '⌫' ? (locale.startsWith('zh') ? '退格' : 'Backspace') : value === 'AC' ? (locale.startsWith('zh') ? '全部清除' : 'Clear all') : value}>{value}</button>)}</div></div><aside className="calculator-help"><p className="eyebrow accent">{locale.startsWith('zh') ? '工具说明' : 'About this tool'}</p><h2>{locale.startsWith('zh') ? '先计算，再理解。' : 'A quick check, then back to learning.'}</h2><p>{c.calcTip}</p></aside></div></div>
+  return <div className="container-wide page-content">
+    <header className="page-heading"><p className="eyebrow accent">OnlyMath / {c.tools}</p><h1>{c.calcTitle}</h1><p>{c.calcLead}</p></header>
+    <div className="calculator-layout">
+      <div className="calculator">
+        <div className="calculator-display" role="status" aria-live="polite" aria-atomic="true" aria-label={zh ? '计算结果' : 'Calculator display'}>{display}</div>
+        {state.error && <p className="calculator-error-hint">{zh ? '输入数字或小数点开始新计算，或按退格、AC 清除。' : 'Enter a number or decimal to start again, or use Backspace or AC to clear.'}</p>}
+        <div className="calculator-keys">{buttons.map(value => <button type="button" key={value} className={`calc-key ${value === '=' ? 'equals' : ''} ${value === '0' ? 'zero' : ''}`} onClick={() => press(value)} aria-label={value === '⌫' ? (zh ? '退格' : 'Backspace') : value === 'AC' ? (zh ? '全部清除' : 'Clear all') : value}>{value}</button>)}</div>
+      </div>
+      <aside className="calculator-help">
+        <p className="eyebrow accent">{zh ? '工具说明' : 'About this tool'}</p><h2>{zh ? '先计算，再理解。' : 'A quick check, then back to learning.'}</h2>
+        <p>{c.calcTip}</p>
+        <ul>
+          <li>{zh ? '按键顺序即时计算，不使用乘除优先级：2 + 3 × 4 = 20。' : 'Operations run in button order, without multiplication precedence: 2 + 3 × 4 = 20.'}</li>
+          <li>{zh ? '每步结果取约 12 位有效数字，每个输入最多 15 位数字。不能替代精确分数或符号运算。' : 'Each result is rounded to 12 significant digits; each entry accepts up to 15 digits. This is not exact fraction or symbolic arithmetic.'}</li>
+          <li>{zh ? '可用数字、+、-、*、/ 和小数点；Enter 求值，Escape 清除，Backspace 退格。聚焦按钮时，Enter 会激活该按钮。' : 'Use digits, +, -, *, / and the decimal point. Enter evaluates, Escape clears and Backspace deletes. When a button is focused, Enter activates that button.'}</li>
+        </ul>
+        <h3>{zh ? '用斜率检查一个例子' : 'Try a slope check'}</h3>
+        <p>{zh ? '直线上两点为 (1, 2) 和 (4, 8)。先手写斜率 (8 − 2) ÷ (4 − 1)，再输入 6 ÷ 3 =，得到 2。计算器只能检查计算；变量与单位仍需要你解释。' : 'For points (1, 2) and (4, 8), write the slope as (8 − 2) ÷ (4 − 1), then enter 6 ÷ 3 = to get 2. The calculator checks the arithmetic; you still need to explain the variables and units.'}</p>
+        <Link className="text-link" href={localPath(locale, '/guides/algebra-foundations')}>{zh ? '练习方程与斜率' : 'Practice equations and slope'}</Link>
+      </aside>
+    </div>
+  </div>
 }

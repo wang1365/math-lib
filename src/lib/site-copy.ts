@@ -39,3 +39,10 @@ export function resourceLevel(level: string, locale: string) {
   if (!locale.startsWith('zh')) return level
   return ({ Beginner: '入门', Intermediate: '进阶', Advanced: '高级', 'All levels': '各级别' } as Record<string, string>)[level] || level
 }
+
+// An explicit /en navigation updates next-intl's language cookie before it
+// redirects to the unprefixed canonical URL. Canonical content links stay clean.
+export function localeSwitchPath(locale: string, path: string) {
+  const normalized = path.startsWith('/') ? path : `/${path}`
+  return locale === 'en' ? `/en${normalized === '/' ? '' : normalized}` : localPath(locale, normalized)
+}
