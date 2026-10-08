@@ -9,5 +9,5 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
 
 export default async function Page({ searchParams }: { searchParams: Promise<Record<string, string | string[] | undefined>> }) {
   const initialFilters = parseResourceFilters(await searchParams)
-  return <ResourcesView key={`${initialFilters.q}|${initialFilters.topic}|${initialFilters.format}`} initialFilters={initialFilters} />
+  return <ResourcesView initialFilters={initialFilters} />
 }

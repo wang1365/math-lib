@@ -1,7 +1,8 @@
 'use client'
 
-import { useEffect, useMemo, useState } from 'react'
+import { useLayoutEffect, useMemo, useSyncExternalStore } from 'react'
 import { useLocale } from 'next-intl'
+import { useSearchParams } from 'next/navigation'
 import { resources, topics, type Format } from '@/lib/catalog'
 import type { ResourceFilters } from '@/lib/resourceFilters'
 import { resourceFormat, siteCopy } from '@/lib/site-copy'
@@ -9,32 +10,55 @@ import ResourceCard from './ResourceCard'
 import ResourceComparison from './ResourceComparison'
 
 const formats: Format[] = ['Course', 'Textbook', 'Notes', 'Video', 'Practice', 'Tool', 'Collection']
+const filtersChangedEvent = 'onlymath:resource-filters-changed'
+
+function subscribeToFilters(onChange: () => void) {
+  window.addEventListener(filtersChangedEvent, onChange)
+  window.addEventListener('popstate', onChange)
+  window.addEventListener('pageshow', onChange)
+  return () => {
+    window.removeEventListener(filtersChangedEvent, onChange)
+    window.removeEventListener('popstate', onChange)
+    window.removeEventListener('pageshow', onChange)
+  }
+}
+
+function readSearch() { return window.location.search.slice(1) }
+function notifyFiltersChanged() { window.dispatchEvent(new Event(filtersChangedEvent)) }
+
+function replaceFilters(params: URLSearchParams) {
+  // Passing Next's internal history state skips its URL synchronization hook.
+  // Next copies the required router state itself when this public API gets null.
+  window.history.replaceState(null, '', `${window.location.pathname}${params.size ? `?${params}` : ''}${window.location.hash}`)
+  notifyFiltersChanged()
+}
 
 export default function ResourcesView({ initialFilters }: { initialFilters: ResourceFilters }) {
   const locale = useLocale()
   const zh = locale.startsWith('zh')
   const c = siteCopy(locale)
-  const [filters, setFilters] = useState(initialFilters)
-  const { q: query, topic, format } = filters
-
-  useEffect(() => {
-    const restore = () => {
-      const params = new URLSearchParams(window.location.search)
-      setFilters({ q: params.get('q') || '', topic: params.get('topic') || '', format: params.get('format') || '' })
-    }
-    window.addEventListener('popstate', restore)
-    return () => window.removeEventListener('popstate', restore)
-  }, [])
+  const routerSearch = useSearchParams()?.toString() ?? new URLSearchParams(initialFilters).toString()
+  // Next restores native history changes asynchronously. Read the URL as an
+  // external store so controlled inputs update synchronously and keep their caret.
+  // The router snapshot also keeps server rendering and hydration consistent.
+  const search = useSyncExternalStore(subscribeToFilters, readSearch, () => routerSearch)
+  // A Next Link/router navigation writes history during its insertion effect,
+  // after render. Notify after that commit, including same-route query changes.
+  useLayoutEffect(notifyFiltersChanged, [routerSearch])
+  const params = new URLSearchParams(search)
+  const query = params.get('q') || ''
+  const topic = params.get('topic') || ''
+  const format = params.get('format') || ''
 
   const update = (key: keyof ResourceFilters, value: string) => {
-    setFilters(current => ({ ...current, [key]: value }))
     const params = new URLSearchParams(window.location.search)
     if (value) params.set(key, value); else params.delete(key)
-    window.history.replaceState(window.history.state, '', `${window.location.pathname}${params.size ? `?${params}` : ''}`)
+    replaceFilters(params)
   }
   const clear = () => {
-    setFilters({ q: '', topic: '', format: '' })
-    window.history.replaceState(window.history.state, '', window.location.pathname)
+    const params = new URLSearchParams(window.location.search)
+    for (const key of ['q', 'topic', 'format']) params.delete(key)
+    replaceFilters(params)
   }
   const filtered = useMemo(() => resources.filter(item => {
     const terms = `${item.name} ${item.summary} ${item.summaryZh} ${item.bestFor} ${item.bestForZh} ${item.topics.join(' ')}`.toLowerCase()
@@ -48,7 +72,7 @@ export default function ResourcesView({ initialFilters }: { initialFilters: Reso
       <label htmlFor="topic-filter">{c.topic}</label><select id="topic-filter" value={topic} onChange={e => update('topic', e.target.value)}><option value="">{c.allTopics}</option>{topics.map(item => <option value={item.id} key={item.id}>{zh ? item.zh : item.name}</option>)}</select>
       <label htmlFor="format-filter">{c.format}</label><select id="format-filter" value={format} onChange={e => update('format', e.target.value)}><option value="">{c.allFormats}</option>{formats.map(item => <option value={item} key={item}>{resourceFormat(item, locale)}</option>)}</select>
       {(topic || format || query) && <button className="clear-button" onClick={clear}>{c.clear}</button>}
-    </aside><div className="directory-results"><div className="results-heading"><strong>{filtered.length} {c.results}</strong><span>{zh ? '按名称排序' : 'Sorted by name'}</span></div>{filtered.length ? <div className="directory-grid">{[...filtered].sort((a,b) => a.name.localeCompare(b.name)).map(item => <ResourceCard key={item.id} resource={item} locale={locale} />)}</div> : <p className="empty-state">{c.noResults}</p>}</div></div>
+    </aside><div className="directory-results"><div className="results-heading"><strong role="status" aria-live="polite">{filtered.length} {filtered.length === 1 ? c.result : c.results}</strong><span>{zh ? '按名称排序' : 'Sorted by name'}</span></div>{filtered.length ? <div className="directory-grid">{[...filtered].sort((a,b) => a.name.localeCompare(b.name)).map(item => <ResourceCard key={item.id} resource={item} locale={locale} />)}</div> : <p className="empty-state">{c.noResults}</p>}</div></div>
     <ResourceComparison locale={locale} />
     <div className="editorial-note"><h2>{c.editorial}</h2><p>{c.editorialText}</p></div>
   </div>

@@ -1,5 +1,6 @@
 import { algebraLesson } from './guideLessons-algebra'
 import { calculusLesson } from './guideLessons-calculus'
+import type { LessonDiagramId } from './lessonDiagramModels'
 
 export type LessonStep = { text: string; equation?: string }
 export type LessonProblem = {
@@ -10,6 +11,7 @@ export type LessonProblem = {
   explanation: string
   commonMistake: string
   reviewChapterId: string
+  diagram?: LessonDiagramId
 }
 export type LessonSource = {
   title: string
@@ -29,6 +31,7 @@ export type LessonChapter = {
     equation?: string
     steps: LessonStep[]
     conclusion: string
+    diagram?: LessonDiagramId
   }
   pitfall: string
   practice: LessonProblem[]

@@ -35,7 +35,7 @@ const read = async (path: string, headers: Record<string, string> = {}) => {
 
 for (const locale of ['en', 'zh-CN']) {
   const prefix = locale === 'en' ? '' : '/zh-CN'
-  for (const path of ['/', '/guides', '/guides/algebra-foundations', '/guides/calculus-roadmap', '/resources', '/examples', '/calculator']) {
+  for (const path of ['/', '/branches', '/guides', '/guides/algebra-foundations', '/guides/calculus-roadmap', '/resources', '/examples', '/calculator']) {
     const localized = `${prefix}${path === '/' ? '' : path}` || '/'
     test(`200, language and canonical metadata: ${localized}`, async () => {
       const { response, document } = await read(localized)
@@ -55,6 +55,14 @@ for (const locale of ['en', 'zh-CN']) {
       if (path.startsWith('/guides/')) {
         assert.ok(document.querySelectorAll('details').length >= 15, 'Exercises and solutions are in server-rendered HTML')
         assert.equal(document.querySelectorAll('.lesson-chapter').length, 4)
+        const expectedDiagrams = path.endsWith('algebra-foundations') ? ['inequality', 'draining-tank'] : ['removable-limit', 'velocity-area']
+        assert.deepEqual([...document.querySelectorAll('figure.lesson-diagram')].map(figure => figure.getAttribute('data-diagram')), expectedDiagrams)
+        for (const svg of document.querySelectorAll('svg[role="img"]')) {
+          assert.ok(document.getElementById(svg.getAttribute('aria-labelledby')!)?.textContent)
+          assert.ok(document.getElementById(svg.getAttribute('aria-describedby')!)?.textContent)
+        }
+        if (path.endsWith('algebra-foundations')) assert.ok(document.querySelector('[data-diagram="inequality"]')?.closest('details.lesson-answer'))
+
         assert.ok(document.querySelector('.lesson-main')!.textContent!.length > 5000)
         const ids = [...document.querySelectorAll('[id]')].map(element => element.id)
         assert.equal(ids.length, new Set(ids).size, 'IDs are unique')
@@ -126,3 +134,23 @@ test('explicit English switch updates a saved Chinese preference and preserves f
   assert.equal(canonical.response.status, 200)
   assert.equal(canonical.document.documentElement.lang, 'en')
 })
+
+for (const locale of ['en', 'zh-CN']) {
+  test(`filtered server render and topic entry links (${locale})`, async () => {
+    const prefix = locale === 'en' ? '' : '/zh-CN'
+    const { document } = await read(`${prefix}/resources?topic=calculus&format=Textbook&q=OpenStax`)
+    assert.equal(document.querySelectorAll('.directory-results .resource-card').length, 1)
+    assert.equal(document.querySelector('[role="status"]')?.textContent, locale === 'en' ? '1 resource' : '1 项资源')
+    assert.equal(document.querySelector<HTMLInputElement>('#resource-search')?.value, 'OpenStax')
+    assert.equal(document.querySelector<HTMLSelectElement>('#topic-filter')?.value, 'calculus')
+    assert.equal(document.querySelector<HTMLSelectElement>('#format-filter')?.value, 'Textbook')
+    const topics = (await read(`${prefix}/branches`)).document
+    for (const [topic, slug] of [['algebra', 'algebra-foundations'], ['calculus', 'calculus-roadmap']]) {
+      const section = topics.getElementById(topic)!
+      assert.ok(section.querySelector(`a[href="${prefix}/guides/${slug}#diagnostic"]`))
+      assert.ok(section.querySelector(`a[href="${prefix}/guides/${slug}"]`))
+      const lesson = (await read(`${prefix}/guides/${slug}`)).document
+      assert.ok(lesson.getElementById('diagnostic'))
+    }
+  })
+}
