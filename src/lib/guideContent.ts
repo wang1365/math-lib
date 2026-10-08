@@ -1,5 +1,6 @@
 export type Guide = {
   slug: string
+  hasLesson?: boolean
   title: string
   summary: string
   level: string
@@ -13,8 +14,9 @@ export type Guide = {
 const zhGuides: Guide[] = [
   {
     slug: 'calculus-roadmap',
+    hasLesson: true,
     title: '微积分自学路线：从函数到积分应用',
-    summary: '一条适合高中后到大学初学者的微积分学习路线，强调概念、计算和应用的顺序。',
+    summary: '包含准备度自测、分步例题、练习与答案解析的四章原创单元，串联极限、导数和积分。',
     level: '入门到中级',
     resourceIds: ['openstax-precalculus', '3b1b', 'pauls-notes', 'openstax-calculus'],
     sections: [
@@ -26,9 +28,9 @@ const zhGuides: Guide[] = [
         ]
       },
       {
-        heading: '按“极限-导数-积分-级数”推进',
+        heading: '先建立极限、导数与积分的联系',
         body: [
-          '极限解决“靠近”的语言，导数解决瞬时变化，积分解决累积，级数解决用无限过程近似函数。',
+          '极限描述“靠近”的趋势，导数描述瞬时变化，积分描述累积。先掌握这些基础，再在后续阶段学习级数。',
           '每学一个计算规则，都要配一个图像解释和一个实际例子，例如速度、面积、边际成本或概率密度。'
         ]
       },
@@ -102,7 +104,7 @@ const zhGuides: Guide[] = [
     ]
   },
   {
-    slug: 'algebra-foundations', title: '代数基础补习路线：从方程到函数', summary: '适合准备 Algebra 1、重修基础或进入预备微积分前自查的学习者。', level: '高中基础',
+    slug: 'algebra-foundations', hasLesson: true, title: '代数基础补习路线：从方程到函数', summary: '通过诊断题定位薄弱环节，用四章原创讲解、例题与答案解析巩固方程、图像和函数。', level: '高中基础',
     resourceIds: ['khan', 'ck12-flexmath', 'math-is-fun', 'openstax-algebra'],
     sections: [
       { heading: '先找出真正卡住的环节', body: ['用几个方程与图像题检查负数运算、分数、比例和一次方程。若这些步骤不稳，先回到对应小节练习。', '做题时记录错误原因：计算、符号、建立方程，还是无法解释图像。针对原因补习比从头重看整门课更有效。'] },
@@ -124,8 +126,9 @@ const zhGuides: Guide[] = [
 const enGuides: Guide[] = [
   {
     slug: 'calculus-roadmap',
+    hasLesson: true,
     title: 'A Calculus Roadmap: From Functions to Applications',
-    summary: 'A practical sequence for first-time calculus learners, connecting concepts, computation, and applications.',
+    summary: 'An original four-chapter unit with a readiness check, worked examples, practice, and explained answers on limits, derivatives, and integrals.',
     level: 'Beginner to intermediate',
     resourceIds: ['openstax-precalculus', '3b1b', 'pauls-notes', 'openstax-calculus'],
     sections: [
@@ -137,9 +140,9 @@ const enGuides: Guide[] = [
         ]
       },
       {
-        heading: 'Use the sequence limits, derivatives, integrals, series',
+        heading: 'Build limits, derivatives, and integrals first',
         body: [
-          'Limits describe approaching behavior, derivatives describe instantaneous change, integrals describe accumulation, and series describe infinite approximation.',
+          'Limits describe approaching behavior, derivatives describe instantaneous change, and integrals describe accumulation. Study series later, after these foundations are secure.',
           'Pair every rule with a graph and an application such as velocity, area, marginal cost, or probability density.'
         ]
       },
@@ -213,7 +216,7 @@ const enGuides: Guide[] = [
     ]
   },
   {
-    slug: 'algebra-foundations', title: 'Rebuild Algebra: From Equations to Functions', summary: 'A focused path for Algebra 1 review or for checking foundations before precalculus.', level: 'High school foundation',
+    slug: 'algebra-foundations', hasLesson: true, title: 'Rebuild Algebra: From Equations to Functions', summary: 'An original four-chapter unit that diagnoses gaps, explains equations and functions, and checks understanding with practice and worked answers.', level: 'High school foundation',
     resourceIds: ['khan', 'ck12-flexmath', 'math-is-fun', 'openstax-algebra'],
     sections: [
       { heading: 'Find the actual gap first', body: ['Use a few equation and graph questions to check signed numbers, fractions, ratios, and linear equations. If one step is shaky, practice that step before moving on.', 'Record whether each mistake came from arithmetic, notation, translating words into an equation, or reading a graph. A targeted review is usually more useful than replaying an entire course.'] },

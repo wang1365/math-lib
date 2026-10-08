@@ -19,7 +19,7 @@ export const additionalResources: Resource[] = [
     id: 'openstax-calculus', name: 'OpenStax Calculus Volume 1', url: 'https://openstax.org/books/calculus-volume-1/pages/preface', format: 'Textbook', cost: 'Free', level: 'Intermediate', topics: ['calculus'],
     summary: 'A first calculus text covering functions, limits, derivatives, and integration.', summaryZh: '覆盖函数、极限、导数和积分的第一册微积分教材。',
     bestFor: 'Reading a complete explanation after an introductory video or lecture.', bestForZh: '听完入门讲解后，需要系统阅读和练习的人。',
-    caveat: 'Comfort with algebra and trigonometry makes the early chapters much easier.', caveatZh: '先掌握代数和三角函数，前几章会更容易。', checkedAt: '2026-09-27',
+    caveat: 'Comfort with algebra and trigonometry makes the early chapters much easier.', caveatZh: '先掌握代数和三角函数，前几章会更容易。', checkedAt: '2026-10-08',
   },
   {
     id: 'openstax-statistics', name: 'OpenStax Introductory Statistics 2e', url: 'https://openstax.org/books/introductory-statistics-2e/pages/preface', format: 'Textbook', cost: 'Free', level: 'Beginner', topics: ['statistics'],
@@ -37,7 +37,7 @@ export const additionalResources: Resource[] = [
     id: 'pauls-notes', name: "Paul's Online Math Notes", url: 'https://tutorial.math.lamar.edu/', format: 'Notes', cost: 'Free', level: 'Intermediate', topics: ['algebra', 'precalculus', 'calculus'],
     summary: 'Free lecture-style notes with worked examples and practice for algebra and calculus.', summaryZh: '免费的代数与微积分讲义，包含例题和练习。',
     bestFor: 'Checking a specific method or working through a solution step by step.', bestForZh: '查阅具体方法，或逐步跟做例题。',
-    caveat: 'Calculus notes assume working algebra and trigonometry knowledge.', caveatZh: '微积分部分预设读者已掌握代数和三角函数。', checkedAt: '2026-09-27',
+    caveat: 'Calculus notes assume working algebra and trigonometry knowledge.', caveatZh: '微积分部分预设读者已掌握代数和三角函数。', checkedAt: '2026-10-08',
   },
   {
     id: 'statquest', name: 'StatQuest Video Index', url: 'https://statquest.org/video_index.html', format: 'Video', cost: 'Free', level: 'Intermediate', topics: ['statistics'],

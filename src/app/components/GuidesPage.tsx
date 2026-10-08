@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import { ArrowUpRight } from 'lucide-react'
 import { getGuides } from '@/lib/guideContent'
+import { guideLessonSlugs } from '@/lib/guideLessons'
 import { resources } from '@/lib/catalog'
 import { localPath } from '@/lib/site-copy'
 
@@ -12,7 +13,7 @@ export default function GuidesPage({ locale }: { locale: string }) {
     <header className="page-heading">
       <p className="eyebrow accent">{zh ? '学习指南' : 'FIELD GUIDES'}</p>
       <h1>{zh ? '找到适合自己的数学学习路径。' : 'Make a plan for learning math.'}</h1>
-      <p>{zh ? '从核心概念、学习顺序到资源选择，逐步建立扎实的数学基础。' : 'Practical guidance on what to study, in which order, and how to choose resources that help.'}</p>
+      <p>{zh ? '先用原创诊断题找出代数或微积分的薄弱点，再跟随例题、独立练习并核对解析。其他路线帮助你规划下一步。' : 'Find your algebra or calculus gaps with original diagnostics, work through examples, and check your own solutions. Other roadmaps help you plan the next step.'}</p>
     </header>
     <div className="guide-list">
       {guides.map((guide, index) => <article className="guide-article" key={guide.slug} id={guide.slug}>
@@ -20,6 +21,8 @@ export default function GuidesPage({ locale }: { locale: string }) {
         <div className="guide-body">
           <h2>{guide.title}</h2>
           <p className="guide-summary">{guide.summary}</p>
+          {guideLessonSlugs.some(slug => slug === guide.slug) && <p><Link className="button button-primary" href={localPath(locale, `/guides/${guide.slug}`)}>{zh ? '开始完整单元：自测、例题与练习' : 'Start the full unit: diagnostics, examples and practice'} <ArrowUpRight size={16} aria-hidden="true" /></Link></p>}
+          {guide.slug === 'choosing-math-resources' && <p><Link className="text-link" href={localPath(locale, '/resources#algebra-to-derivatives')}>{zh ? '比较四种具体课程与教材' : 'Compare four specific courses and textbooks'} <ArrowUpRight size={16} aria-hidden="true" /></Link></p>}
           {guide.sections.map(section => <section key={section.heading}>
             <h3>{section.heading}</h3>
             {section.body.map(paragraph => <p key={paragraph}>{paragraph}</p>)}
